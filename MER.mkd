@@ -1,0 +1,164 @@
+# MER do domínio RH
+
+## Entidades e atributos
+
+### Colaborador
+- colaborador_id (PK)
+- nome
+- email
+- telefone
+- data_admissao
+- status
+- tipo_vinculo
+- cargo_id (FK)
+- departamento_id (FK)
+- gestor_id (FK, auto-relacionamento)
+
+### Cargo
+- cargo_id (PK)
+- nome_cargo
+- nivel
+- descricao
+
+### Departamento
+- departamento_id (PK)
+- nome_departamento
+- centro_custo_id (FK)
+
+### Movimentacao_Colaborador
+- movimentacao_id (PK)
+- colaborador_id (FK)
+- tipo_movimentacao
+- data_movimentacao
+- cargo_anterior (FK)
+- cargo_novo (FK)
+- departamento_anterior (FK)
+- departamento_novo (FK)
+
+### Ausencia
+- ausencia_id (PK)
+- colaborador_id (FK)
+- tipo_ausencia
+- data_inicio
+- data_fim
+- status_aprovacao
+
+### Recrutamento_Vaga
+- vaga_id (PK)
+- titulo
+- departamento_id (FK)
+- data_abertura
+- status
+- quantidade_vagas
+
+### Candidatura
+- candidatura_id (PK)
+- vaga_id (FK)
+- nome_candidato
+- email_candidato
+- origem_candidatura
+- status_candidatura
+
+---
+
+## Relacionamentos
+
+### Cargo x Colaborador
+- Um cargo pode estar associado a vários colaboradores.
+- Um colaborador ocupa um cargo.
+
+**Cardinalidade:**
+- Cargo (1) : Colaborador (N)
+
+### Cargo x Movimentacao_Colaborador
+- Um cargo pode ser a origem ou o destino de várias movimentações.
+- Cada movimentação exige exatamente um cargo anterior e um cargo novo.
+**Cardinalidade:**
+- Cargo (1) : Movimentacao_Colaborador (N)
+
+### Departamento x Colaborador
+- Um departamento pode possuir vários colaboradores.
+- Um colaborador pertence a um departamento.
+
+**Cardinalidade:**
+- Departamento (1) : Colaborador (N)
+
+### Departamento x Movimentacao_Colaborador
+- Um departamento pode ser a origem ou o destino de várias movimentações.
+- Cada movimentação exige exatamente um departamento anterior e um departamento novo.
+**Cardinalidade:**
+- Departamento (1) : Movimentacao_Colaborador (N)
+
+### Colaborador x Movimentacao_Colaborador
+- Um colaborador pode ter várias movimentações.
+- Cada movimentação pertence a um único colaborador.
+
+**Cardinalidade:**
+- Colaborador (1) : Movimentacao_Colaborador (N)
+
+### Colaborador x Ausencia
+- Um colaborador pode ter várias ausências.
+- Cada ausência pertence a um único colaborador.
+
+**Cardinalidade:**
+- Colaborador (1) : Ausencia (N)
+
+### Departamento x Recrutamento_Vaga
+- Um departamento pode abrir várias vagas.
+- Cada vaga pertence a um departamento.
+
+**Cardinalidade:**
+- Departamento (1) : Recrutamento_Vaga (N)
+
+### Recrutamento_Vaga x Candidatura
+- Uma vaga pode receber várias candidaturas.
+- Cada candidatura pertence a uma única vaga.
+
+**Cardinalidade:**
+- Recrutamento_Vaga (1) : Candidatura (N)
+
+### Colaborador x Colaborador
+- Um colaborador pode gerenciar vários colaboradores.
+- Um colaborador pode ter um gestor.
+
+**Cardinalidade:**
+- Colaborador (1) : Colaborador (N)
+
+---
+
+## Chaves primárias e estrangeiras
+
+### Chaves primárias
+- Colaborador: colaborador_id
+- Cargo: cargo_id
+- Departamento: departamento_id
+- Movimentacao_Colaborador: movimentacao_id
+- Ausencia: ausencia_id
+- Recrutamento_Vaga: vaga_id
+- Candidatura: candidatura_id
+
+### Chaves estrangeiras
+- Movimentacao_Colaborador.cargo_anterior → Cargo.cargo_id
+- Movimentacao_Colaborador.cargo_novo → Cargo.cargo_id
+- Movimentacao_Colaborador.departamento_anterior → Departamento.departamento_id
+- Movimentacao_Colaborador.departamento_novo → Departamento.departamento_id
+- Colaborador.cargo_id → Cargo.cargo_id
+- Colaborador.departamento_id → Departamento.departamento_id
+- Colaborador.gestor_id → Colaborador.colaborador_id
+- Movimentacao_Colaborador.colaborador_id → Colaborador.colaborador_id
+- Ausencia.colaborador_id → Colaborador.colaborador_id
+- Recrutamento_Vaga.departamento_id → Departamento.departamento_id
+- Candidatura.vaga_id → Recrutamento_Vaga.vaga_id
+
+---
+
+## Regras de negócio básicas
+
+- Todo colaborador deve estar vinculado a um cargo.
+- Todo colaborador deve estar vinculado a um departamento.
+- Um colaborador pode ou não ter gestor.
+- Toda movimentação deve estar associada a um colaborador.
+- Toda ausência deve estar associada a um colaborador.
+- Toda vaga deve pertencer a um departamento.
+- Toda candidatura deve estar vinculada a uma vaga.
+- Toda movimentação de colaborador deve registrar obrigatoriamente o cargo e o departamento de origem, bem como o cargo e o departamento de destino.
