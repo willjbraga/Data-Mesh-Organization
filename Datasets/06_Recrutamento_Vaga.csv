@@ -1,0 +1,1001 @@
+Vaga_id;Titulo;Data_abertura;Quantidade_vagas;Status;FK_departamento_id
+1;Estagiario Administrativo 001;2025-08-01;4;Fechada;204
+2;Estagiario Administrativo 002;2025-04-23;8;Fechada;834
+3;Coordenador de Operacoes 003;2024-02-22;5;Aberta;930
+4;Coordenador de Operacoes 004;2022-07-23;3;Aberta;294
+5;Analista de RH 005;2024-09-20;8;Fechada;255
+6;Analista Financeiro 006;2022-12-23;6;Pausada;216
+7;Analista de Treinamento 007;2025-11-11;5;Fechada;934
+8;Assistente de RH 008;2025-06-04;8;Fechada;69
+9;Analista de Treinamento 009;2023-06-25;3;Fechada;869
+10;Business Partner 010;2022-10-13;1;Aberta;53
+11;Recrutador 011;2024-08-01;3;Aberta;421
+12;Analista de RH 012;2022-11-21;1;Fechada;677
+13;Business Partner 013;2023-06-16;2;Fechada;924
+14;Recrutador 014;2022-06-21;4;Aberta;719
+15;Analista de DP 015;2025-06-13;8;Cancelada;919
+16;Assistente de RH 016;2022-06-21;8;Cancelada;749
+17;Recrutador 017;2024-10-28;5;Cancelada;521
+18;Analista de RH 018;2022-05-25;7;Fechada;312
+19;Recrutador 019;2022-10-11;3;Fechada;463
+20;Analista de Dados 020;2024-12-04;4;Fechada;451
+21;Recrutador 021;2024-02-05;8;Cancelada;553
+22;Analista de Marketing 022;2022-05-07;1;Aberta;48
+23;Coordenador de Operacoes 023;2024-08-29;6;Pausada;96
+24;Analista de Marketing 024;2023-01-22;7;Fechada;307
+25;Analista de Beneficios 025;2024-04-05;2;Fechada;685
+26;Assistente de RH 026;2022-11-20;8;Fechada;605
+27;Desenvolvedor Python 027;2022-12-05;7;Fechada;517
+28;Analista de Marketing 028;2024-08-06;7;Fechada;687
+29;Estagiario Administrativo 029;2025-09-23;1;Aberta;603
+30;Analista de Dados 030;2023-04-15;2;Aberta;810
+31;Assistente de RH 031;2025-04-04;7;Aberta;438
+32;Analista de RH 032;2024-10-09;4;Aberta;291
+33;Business Partner 033;2025-11-16;4;Aberta;387
+34;Analista de Dados 034;2022-08-08;8;Fechada;880
+35;Analista de DP 035;2025-09-10;7;Aberta;656
+36;Analista de RH 036;2025-05-23;7;Fechada;290
+37;Analista de Beneficios 037;2024-02-10;7;Fechada;738
+38;Desenvolvedor Python 038;2025-06-06;7;Aberta;464
+39;Recrutador 039;2023-10-02;3;Aberta;12
+40;Analista de Marketing 040;2025-02-22;6;Aberta;146
+41;Analista de Marketing 041;2023-12-30;4;Fechada;417
+42;Desenvolvedor Python 042;2025-01-16;3;Aberta;991
+43;Analista de Beneficios 043;2023-03-31;5;Fechada;546
+44;Analista de Treinamento 044;2024-10-24;4;Fechada;902
+45;Coordenador de Operacoes 045;2022-10-09;5;Pausada;155
+46;Analista de DP 046;2024-12-15;8;Fechada;70
+47;Coordenador de Operacoes 047;2022-02-15;2;Aberta;76
+48;Analista Financeiro 048;2022-08-20;4;Aberta;774
+49;Analista de Beneficios 049;2025-08-03;3;Cancelada;895
+50;Analista Financeiro 050;2026-01-03;7;Aberta;219
+51;Estagiario Administrativo 051;2026-01-13;7;Fechada;350
+52;Analista de Marketing 052;2023-05-25;1;Cancelada;329
+53;Recrutador 053;2024-11-12;2;Pausada;799
+54;Analista de Treinamento 054;2022-02-14;3;Aberta;980
+55;Desenvolvedor Python 055;2026-03-17;5;Pausada;269
+56;Assistente de RH 056;2025-06-16;2;Pausada;666
+57;Analista de RH 057;2023-01-31;5;Aberta;807
+58;Analista de Beneficios 058;2024-05-02;7;Fechada;482
+59;Analista de DP 059;2026-02-25;8;Fechada;954
+60;Analista de Treinamento 060;2022-05-14;3;Fechada;609
+61;Recrutador 061;2025-03-19;1;Fechada;980
+62;Analista de Treinamento 062;2022-01-06;7;Pausada;565
+63;Analista de Marketing 063;2022-07-18;5;Aberta;278
+64;Coordenador de Operacoes 064;2024-11-24;2;Fechada;860
+65;Analista de Dados 065;2025-06-28;3;Cancelada;642
+66;Coordenador de Operacoes 066;2023-06-27;7;Fechada;552
+67;Analista de Beneficios 067;2023-05-25;7;Fechada;563
+68;Estagiario Administrativo 068;2023-10-01;7;Fechada;706
+69;Assistente de RH 069;2023-11-02;6;Fechada;322
+70;Analista de DP 070;2025-09-13;1;Aberta;629
+71;Analista de Marketing 071;2026-01-19;3;Aberta;704
+72;Analista de DP 072;2024-09-05;6;Aberta;952
+73;Coordenador de Operacoes 073;2025-11-23;1;Aberta;73
+74;Estagiario Administrativo 074;2022-06-10;7;Fechada;64
+75;Analista Financeiro 075;2025-05-05;7;Aberta;322
+76;Analista Financeiro 076;2024-04-21;3;Aberta;594
+77;Desenvolvedor Python 077;2023-11-03;6;Fechada;389
+78;Estagiario Administrativo 078;2022-01-16;1;Aberta;672
+79;Business Partner 079;2025-03-18;5;Fechada;306
+80;Recrutador 080;2025-04-03;5;Aberta;301
+81;Coordenador de Operacoes 081;2024-02-08;5;Fechada;759
+82;Recrutador 082;2025-06-10;7;Pausada;421
+83;Analista de RH 083;2023-11-01;7;Aberta;15
+84;Analista de DP 084;2023-09-29;6;Pausada;373
+85;Estagiario Administrativo 085;2026-03-29;8;Aberta;914
+86;Analista de RH 086;2025-03-15;8;Fechada;316
+87;Analista de DP 087;2023-10-16;4;Aberta;519
+88;Analista de DP 088;2025-05-31;1;Pausada;249
+89;Analista de DP 089;2024-01-27;5;Fechada;897
+90;Coordenador de Operacoes 090;2022-09-25;3;Fechada;345
+91;Analista de Treinamento 091;2023-08-16;1;Aberta;648
+92;Analista de Dados 092;2025-05-21;6;Aberta;55
+93;Analista de RH 093;2025-11-23;7;Aberta;192
+94;Assistente de RH 094;2022-12-25;3;Aberta;987
+95;Analista de DP 095;2024-07-14;7;Cancelada;490
+96;Analista de Treinamento 096;2025-09-06;8;Aberta;138
+97;Analista de DP 097;2023-10-10;2;Pausada;107
+98;Assistente de RH 098;2022-12-29;5;Fechada;103
+99;Assistente de RH 099;2024-02-02;5;Fechada;530
+100;Business Partner 100;2024-03-06;1;Aberta;927
+101;Recrutador 101;2022-01-31;2;Pausada;529
+102;Coordenador de Operacoes 102;2024-09-12;8;Cancelada;131
+103;Analista Financeiro 103;2022-06-12;3;Fechada;904
+104;Analista de Dados 104;2024-06-28;1;Cancelada;280
+105;Estagiario Administrativo 105;2022-10-04;7;Fechada;874
+106;Analista de Marketing 106;2025-07-31;7;Aberta;748
+107;Assistente de RH 107;2022-12-04;1;Aberta;258
+108;Analista Financeiro 108;2026-02-15;8;Aberta;441
+109;Analista de Dados 109;2025-11-27;7;Fechada;546
+110;Analista de RH 110;2024-08-02;6;Cancelada;651
+111;Analista de Marketing 111;2024-01-25;5;Cancelada;180
+112;Desenvolvedor Python 112;2022-09-19;2;Fechada;712
+113;Analista de DP 113;2023-04-22;6;Fechada;371
+114;Analista de DP 114;2026-03-21;5;Aberta;693
+115;Coordenador de Operacoes 115;2023-06-06;5;Fechada;293
+116;Business Partner 116;2024-08-14;6;Fechada;891
+117;Analista Financeiro 117;2022-06-07;2;Aberta;199
+118;Analista de Marketing 118;2025-12-31;8;Aberta;551
+119;Analista de Beneficios 119;2026-04-17;8;Fechada;636
+120;Analista de Treinamento 120;2022-06-23;8;Pausada;793
+121;Coordenador de Operacoes 121;2026-04-14;4;Aberta;301
+122;Business Partner 122;2025-08-06;3;Pausada;32
+123;Analista Financeiro 123;2025-02-10;7;Fechada;840
+124;Assistente de RH 124;2024-08-30;6;Fechada;671
+125;Recrutador 125;2022-05-05;2;Fechada;397
+126;Analista Financeiro 126;2022-03-27;5;Aberta;651
+127;Analista Financeiro 127;2022-03-09;7;Fechada;812
+128;Analista Financeiro 128;2023-10-28;3;Aberta;916
+129;Analista Financeiro 129;2023-11-09;4;Fechada;13
+130;Analista de RH 130;2025-12-04;2;Pausada;733
+131;Coordenador de Operacoes 131;2024-06-21;8;Pausada;527
+132;Assistente de RH 132;2024-05-20;6;Cancelada;286
+133;Desenvolvedor Python 133;2023-06-05;6;Aberta;438
+134;Analista de RH 134;2024-12-24;4;Fechada;901
+135;Analista de Dados 135;2025-11-10;2;Pausada;635
+136;Analista Financeiro 136;2024-07-11;2;Aberta;703
+137;Business Partner 137;2026-03-28;6;Aberta;611
+138;Assistente de RH 138;2022-10-29;8;Cancelada;525
+139;Business Partner 139;2023-06-08;7;Fechada;582
+140;Analista de Beneficios 140;2024-05-21;3;Fechada;783
+141;Analista de Treinamento 141;2025-05-11;1;Aberta;323
+142;Estagiario Administrativo 142;2025-03-31;3;Fechada;108
+143;Desenvolvedor Python 143;2024-07-09;3;Aberta;239
+144;Analista de RH 144;2022-07-03;7;Fechada;180
+145;Desenvolvedor Python 145;2022-09-28;4;Fechada;665
+146;Analista Financeiro 146;2025-04-28;8;Aberta;242
+147;Analista Financeiro 147;2025-03-09;2;Aberta;116
+148;Business Partner 148;2025-09-12;8;Aberta;943
+149;Analista de Marketing 149;2025-03-06;4;Cancelada;530
+150;Recrutador 150;2022-04-12;4;Aberta;125
+151;Analista de RH 151;2022-08-28;1;Aberta;180
+152;Analista de RH 152;2022-02-03;2;Fechada;396
+153;Estagiario Administrativo 153;2024-06-07;7;Aberta;932
+154;Analista de RH 154;2024-11-06;8;Fechada;125
+155;Analista de RH 155;2025-01-26;2;Fechada;194
+156;Analista de Dados 156;2024-02-25;2;Aberta;940
+157;Analista de Treinamento 157;2023-04-27;5;Cancelada;666
+158;Analista Financeiro 158;2025-08-06;2;Fechada;774
+159;Analista de RH 159;2024-09-15;5;Pausada;770
+160;Analista de DP 160;2025-02-01;3;Aberta;317
+161;Coordenador de Operacoes 161;2025-04-20;6;Fechada;810
+162;Assistente de RH 162;2022-03-13;1;Aberta;792
+163;Analista de RH 163;2024-07-25;7;Cancelada;4
+164;Analista de Dados 164;2023-07-26;6;Cancelada;603
+165;Coordenador de Operacoes 165;2024-06-15;2;Aberta;925
+166;Analista de Treinamento 166;2022-04-05;7;Pausada;919
+167;Business Partner 167;2024-03-09;7;Aberta;76
+168;Analista de RH 168;2025-08-18;7;Cancelada;307
+169;Assistente de RH 169;2025-12-22;2;Fechada;914
+170;Analista Financeiro 170;2023-08-01;1;Fechada;555
+171;Analista de Dados 171;2022-07-25;7;Fechada;945
+172;Analista de Beneficios 172;2023-07-05;8;Aberta;630
+173;Analista de RH 173;2024-01-23;4;Pausada;562
+174;Analista Financeiro 174;2023-08-26;3;Aberta;744
+175;Analista de Beneficios 175;2025-03-02;7;Aberta;622
+176;Estagiario Administrativo 176;2022-02-01;4;Fechada;572
+177;Recrutador 177;2024-12-01;2;Pausada;699
+178;Business Partner 178;2025-08-05;8;Fechada;75
+179;Analista de Dados 179;2022-03-04;6;Fechada;440
+180;Analista de Marketing 180;2024-01-14;8;Fechada;584
+181;Estagiario Administrativo 181;2024-02-12;1;Fechada;243
+182;Analista de Marketing 182;2022-02-15;2;Aberta;903
+183;Analista de Treinamento 183;2026-04-14;6;Pausada;987
+184;Business Partner 184;2024-12-05;3;Pausada;310
+185;Assistente de RH 185;2025-02-07;1;Fechada;919
+186;Analista de Beneficios 186;2024-01-25;3;Cancelada;803
+187;Estagiario Administrativo 187;2024-01-10;6;Pausada;995
+188;Assistente de RH 188;2024-08-01;8;Pausada;724
+189;Assistente de RH 189;2025-10-06;3;Pausada;395
+190;Analista de Beneficios 190;2023-01-14;2;Aberta;690
+191;Analista de DP 191;2025-08-13;3;Aberta;624
+192;Analista de Treinamento 192;2025-04-27;7;Cancelada;447
+193;Desenvolvedor Python 193;2022-12-29;3;Aberta;966
+194;Estagiario Administrativo 194;2023-11-16;2;Pausada;831
+195;Analista de Treinamento 195;2023-06-26;6;Aberta;136
+196;Assistente de RH 196;2025-02-07;6;Fechada;382
+197;Estagiario Administrativo 197;2022-04-03;6;Pausada;518
+198;Analista de Marketing 198;2022-01-06;3;Aberta;891
+199;Analista de Dados 199;2024-10-14;1;Fechada;19
+200;Analista de Treinamento 200;2022-04-12;2;Fechada;225
+201;Analista de Treinamento 201;2023-12-02;7;Aberta;55
+202;Estagiario Administrativo 202;2022-12-18;4;Fechada;286
+203;Estagiario Administrativo 203;2022-12-30;3;Cancelada;626
+204;Analista de Dados 204;2026-01-16;5;Aberta;92
+205;Estagiario Administrativo 205;2024-12-01;3;Aberta;269
+206;Analista de Treinamento 206;2024-07-15;4;Aberta;430
+207;Assistente de RH 207;2024-03-08;6;Aberta;68
+208;Analista de RH 208;2023-12-21;1;Aberta;589
+209;Analista de Dados 209;2022-01-03;3;Fechada;908
+210;Analista de DP 210;2022-08-12;2;Aberta;438
+211;Assistente de RH 211;2026-03-11;1;Fechada;233
+212;Analista de DP 212;2024-06-21;1;Fechada;140
+213;Analista Financeiro 213;2022-03-31;1;Pausada;830
+214;Coordenador de Operacoes 214;2025-04-30;6;Fechada;5
+215;Estagiario Administrativo 215;2023-06-10;2;Fechada;588
+216;Analista de DP 216;2023-10-02;6;Fechada;233
+217;Analista de DP 217;2025-08-15;3;Fechada;535
+218;Estagiario Administrativo 218;2024-04-26;4;Fechada;423
+219;Analista de Dados 219;2022-09-27;5;Aberta;484
+220;Analista de DP 220;2022-08-25;7;Fechada;91
+221;Analista de Beneficios 221;2026-01-16;3;Cancelada;208
+222;Analista de DP 222;2023-09-29;2;Aberta;790
+223;Analista de Treinamento 223;2026-05-04;2;Aberta;341
+224;Analista de RH 224;2022-11-11;6;Fechada;680
+225;Analista de Beneficios 225;2024-04-05;4;Fechada;71
+226;Estagiario Administrativo 226;2023-08-31;4;Cancelada;803
+227;Analista de DP 227;2026-01-31;6;Pausada;537
+228;Analista de DP 228;2023-05-11;6;Fechada;156
+229;Coordenador de Operacoes 229;2024-12-21;1;Pausada;280
+230;Recrutador 230;2024-06-10;1;Fechada;459
+231;Analista Financeiro 231;2025-04-19;4;Cancelada;258
+232;Desenvolvedor Python 232;2025-01-14;4;Fechada;991
+233;Analista de Marketing 233;2023-10-14;4;Pausada;817
+234;Business Partner 234;2023-09-03;7;Cancelada;554
+235;Analista de RH 235;2023-11-09;6;Aberta;836
+236;Estagiario Administrativo 236;2023-07-21;1;Pausada;460
+237;Analista de Beneficios 237;2023-11-19;6;Aberta;984
+238;Coordenador de Operacoes 238;2022-11-23;4;Fechada;747
+239;Analista de RH 239;2025-05-01;1;Fechada;342
+240;Analista de DP 240;2023-10-27;2;Aberta;645
+241;Analista de Treinamento 241;2023-09-26;1;Fechada;615
+242;Assistente de RH 242;2023-04-24;2;Cancelada;103
+243;Estagiario Administrativo 243;2024-11-05;7;Aberta;704
+244;Analista de RH 244;2022-10-19;6;Fechada;722
+245;Estagiario Administrativo 245;2025-10-28;7;Aberta;720
+246;Analista de Marketing 246;2022-12-11;1;Pausada;636
+247;Analista de Dados 247;2023-04-24;6;Fechada;955
+248;Desenvolvedor Python 248;2025-12-01;2;Fechada;1
+249;Assistente de RH 249;2025-09-27;3;Aberta;923
+250;Analista de Dados 250;2025-03-04;6;Fechada;61
+251;Analista de RH 251;2022-11-20;7;Fechada;717
+252;Analista de RH 252;2022-06-11;6;Aberta;220
+253;Analista de Treinamento 253;2023-01-10;6;Cancelada;671
+254;Business Partner 254;2025-11-06;5;Pausada;912
+255;Analista de Beneficios 255;2023-11-27;1;Pausada;45
+256;Estagiario Administrativo 256;2022-07-24;8;Fechada;865
+257;Analista de Marketing 257;2024-08-07;1;Cancelada;726
+258;Analista de Treinamento 258;2025-04-23;6;Fechada;936
+259;Analista Financeiro 259;2025-09-26;2;Aberta;403
+260;Desenvolvedor Python 260;2025-10-19;4;Cancelada;792
+261;Analista de Treinamento 261;2022-01-25;4;Fechada;593
+262;Assistente de RH 262;2022-01-07;5;Aberta;961
+263;Analista de RH 263;2023-03-16;7;Aberta;627
+264;Analista de Treinamento 264;2026-04-07;5;Aberta;556
+265;Desenvolvedor Python 265;2025-07-07;2;Cancelada;670
+266;Analista de Dados 266;2025-06-14;3;Cancelada;368
+267;Analista de Dados 267;2026-04-06;4;Cancelada;703
+268;Analista de Beneficios 268;2023-11-29;3;Aberta;398
+269;Assistente de RH 269;2022-03-10;1;Pausada;499
+270;Analista de Beneficios 270;2025-03-28;1;Fechada;408
+271;Analista de Beneficios 271;2024-05-27;1;Aberta;397
+272;Analista de Treinamento 272;2024-06-18;8;Aberta;797
+273;Analista de Treinamento 273;2023-05-10;8;Pausada;712
+274;Business Partner 274;2022-09-14;4;Fechada;584
+275;Desenvolvedor Python 275;2023-09-21;6;Fechada;22
+276;Analista de RH 276;2024-03-15;8;Pausada;777
+277;Analista de Marketing 277;2023-11-16;6;Aberta;165
+278;Business Partner 278;2023-12-14;1;Aberta;218
+279;Coordenador de Operacoes 279;2023-10-04;5;Aberta;401
+280;Analista de Marketing 280;2023-08-09;2;Pausada;261
+281;Analista de Marketing 281;2025-04-07;1;Fechada;678
+282;Analista de Beneficios 282;2025-12-09;3;Aberta;227
+283;Desenvolvedor Python 283;2023-11-09;2;Aberta;755
+284;Analista de DP 284;2022-03-07;1;Fechada;914
+285;Coordenador de Operacoes 285;2025-10-18;1;Aberta;6
+286;Business Partner 286;2026-04-15;7;Pausada;249
+287;Analista de RH 287;2022-11-07;2;Aberta;403
+288;Estagiario Administrativo 288;2023-03-27;3;Fechada;7
+289;Desenvolvedor Python 289;2025-10-21;6;Cancelada;946
+290;Estagiario Administrativo 290;2023-11-16;8;Aberta;580
+291;Analista de Marketing 291;2022-06-29;3;Fechada;608
+292;Analista de DP 292;2024-05-17;5;Aberta;48
+293;Analista Financeiro 293;2023-05-08;7;Fechada;904
+294;Analista de Marketing 294;2022-01-18;3;Pausada;363
+295;Recrutador 295;2023-01-18;2;Aberta;475
+296;Analista de RH 296;2025-11-24;3;Aberta;456
+297;Assistente de RH 297;2022-07-06;6;Fechada;232
+298;Analista de Treinamento 298;2026-03-20;1;Aberta;442
+299;Analista de Treinamento 299;2022-12-11;2;Fechada;623
+300;Analista de Treinamento 300;2025-09-14;3;Aberta;929
+301;Recrutador 301;2022-09-12;8;Fechada;703
+302;Analista de Dados 302;2025-03-04;2;Pausada;792
+303;Assistente de RH 303;2024-10-27;7;Aberta;381
+304;Analista de Dados 304;2025-01-31;2;Fechada;902
+305;Analista de Dados 305;2025-03-11;8;Fechada;482
+306;Analista de Marketing 306;2025-12-12;2;Pausada;530
+307;Analista de RH 307;2025-12-22;1;Fechada;792
+308;Analista de Dados 308;2023-04-30;8;Fechada;828
+309;Analista de Treinamento 309;2025-05-21;4;Aberta;385
+310;Analista de Beneficios 310;2022-11-13;8;Fechada;823
+311;Recrutador 311;2023-07-20;6;Cancelada;319
+312;Analista de RH 312;2025-09-08;2;Cancelada;142
+313;Analista de Marketing 313;2026-01-19;8;Aberta;56
+314;Analista de Marketing 314;2025-02-02;4;Fechada;550
+315;Analista de Marketing 315;2025-07-04;4;Aberta;969
+316;Analista de Marketing 316;2022-05-02;5;Aberta;286
+317;Estagiario Administrativo 317;2023-07-25;4;Fechada;947
+318;Analista de Treinamento 318;2024-12-10;2;Aberta;998
+319;Analista de Dados 319;2025-03-28;4;Fechada;690
+320;Analista de Marketing 320;2026-02-15;1;Aberta;650
+321;Analista Financeiro 321;2022-04-14;5;Cancelada;713
+322;Analista de Marketing 322;2023-03-25;3;Aberta;450
+323;Estagiario Administrativo 323;2024-01-06;3;Fechada;106
+324;Analista Financeiro 324;2024-02-03;4;Aberta;796
+325;Analista de DP 325;2022-09-25;2;Pausada;908
+326;Analista de RH 326;2024-04-13;5;Pausada;3
+327;Business Partner 327;2022-04-28;6;Fechada;610
+328;Analista Financeiro 328;2024-06-20;8;Pausada;408
+329;Analista de Beneficios 329;2022-07-16;4;Aberta;73
+330;Business Partner 330;2022-02-16;3;Cancelada;92
+331;Coordenador de Operacoes 331;2025-10-30;2;Pausada;388
+332;Analista de Beneficios 332;2022-03-25;3;Fechada;979
+333;Recrutador 333;2023-03-23;2;Cancelada;30
+334;Desenvolvedor Python 334;2023-05-23;5;Aberta;397
+335;Coordenador de Operacoes 335;2022-11-29;3;Fechada;821
+336;Analista Financeiro 336;2022-08-31;7;Pausada;514
+337;Analista de RH 337;2024-01-22;7;Fechada;378
+338;Coordenador de Operacoes 338;2024-03-16;8;Cancelada;899
+339;Analista de RH 339;2024-02-24;4;Fechada;953
+340;Analista de Marketing 340;2022-06-22;7;Aberta;62
+341;Desenvolvedor Python 341;2025-04-05;5;Fechada;803
+342;Desenvolvedor Python 342;2023-09-08;1;Pausada;442
+343;Coordenador de Operacoes 343;2023-02-07;5;Fechada;194
+344;Analista de Treinamento 344;2023-04-06;7;Aberta;310
+345;Business Partner 345;2025-05-23;7;Aberta;195
+346;Analista de Marketing 346;2022-12-12;7;Aberta;904
+347;Assistente de RH 347;2022-07-01;5;Cancelada;262
+348;Analista Financeiro 348;2024-04-21;3;Cancelada;757
+349;Analista de Dados 349;2025-09-02;6;Aberta;155
+350;Assistente de RH 350;2025-10-22;1;Fechada;505
+351;Analista de Beneficios 351;2025-11-08;2;Fechada;953
+352;Coordenador de Operacoes 352;2022-10-30;4;Fechada;930
+353;Analista de Treinamento 353;2022-06-23;7;Aberta;206
+354;Recrutador 354;2023-11-25;4;Fechada;738
+355;Desenvolvedor Python 355;2024-08-01;3;Fechada;683
+356;Analista de RH 356;2024-01-17;4;Aberta;267
+357;Analista Financeiro 357;2022-03-13;4;Aberta;724
+358;Analista de Dados 358;2025-10-01;8;Pausada;383
+359;Analista de Treinamento 359;2023-07-01;6;Fechada;798
+360;Analista de Treinamento 360;2024-03-10;5;Pausada;816
+361;Estagiario Administrativo 361;2024-04-02;5;Fechada;966
+362;Business Partner 362;2023-11-19;4;Aberta;246
+363;Coordenador de Operacoes 363;2024-01-30;8;Cancelada;278
+364;Coordenador de Operacoes 364;2024-03-02;7;Cancelada;66
+365;Coordenador de Operacoes 365;2023-03-04;5;Aberta;182
+366;Analista de Dados 366;2023-08-08;6;Aberta;715
+367;Analista de RH 367;2025-03-18;6;Cancelada;960
+368;Analista de Beneficios 368;2023-09-20;2;Fechada;190
+369;Analista de DP 369;2024-03-28;3;Aberta;963
+370;Analista de Dados 370;2025-03-25;7;Pausada;865
+371;Estagiario Administrativo 371;2023-01-08;2;Fechada;246
+372;Analista de RH 372;2024-07-17;5;Aberta;377
+373;Analista de DP 373;2026-01-09;2;Aberta;395
+374;Assistente de RH 374;2023-08-09;1;Cancelada;977
+375;Desenvolvedor Python 375;2025-08-25;4;Aberta;919
+376;Analista de Marketing 376;2024-04-30;2;Aberta;325
+377;Desenvolvedor Python 377;2023-03-14;1;Pausada;423
+378;Analista Financeiro 378;2025-09-09;8;Aberta;985
+379;Business Partner 379;2022-02-07;1;Fechada;703
+380;Analista de Treinamento 380;2022-09-07;8;Cancelada;842
+381;Analista de Dados 381;2022-12-09;3;Cancelada;82
+382;Analista de Dados 382;2026-02-03;8;Aberta;955
+383;Recrutador 383;2023-07-30;6;Aberta;372
+384;Business Partner 384;2023-07-27;3;Pausada;928
+385;Recrutador 385;2024-08-01;5;Aberta;697
+386;Business Partner 386;2025-10-22;8;Aberta;510
+387;Analista Financeiro 387;2025-08-09;3;Fechada;957
+388;Business Partner 388;2022-02-21;7;Fechada;897
+389;Analista de Treinamento 389;2022-10-30;4;Cancelada;474
+390;Estagiario Administrativo 390;2022-09-28;7;Pausada;332
+391;Coordenador de Operacoes 391;2023-01-21;4;Pausada;115
+392;Desenvolvedor Python 392;2022-05-07;1;Cancelada;645
+393;Analista de Treinamento 393;2024-01-02;3;Fechada;955
+394;Recrutador 394;2022-05-09;1;Cancelada;377
+395;Analista de Dados 395;2025-08-22;1;Aberta;943
+396;Analista de Marketing 396;2024-09-17;3;Fechada;68
+397;Desenvolvedor Python 397;2023-01-17;6;Pausada;868
+398;Analista Financeiro 398;2022-09-03;7;Aberta;309
+399;Analista Financeiro 399;2025-03-20;2;Fechada;223
+400;Analista de DP 400;2024-03-26;2;Pausada;169
+401;Analista de RH 401;2023-02-11;2;Aberta;638
+402;Analista de Dados 402;2023-12-20;3;Pausada;401
+403;Analista de Marketing 403;2026-01-16;1;Fechada;191
+404;Analista de Beneficios 404;2026-01-27;8;Fechada;353
+405;Analista de Marketing 405;2026-01-12;6;Cancelada;361
+406;Business Partner 406;2025-10-30;4;Cancelada;152
+407;Analista de Marketing 407;2022-11-05;8;Aberta;631
+408;Analista Financeiro 408;2024-12-05;3;Aberta;373
+409;Estagiario Administrativo 409;2025-11-16;4;Fechada;231
+410;Analista de Marketing 410;2023-04-10;7;Pausada;520
+411;Analista de Dados 411;2022-03-13;8;Pausada;930
+412;Analista de RH 412;2025-02-02;8;Aberta;192
+413;Coordenador de Operacoes 413;2025-05-28;8;Fechada;124
+414;Analista de DP 414;2024-11-01;3;Fechada;205
+415;Coordenador de Operacoes 415;2022-03-21;2;Aberta;128
+416;Analista de Marketing 416;2024-03-22;2;Aberta;866
+417;Recrutador 417;2023-04-01;3;Fechada;987
+418;Estagiario Administrativo 418;2025-09-26;7;Cancelada;781
+419;Desenvolvedor Python 419;2024-12-29;5;Fechada;490
+420;Analista Financeiro 420;2023-10-27;8;Fechada;135
+421;Analista de Marketing 421;2023-03-06;4;Cancelada;157
+422;Analista de Marketing 422;2022-11-27;1;Fechada;773
+423;Analista de Beneficios 423;2023-08-22;5;Cancelada;355
+424;Recrutador 424;2025-10-04;3;Fechada;681
+425;Business Partner 425;2025-07-16;3;Aberta;982
+426;Analista de Dados 426;2024-04-09;1;Aberta;841
+427;Analista de Beneficios 427;2023-11-23;4;Aberta;51
+428;Coordenador de Operacoes 428;2023-05-12;8;Fechada;251
+429;Assistente de RH 429;2025-08-19;2;Fechada;279
+430;Coordenador de Operacoes 430;2025-11-01;8;Aberta;848
+431;Analista Financeiro 431;2022-01-13;8;Fechada;235
+432;Recrutador 432;2023-09-17;2;Fechada;332
+433;Analista de Marketing 433;2022-01-28;2;Aberta;395
+434;Analista de Marketing 434;2024-04-01;1;Pausada;294
+435;Business Partner 435;2024-03-28;4;Fechada;738
+436;Estagiario Administrativo 436;2025-09-07;6;Pausada;322
+437;Analista de Treinamento 437;2023-07-21;8;Aberta;327
+438;Desenvolvedor Python 438;2025-03-10;2;Fechada;960
+439;Business Partner 439;2025-09-13;2;Aberta;439
+440;Analista de Treinamento 440;2023-07-03;2;Aberta;785
+441;Business Partner 441;2023-12-02;6;Pausada;18
+442;Analista de Beneficios 442;2025-10-05;2;Fechada;385
+443;Analista de Beneficios 443;2023-03-10;6;Pausada;509
+444;Analista de Dados 444;2023-01-14;1;Pausada;1
+445;Analista de DP 445;2022-10-08;1;Aberta;446
+446;Analista de Marketing 446;2025-09-27;1;Aberta;888
+447;Business Partner 447;2024-10-13;2;Aberta;678
+448;Assistente de RH 448;2022-11-03;5;Aberta;207
+449;Analista de Beneficios 449;2023-05-14;7;Cancelada;636
+450;Coordenador de Operacoes 450;2024-08-05;8;Pausada;580
+451;Recrutador 451;2024-08-29;4;Aberta;437
+452;Estagiario Administrativo 452;2024-09-17;4;Aberta;617
+453;Analista de DP 453;2023-01-15;3;Pausada;399
+454;Business Partner 454;2026-04-15;1;Pausada;348
+455;Analista de Treinamento 455;2025-03-27;8;Fechada;431
+456;Analista de Dados 456;2023-05-01;4;Cancelada;702
+457;Analista de Beneficios 457;2025-12-01;5;Aberta;618
+458;Assistente de RH 458;2025-07-14;7;Aberta;193
+459;Analista de RH 459;2024-11-15;6;Aberta;128
+460;Analista de Marketing 460;2022-04-04;3;Aberta;71
+461;Analista de Dados 461;2022-02-18;6;Pausada;388
+462;Desenvolvedor Python 462;2023-08-03;8;Fechada;291
+463;Estagiario Administrativo 463;2022-01-15;1;Aberta;431
+464;Recrutador 464;2024-08-08;7;Aberta;558
+465;Business Partner 465;2026-04-11;7;Pausada;305
+466;Analista de Beneficios 466;2024-07-06;8;Cancelada;907
+467;Assistente de RH 467;2024-05-09;4;Pausada;356
+468;Coordenador de Operacoes 468;2025-11-15;1;Aberta;339
+469;Analista de RH 469;2022-02-17;7;Aberta;323
+470;Analista de Treinamento 470;2023-03-28;8;Aberta;603
+471;Analista de Treinamento 471;2024-03-01;5;Fechada;632
+472;Analista de Marketing 472;2024-08-09;8;Aberta;904
+473;Business Partner 473;2025-03-04;6;Aberta;713
+474;Coordenador de Operacoes 474;2023-04-02;6;Aberta;712
+475;Analista de Dados 475;2025-04-30;8;Fechada;184
+476;Analista de Dados 476;2023-12-18;2;Aberta;165
+477;Estagiario Administrativo 477;2024-04-26;4;Pausada;241
+478;Assistente de RH 478;2023-10-06;5;Cancelada;636
+479;Recrutador 479;2025-03-13;6;Fechada;358
+480;Desenvolvedor Python 480;2024-04-27;7;Aberta;996
+481;Analista de Dados 481;2026-03-24;5;Fechada;965
+482;Desenvolvedor Python 482;2026-03-07;4;Aberta;264
+483;Analista de DP 483;2022-05-30;5;Fechada;406
+484;Analista de Beneficios 484;2025-05-20;4;Fechada;249
+485;Analista de Treinamento 485;2023-06-14;5;Fechada;292
+486;Analista Financeiro 486;2025-03-23;5;Fechada;271
+487;Analista de RH 487;2024-12-12;3;Aberta;49
+488;Analista de Beneficios 488;2023-11-04;7;Aberta;741
+489;Estagiario Administrativo 489;2026-01-21;4;Cancelada;686
+490;Recrutador 490;2025-08-08;5;Aberta;162
+491;Assistente de RH 491;2022-01-17;8;Aberta;708
+492;Analista de Marketing 492;2022-08-24;8;Fechada;491
+493;Analista de Dados 493;2023-09-10;6;Aberta;646
+494;Analista de Treinamento 494;2024-04-25;6;Aberta;820
+495;Analista de Beneficios 495;2022-09-28;3;Aberta;11
+496;Analista de RH 496;2023-09-11;5;Fechada;869
+497;Desenvolvedor Python 497;2024-02-21;2;Aberta;626
+498;Analista Financeiro 498;2025-03-06;1;Fechada;145
+499;Analista de Treinamento 499;2023-12-30;2;Aberta;118
+500;Analista Financeiro 500;2026-02-11;8;Aberta;403
+501;Analista de Dados 501;2024-12-18;7;Aberta;597
+502;Analista de Dados 502;2025-07-10;8;Cancelada;569
+503;Coordenador de Operacoes 503;2022-06-11;4;Cancelada;268
+504;Analista de Treinamento 504;2024-01-09;5;Aberta;713
+505;Analista de Dados 505;2024-03-23;7;Aberta;75
+506;Analista Financeiro 506;2025-01-15;6;Aberta;210
+507;Desenvolvedor Python 507;2023-01-11;4;Fechada;162
+508;Business Partner 508;2026-02-26;3;Aberta;255
+509;Analista Financeiro 509;2023-09-27;8;Aberta;272
+510;Coordenador de Operacoes 510;2023-03-02;2;Aberta;238
+511;Business Partner 511;2024-07-12;7;Pausada;710
+512;Business Partner 512;2025-09-09;7;Fechada;554
+513;Analista de RH 513;2022-03-08;6;Fechada;919
+514;Analista de Marketing 514;2025-03-11;5;Pausada;597
+515;Analista de RH 515;2022-11-10;2;Fechada;996
+516;Estagiario Administrativo 516;2024-06-16;5;Aberta;270
+517;Analista Financeiro 517;2022-03-18;5;Aberta;327
+518;Analista de RH 518;2022-11-14;4;Fechada;811
+519;Analista de Dados 519;2022-04-07;3;Aberta;573
+520;Analista de Beneficios 520;2023-07-29;7;Pausada;186
+521;Estagiario Administrativo 521;2026-03-20;6;Fechada;772
+522;Analista de DP 522;2022-11-23;4;Aberta;533
+523;Analista de Marketing 523;2025-07-01;4;Aberta;17
+524;Analista de Marketing 524;2023-11-08;7;Fechada;111
+525;Analista Financeiro 525;2023-02-23;1;Aberta;225
+526;Analista Financeiro 526;2023-06-04;7;Pausada;70
+527;Analista de Treinamento 527;2025-11-18;2;Fechada;439
+528;Analista de DP 528;2024-07-23;6;Cancelada;11
+529;Estagiario Administrativo 529;2024-05-24;3;Fechada;625
+530;Analista de Beneficios 530;2023-12-13;6;Aberta;767
+531;Analista de RH 531;2022-12-22;5;Fechada;216
+532;Analista de RH 532;2022-06-10;3;Cancelada;753
+533;Analista de Beneficios 533;2025-02-12;5;Fechada;175
+534;Analista Financeiro 534;2022-03-01;4;Aberta;940
+535;Analista de DP 535;2022-09-27;1;Aberta;304
+536;Estagiario Administrativo 536;2022-05-20;1;Aberta;735
+537;Analista de Marketing 537;2022-12-01;3;Aberta;903
+538;Analista de Dados 538;2022-04-30;8;Fechada;740
+539;Coordenador de Operacoes 539;2023-06-15;8;Fechada;982
+540;Assistente de RH 540;2024-09-02;8;Aberta;267
+541;Coordenador de Operacoes 541;2022-08-05;3;Cancelada;52
+542;Coordenador de Operacoes 542;2024-01-07;4;Fechada;943
+543;Estagiario Administrativo 543;2022-11-12;8;Fechada;348
+544;Recrutador 544;2022-05-12;3;Aberta;614
+545;Analista de RH 545;2025-04-12;6;Pausada;777
+546;Recrutador 546;2023-08-01;5;Cancelada;743
+547;Analista de Treinamento 547;2022-10-29;4;Pausada;643
+548;Analista Financeiro 548;2024-07-13;2;Fechada;103
+549;Analista de Marketing 549;2022-06-23;2;Cancelada;123
+550;Recrutador 550;2024-07-26;1;Aberta;355
+551;Analista de Treinamento 551;2025-02-06;7;Fechada;761
+552;Analista de Beneficios 552;2022-04-13;2;Pausada;51
+553;Estagiario Administrativo 553;2023-08-20;1;Fechada;955
+554;Analista Financeiro 554;2025-05-10;3;Aberta;602
+555;Analista de Beneficios 555;2025-06-18;5;Fechada;183
+556;Analista de Beneficios 556;2023-10-14;2;Pausada;177
+557;Analista de Marketing 557;2022-10-19;8;Cancelada;767
+558;Desenvolvedor Python 558;2023-05-27;4;Fechada;187
+559;Analista de Marketing 559;2022-02-13;6;Fechada;154
+560;Analista de Marketing 560;2022-08-20;7;Aberta;696
+561;Analista de Dados 561;2025-11-04;5;Fechada;662
+562;Coordenador de Operacoes 562;2023-01-29;4;Fechada;2
+563;Analista de Treinamento 563;2025-01-10;4;Aberta;297
+564;Desenvolvedor Python 564;2023-09-11;8;Fechada;854
+565;Analista de RH 565;2023-09-17;8;Pausada;595
+566;Analista de Dados 566;2022-01-25;5;Pausada;824
+567;Analista de Marketing 567;2022-01-22;6;Fechada;387
+568;Analista de DP 568;2024-11-05;6;Aberta;785
+569;Analista de Dados 569;2023-01-24;8;Pausada;639
+570;Analista de Treinamento 570;2023-01-08;7;Pausada;674
+571;Analista Financeiro 571;2022-11-24;6;Pausada;275
+572;Analista de Marketing 572;2024-07-15;8;Pausada;814
+573;Analista de Marketing 573;2022-11-24;6;Fechada;18
+574;Coordenador de Operacoes 574;2022-06-14;7;Aberta;86
+575;Analista de Marketing 575;2025-05-23;3;Aberta;378
+576;Analista de Beneficios 576;2026-01-25;3;Aberta;293
+577;Assistente de RH 577;2022-05-27;6;Cancelada;978
+578;Analista de DP 578;2024-04-20;4;Aberta;606
+579;Analista de Dados 579;2023-10-09;7;Aberta;251
+580;Estagiario Administrativo 580;2025-09-30;3;Fechada;177
+581;Analista de Beneficios 581;2026-01-20;5;Fechada;977
+582;Analista de Marketing 582;2022-03-29;7;Aberta;344
+583;Business Partner 583;2023-06-15;1;Fechada;565
+584;Analista de Dados 584;2022-07-18;4;Aberta;110
+585;Analista Financeiro 585;2025-09-02;1;Aberta;588
+586;Recrutador 586;2023-04-05;3;Aberta;658
+587;Assistente de RH 587;2022-12-29;3;Aberta;849
+588;Analista de Marketing 588;2022-06-06;6;Fechada;524
+589;Business Partner 589;2022-08-19;6;Fechada;891
+590;Coordenador de Operacoes 590;2025-01-17;7;Fechada;412
+591;Desenvolvedor Python 591;2022-01-18;2;Fechada;113
+592;Recrutador 592;2023-11-01;5;Fechada;60
+593;Coordenador de Operacoes 593;2023-09-26;5;Fechada;858
+594;Business Partner 594;2022-01-02;1;Fechada;182
+595;Analista de Beneficios 595;2024-10-26;8;Pausada;538
+596;Estagiario Administrativo 596;2023-05-16;6;Fechada;795
+597;Analista de Treinamento 597;2024-03-05;7;Aberta;892
+598;Coordenador de Operacoes 598;2026-03-14;5;Fechada;122
+599;Analista de Beneficios 599;2024-06-10;3;Aberta;675
+600;Analista de Marketing 600;2022-08-17;3;Fechada;447
+601;Analista de DP 601;2022-10-24;3;Aberta;188
+602;Analista de RH 602;2023-09-18;2;Aberta;168
+603;Analista de Beneficios 603;2023-06-03;4;Fechada;116
+604;Desenvolvedor Python 604;2026-02-09;8;Cancelada;940
+605;Analista de Beneficios 605;2026-05-02;2;Aberta;884
+606;Analista de Beneficios 606;2024-07-03;3;Fechada;417
+607;Analista de Beneficios 607;2025-06-02;5;Fechada;540
+608;Assistente de RH 608;2025-08-27;3;Pausada;204
+609;Assistente de RH 609;2026-02-15;1;Aberta;897
+610;Coordenador de Operacoes 610;2024-05-14;7;Aberta;705
+611;Analista de Treinamento 611;2022-12-11;1;Aberta;357
+612;Analista Financeiro 612;2026-03-12;3;Fechada;199
+613;Recrutador 613;2024-03-22;4;Fechada;4
+614;Analista de Dados 614;2025-07-17;1;Aberta;184
+615;Desenvolvedor Python 615;2023-05-16;4;Fechada;2
+616;Analista de Dados 616;2025-02-06;3;Cancelada;863
+617;Analista de DP 617;2025-06-15;3;Fechada;579
+618;Analista de DP 618;2025-06-06;1;Aberta;408
+619;Recrutador 619;2025-11-29;7;Aberta;469
+620;Analista de DP 620;2024-06-12;4;Fechada;182
+621;Recrutador 621;2023-02-28;7;Fechada;904
+622;Analista Financeiro 622;2023-03-16;8;Pausada;765
+623;Assistente de RH 623;2024-11-01;6;Fechada;905
+624;Business Partner 624;2025-01-15;7;Aberta;466
+625;Assistente de RH 625;2023-05-23;7;Fechada;989
+626;Analista de DP 626;2022-08-11;1;Cancelada;195
+627;Analista de Marketing 627;2025-09-21;3;Aberta;232
+628;Analista de Treinamento 628;2025-05-31;3;Aberta;554
+629;Recrutador 629;2026-02-06;4;Aberta;192
+630;Estagiario Administrativo 630;2026-02-18;2;Fechada;334
+631;Analista de Treinamento 631;2026-04-15;1;Pausada;918
+632;Estagiario Administrativo 632;2024-10-06;7;Aberta;45
+633;Coordenador de Operacoes 633;2026-03-28;6;Fechada;172
+634;Analista de RH 634;2025-07-24;2;Fechada;833
+635;Desenvolvedor Python 635;2023-05-22;2;Fechada;479
+636;Analista de Beneficios 636;2024-06-29;7;Aberta;941
+637;Recrutador 637;2025-11-23;2;Aberta;608
+638;Coordenador de Operacoes 638;2025-04-01;4;Fechada;307
+639;Analista de Dados 639;2025-09-15;8;Aberta;692
+640;Analista de RH 640;2026-01-06;3;Fechada;386
+641;Analista de Dados 641;2025-11-26;7;Fechada;783
+642;Analista de Marketing 642;2025-06-06;6;Fechada;97
+643;Analista de Marketing 643;2023-10-25;8;Aberta;632
+644;Recrutador 644;2025-04-29;3;Aberta;229
+645;Analista de Beneficios 645;2023-07-13;7;Fechada;10
+646;Analista de DP 646;2024-06-29;5;Fechada;594
+647;Analista de Beneficios 647;2022-02-16;8;Aberta;487
+648;Analista de Marketing 648;2026-04-16;7;Pausada;312
+649;Assistente de RH 649;2026-04-15;8;Fechada;406
+650;Estagiario Administrativo 650;2022-02-14;1;Fechada;610
+651;Estagiario Administrativo 651;2023-09-21;8;Aberta;361
+652;Business Partner 652;2025-06-19;5;Pausada;78
+653;Recrutador 653;2023-02-01;5;Aberta;474
+654;Analista Financeiro 654;2023-08-15;8;Pausada;646
+655;Analista de Dados 655;2023-02-27;7;Fechada;550
+656;Analista de DP 656;2024-12-28;2;Cancelada;300
+657;Analista de DP 657;2025-04-11;1;Aberta;324
+658;Analista de RH 658;2025-05-23;3;Fechada;528
+659;Analista de DP 659;2024-03-18;1;Aberta;176
+660;Assistente de RH 660;2022-03-06;3;Pausada;985
+661;Estagiario Administrativo 661;2022-03-22;7;Pausada;567
+662;Analista de Beneficios 662;2022-05-06;1;Fechada;184
+663;Desenvolvedor Python 663;2024-12-30;5;Aberta;107
+664;Analista de DP 664;2023-03-30;1;Fechada;553
+665;Analista de Beneficios 665;2025-02-11;4;Fechada;824
+666;Analista de RH 666;2023-11-07;8;Aberta;835
+667;Recrutador 667;2025-02-02;4;Fechada;755
+668;Estagiario Administrativo 668;2023-06-21;2;Fechada;426
+669;Analista Financeiro 669;2022-01-30;3;Cancelada;458
+670;Analista de DP 670;2024-01-29;1;Aberta;218
+671;Analista de RH 671;2025-10-23;6;Fechada;779
+672;Business Partner 672;2024-04-05;2;Fechada;891
+673;Analista de DP 673;2025-05-06;6;Fechada;18
+674;Analista de Dados 674;2024-03-04;5;Aberta;268
+675;Analista de DP 675;2025-03-03;4;Fechada;555
+676;Business Partner 676;2023-08-26;7;Pausada;54
+677;Recrutador 677;2026-04-08;8;Cancelada;935
+678;Analista de RH 678;2025-08-31;2;Fechada;166
+679;Coordenador de Operacoes 679;2025-08-09;1;Aberta;647
+680;Analista de DP 680;2023-02-22;7;Aberta;705
+681;Assistente de RH 681;2022-04-08;4;Aberta;303
+682;Desenvolvedor Python 682;2023-06-01;3;Fechada;961
+683;Analista de RH 683;2024-03-16;8;Aberta;352
+684;Coordenador de Operacoes 684;2025-02-18;7;Fechada;384
+685;Analista de Marketing 685;2023-09-09;1;Aberta;807
+686;Analista de DP 686;2022-09-16;2;Aberta;353
+687;Analista de Beneficios 687;2025-05-08;7;Fechada;141
+688;Analista de Dados 688;2024-05-21;3;Aberta;876
+689;Analista de Marketing 689;2022-09-13;1;Aberta;221
+690;Business Partner 690;2025-08-19;5;Pausada;31
+691;Desenvolvedor Python 691;2024-10-18;5;Pausada;399
+692;Desenvolvedor Python 692;2025-01-13;5;Fechada;334
+693;Analista de Dados 693;2025-05-08;4;Fechada;335
+694;Analista de Marketing 694;2022-07-17;4;Fechada;321
+695;Analista de RH 695;2024-09-28;2;Cancelada;295
+696;Analista de Dados 696;2026-02-01;6;Aberta;171
+697;Analista de Treinamento 697;2025-05-05;1;Aberta;256
+698;Coordenador de Operacoes 698;2022-09-19;3;Cancelada;953
+699;Assistente de RH 699;2026-01-08;8;Aberta;798
+700;Business Partner 700;2022-10-21;8;Pausada;436
+701;Analista de DP 701;2023-07-09;4;Fechada;570
+702;Analista de Dados 702;2025-12-29;6;Fechada;176
+703;Analista de Marketing 703;2025-04-11;5;Aberta;862
+704;Analista de Dados 704;2022-10-14;6;Aberta;119
+705;Recrutador 705;2023-11-03;8;Aberta;87
+706;Estagiario Administrativo 706;2022-05-17;1;Aberta;54
+707;Recrutador 707;2025-07-28;1;Aberta;614
+708;Assistente de RH 708;2023-06-14;8;Pausada;276
+709;Estagiario Administrativo 709;2023-04-17;6;Fechada;366
+710;Analista de DP 710;2022-10-17;5;Pausada;542
+711;Analista de Treinamento 711;2026-03-03;5;Aberta;809
+712;Estagiario Administrativo 712;2022-09-01;6;Fechada;720
+713;Analista de DP 713;2025-03-15;8;Aberta;297
+714;Analista de Beneficios 714;2023-02-21;1;Aberta;501
+715;Recrutador 715;2024-12-30;1;Aberta;128
+716;Recrutador 716;2023-03-22;7;Aberta;807
+717;Assistente de RH 717;2025-11-10;4;Aberta;660
+718;Recrutador 718;2025-05-15;3;Pausada;39
+719;Recrutador 719;2024-08-29;3;Fechada;571
+720;Assistente de RH 720;2023-12-24;3;Pausada;487
+721;Analista Financeiro 721;2022-01-20;5;Fechada;446
+722;Analista de Marketing 722;2023-10-10;2;Aberta;126
+723;Estagiario Administrativo 723;2025-11-17;5;Pausada;852
+724;Business Partner 724;2023-03-12;6;Fechada;495
+725;Analista de DP 725;2024-11-14;1;Aberta;579
+726;Assistente de RH 726;2023-12-31;7;Fechada;193
+727;Desenvolvedor Python 727;2023-07-26;7;Pausada;753
+728;Estagiario Administrativo 728;2024-06-25;7;Cancelada;607
+729;Analista de DP 729;2024-03-25;2;Cancelada;230
+730;Analista Financeiro 730;2024-03-22;3;Fechada;590
+731;Desenvolvedor Python 731;2024-02-10;7;Aberta;928
+732;Analista de Dados 732;2022-04-18;1;Fechada;115
+733;Analista de RH 733;2024-12-26;6;Pausada;592
+734;Analista de RH 734;2024-12-24;4;Fechada;701
+735;Analista de Treinamento 735;2023-11-29;3;Aberta;88
+736;Recrutador 736;2025-05-02;7;Fechada;298
+737;Desenvolvedor Python 737;2022-12-15;5;Pausada;754
+738;Recrutador 738;2024-11-24;5;Fechada;962
+739;Business Partner 739;2025-06-13;8;Fechada;449
+740;Analista de Marketing 740;2025-02-23;6;Fechada;912
+741;Estagiario Administrativo 741;2023-11-04;6;Fechada;130
+742;Recrutador 742;2026-02-28;2;Fechada;53
+743;Analista de Marketing 743;2022-10-21;2;Pausada;598
+744;Estagiario Administrativo 744;2026-02-06;2;Fechada;307
+745;Recrutador 745;2025-01-11;4;Fechada;930
+746;Estagiario Administrativo 746;2022-06-17;8;Aberta;337
+747;Analista de DP 747;2025-04-04;5;Cancelada;269
+748;Analista de Dados 748;2022-07-22;5;Fechada;212
+749;Coordenador de Operacoes 749;2024-10-13;3;Fechada;401
+750;Recrutador 750;2022-08-03;2;Aberta;223
+751;Business Partner 751;2022-03-02;4;Fechada;350
+752;Analista de DP 752;2024-06-08;2;Fechada;592
+753;Analista Financeiro 753;2025-06-02;8;Fechada;82
+754;Desenvolvedor Python 754;2023-11-21;1;Fechada;24
+755;Analista de Treinamento 755;2025-06-18;3;Fechada;456
+756;Estagiario Administrativo 756;2025-03-27;1;Aberta;152
+757;Recrutador 757;2024-05-20;7;Fechada;227
+758;Analista de DP 758;2024-02-05;2;Fechada;673
+759;Analista de Dados 759;2026-03-05;1;Fechada;476
+760;Analista de Treinamento 760;2022-01-25;6;Aberta;690
+761;Coordenador de Operacoes 761;2022-02-10;2;Aberta;247
+762;Analista de DP 762;2025-04-12;2;Aberta;982
+763;Recrutador 763;2022-09-15;8;Aberta;662
+764;Analista de Dados 764;2023-12-17;2;Aberta;437
+765;Analista de RH 765;2025-03-21;1;Fechada;336
+766;Recrutador 766;2022-07-26;2;Aberta;336
+767;Analista de RH 767;2022-10-05;5;Aberta;473
+768;Analista Financeiro 768;2024-03-31;2;Cancelada;956
+769;Analista de Treinamento 769;2024-12-23;8;Aberta;776
+770;Coordenador de Operacoes 770;2022-10-14;8;Aberta;707
+771;Analista de Dados 771;2024-11-09;7;Fechada;215
+772;Analista de Dados 772;2023-05-11;1;Fechada;642
+773;Analista de Dados 773;2025-01-20;6;Cancelada;770
+774;Coordenador de Operacoes 774;2022-07-05;6;Fechada;299
+775;Estagiario Administrativo 775;2025-09-25;4;Aberta;343
+776;Coordenador de Operacoes 776;2024-02-09;4;Fechada;582
+777;Analista de Marketing 777;2024-01-02;6;Fechada;119
+778;Assistente de RH 778;2024-02-17;5;Aberta;980
+779;Business Partner 779;2025-06-10;1;Fechada;859
+780;Recrutador 780;2023-05-07;8;Pausada;468
+781;Analista de RH 781;2022-11-21;7;Cancelada;666
+782;Coordenador de Operacoes 782;2024-04-19;1;Aberta;256
+783;Desenvolvedor Python 783;2022-12-29;2;Aberta;262
+784;Desenvolvedor Python 784;2022-05-21;7;Aberta;915
+785;Assistente de RH 785;2025-06-30;8;Cancelada;332
+786;Business Partner 786;2023-02-24;6;Fechada;838
+787;Business Partner 787;2023-09-06;7;Fechada;44
+788;Analista de Dados 788;2022-09-12;1;Aberta;574
+789;Recrutador 789;2022-01-03;3;Pausada;220
+790;Analista de RH 790;2023-06-25;3;Pausada;214
+791;Coordenador de Operacoes 791;2022-10-03;2;Aberta;266
+792;Business Partner 792;2023-07-09;8;Aberta;774
+793;Analista de Beneficios 793;2023-04-16;6;Fechada;949
+794;Analista de RH 794;2025-03-24;7;Fechada;46
+795;Coordenador de Operacoes 795;2024-10-11;7;Aberta;775
+796;Business Partner 796;2025-05-27;1;Fechada;178
+797;Recrutador 797;2025-01-03;5;Cancelada;522
+798;Estagiario Administrativo 798;2026-04-17;5;Fechada;773
+799;Analista de Dados 799;2022-08-18;4;Fechada;786
+800;Analista de Dados 800;2025-01-06;8;Aberta;503
+801;Assistente de RH 801;2024-07-17;5;Fechada;22
+802;Business Partner 802;2024-05-20;2;Fechada;776
+803;Coordenador de Operacoes 803;2023-07-09;1;Aberta;970
+804;Analista Financeiro 804;2025-04-24;2;Pausada;211
+805;Recrutador 805;2024-08-20;8;Fechada;368
+806;Recrutador 806;2023-04-01;4;Aberta;291
+807;Analista de DP 807;2024-08-30;8;Aberta;258
+808;Assistente de RH 808;2023-04-22;1;Fechada;638
+809;Assistente de RH 809;2023-12-16;4;Pausada;653
+810;Coordenador de Operacoes 810;2022-02-17;3;Fechada;406
+811;Analista de Marketing 811;2023-12-16;5;Fechada;994
+812;Analista de RH 812;2023-06-21;2;Fechada;175
+813;Analista Financeiro 813;2022-06-24;1;Fechada;365
+814;Estagiario Administrativo 814;2024-08-03;3;Aberta;777
+815;Desenvolvedor Python 815;2022-05-16;1;Aberta;707
+816;Estagiario Administrativo 816;2025-11-13;5;Aberta;221
+817;Analista de Marketing 817;2023-07-09;6;Cancelada;246
+818;Recrutador 818;2025-08-10;2;Aberta;495
+819;Analista de Treinamento 819;2025-06-15;5;Aberta;650
+820;Analista de Marketing 820;2022-10-23;5;Fechada;477
+821;Analista de RH 821;2025-04-17;8;Aberta;400
+822;Desenvolvedor Python 822;2025-03-22;7;Aberta;182
+823;Analista de Dados 823;2022-06-10;8;Fechada;813
+824;Analista de Marketing 824;2023-01-15;5;Aberta;853
+825;Analista de Treinamento 825;2025-08-15;4;Aberta;103
+826;Assistente de RH 826;2024-12-28;1;Aberta;313
+827;Coordenador de Operacoes 827;2024-12-12;7;Aberta;391
+828;Analista Financeiro 828;2022-04-13;8;Aberta;560
+829;Coordenador de Operacoes 829;2024-07-07;3;Aberta;953
+830;Analista de Marketing 830;2022-03-13;1;Fechada;799
+831;Analista de DP 831;2023-04-30;7;Fechada;425
+832;Analista de Treinamento 832;2022-10-05;2;Fechada;202
+833;Coordenador de Operacoes 833;2025-01-18;1;Aberta;477
+834;Estagiario Administrativo 834;2025-05-23;6;Aberta;99
+835;Estagiario Administrativo 835;2023-05-14;3;Aberta;818
+836;Analista de Beneficios 836;2022-01-26;1;Fechada;222
+837;Analista de Beneficios 837;2024-08-03;2;Aberta;798
+838;Analista de RH 838;2025-09-02;8;Aberta;96
+839;Assistente de RH 839;2023-02-23;7;Fechada;762
+840;Recrutador 840;2024-08-25;2;Fechada;508
+841;Analista de Marketing 841;2023-01-16;2;Aberta;844
+842;Desenvolvedor Python 842;2023-10-10;5;Fechada;812
+843;Assistente de RH 843;2024-10-12;2;Fechada;561
+844;Analista de DP 844;2022-05-21;8;Fechada;466
+845;Desenvolvedor Python 845;2023-09-20;4;Pausada;149
+846;Analista Financeiro 846;2026-04-05;5;Aberta;806
+847;Analista de Marketing 847;2023-01-12;6;Aberta;664
+848;Coordenador de Operacoes 848;2022-02-01;3;Aberta;220
+849;Analista de Beneficios 849;2023-07-07;2;Aberta;751
+850;Business Partner 850;2026-02-04;1;Fechada;313
+851;Analista de Treinamento 851;2024-07-02;8;Fechada;385
+852;Analista de Beneficios 852;2022-02-16;4;Fechada;431
+853;Business Partner 853;2025-07-05;6;Aberta;231
+854;Analista de Marketing 854;2024-08-21;7;Aberta;477
+855;Analista de Beneficios 855;2023-09-07;1;Cancelada;694
+856;Analista de Marketing 856;2023-07-08;6;Fechada;368
+857;Analista de Beneficios 857;2025-01-11;6;Aberta;38
+858;Analista de Marketing 858;2022-08-05;2;Fechada;114
+859;Analista de Dados 859;2025-01-04;2;Aberta;441
+860;Recrutador 860;2024-04-08;5;Fechada;822
+861;Recrutador 861;2024-04-27;5;Pausada;439
+862;Analista de DP 862;2024-11-18;7;Aberta;475
+863;Coordenador de Operacoes 863;2022-05-01;1;Pausada;276
+864;Desenvolvedor Python 864;2024-07-23;5;Aberta;768
+865;Analista Financeiro 865;2024-06-16;2;Cancelada;113
+866;Analista de Beneficios 866;2022-03-08;8;Aberta;867
+867;Analista de Beneficios 867;2022-09-25;2;Pausada;45
+868;Analista de RH 868;2024-04-06;4;Pausada;986
+869;Analista de Treinamento 869;2025-07-04;3;Fechada;805
+870;Analista de Dados 870;2023-04-17;5;Fechada;523
+871;Coordenador de Operacoes 871;2023-07-08;8;Cancelada;41
+872;Recrutador 872;2022-11-20;2;Aberta;989
+873;Recrutador 873;2024-04-20;6;Aberta;192
+874;Analista de Marketing 874;2026-01-03;1;Aberta;171
+875;Analista Financeiro 875;2026-03-03;8;Fechada;761
+876;Analista de Marketing 876;2022-01-30;6;Cancelada;2
+877;Analista Financeiro 877;2026-04-09;4;Aberta;22
+878;Analista de RH 878;2025-01-28;7;Aberta;299
+879;Analista de Treinamento 879;2026-01-02;7;Pausada;608
+880;Assistente de RH 880;2025-06-07;1;Aberta;534
+881;Analista de Beneficios 881;2026-04-23;2;Aberta;122
+882;Coordenador de Operacoes 882;2022-01-06;1;Fechada;877
+883;Assistente de RH 883;2024-02-27;3;Fechada;143
+884;Business Partner 884;2024-10-09;4;Cancelada;760
+885;Analista de Beneficios 885;2025-10-10;8;Fechada;633
+886;Analista de RH 886;2024-03-06;1;Fechada;751
+887;Analista de Dados 887;2023-09-07;2;Cancelada;888
+888;Recrutador 888;2024-05-20;8;Cancelada;398
+889;Analista Financeiro 889;2022-03-25;1;Aberta;612
+890;Analista de Beneficios 890;2024-11-20;5;Fechada;256
+891;Coordenador de Operacoes 891;2022-09-01;2;Fechada;251
+892;Estagiario Administrativo 892;2022-06-18;2;Fechada;88
+893;Analista de Dados 893;2022-07-09;6;Fechada;338
+894;Recrutador 894;2022-10-17;5;Aberta;19
+895;Analista Financeiro 895;2025-07-26;5;Fechada;681
+896;Analista de RH 896;2022-05-21;6;Aberta;781
+897;Analista Financeiro 897;2023-07-23;7;Pausada;458
+898;Analista de Dados 898;2024-02-08;5;Aberta;912
+899;Analista de Treinamento 899;2023-07-14;7;Pausada;152
+900;Analista de Treinamento 900;2022-04-20;2;Aberta;142
+901;Desenvolvedor Python 901;2025-08-11;1;Fechada;724
+902;Analista de DP 902;2025-01-09;2;Fechada;156
+903;Analista de Marketing 903;2025-08-29;4;Pausada;611
+904;Analista de DP 904;2023-08-15;1;Aberta;913
+905;Coordenador de Operacoes 905;2022-10-16;1;Fechada;513
+906;Assistente de RH 906;2024-10-14;5;Fechada;927
+907;Analista de Marketing 907;2024-08-15;4;Fechada;368
+908;Business Partner 908;2023-01-30;7;Aberta;974
+909;Analista Financeiro 909;2023-12-07;8;Aberta;302
+910;Assistente de RH 910;2022-11-23;2;Cancelada;574
+911;Analista de Marketing 911;2025-02-03;6;Aberta;119
+912;Business Partner 912;2024-05-07;2;Fechada;806
+913;Business Partner 913;2023-11-02;6;Fechada;294
+914;Business Partner 914;2024-03-25;2;Fechada;63
+915;Estagiario Administrativo 915;2025-05-17;3;Aberta;271
+916;Coordenador de Operacoes 916;2024-04-16;1;Aberta;131
+917;Recrutador 917;2023-05-12;3;Pausada;31
+918;Assistente de RH 918;2026-01-21;3;Aberta;926
+919;Analista de Marketing 919;2025-03-08;7;Aberta;92
+920;Analista de Marketing 920;2022-03-02;5;Cancelada;733
+921;Analista de Dados 921;2022-01-24;8;Fechada;446
+922;Analista de DP 922;2023-10-28;4;Cancelada;791
+923;Analista de Treinamento 923;2026-03-25;5;Aberta;743
+924;Analista de RH 924;2023-09-18;3;Fechada;451
+925;Coordenador de Operacoes 925;2023-03-25;5;Pausada;990
+926;Analista de RH 926;2022-08-08;2;Aberta;8
+927;Analista de Dados 927;2024-10-19;4;Cancelada;317
+928;Estagiario Administrativo 928;2022-11-01;5;Aberta;572
+929;Coordenador de Operacoes 929;2022-06-20;8;Cancelada;548
+930;Analista de Marketing 930;2022-12-01;6;Fechada;768
+931;Business Partner 931;2022-09-16;8;Fechada;188
+932;Coordenador de Operacoes 932;2024-07-16;1;Pausada;868
+933;Coordenador de Operacoes 933;2025-12-11;7;Cancelada;955
+934;Analista de Treinamento 934;2024-03-30;3;Fechada;283
+935;Assistente de RH 935;2025-06-26;8;Fechada;419
+936;Recrutador 936;2024-06-24;5;Fechada;301
+937;Estagiario Administrativo 937;2024-08-14;2;Fechada;593
+938;Analista de RH 938;2025-08-01;4;Aberta;38
+939;Coordenador de Operacoes 939;2022-08-11;5;Pausada;495
+940;Desenvolvedor Python 940;2022-10-26;3;Aberta;885
+941;Desenvolvedor Python 941;2023-03-06;5;Aberta;744
+942;Coordenador de Operacoes 942;2026-02-22;7;Fechada;971
+943;Assistente de RH 943;2022-11-05;2;Aberta;653
+944;Coordenador de Operacoes 944;2023-06-02;6;Aberta;263
+945;Analista de Beneficios 945;2022-12-19;1;Cancelada;676
+946;Analista de Treinamento 946;2023-07-21;5;Fechada;91
+947;Analista de DP 947;2022-09-11;2;Fechada;628
+948;Estagiario Administrativo 948;2026-05-05;4;Fechada;83
+949;Recrutador 949;2022-10-28;8;Aberta;878
+950;Business Partner 950;2024-05-28;4;Aberta;346
+951;Business Partner 951;2025-04-16;5;Pausada;885
+952;Recrutador 952;2023-01-02;2;Fechada;284
+953;Analista de Beneficios 953;2024-05-09;1;Cancelada;415
+954;Desenvolvedor Python 954;2026-05-05;1;Aberta;101
+955;Assistente de RH 955;2022-03-31;3;Aberta;835
+956;Analista de Dados 956;2023-09-29;4;Fechada;286
+957;Assistente de RH 957;2026-01-27;3;Aberta;31
+958;Assistente de RH 958;2025-12-21;7;Aberta;626
+959;Analista de Treinamento 959;2024-12-17;7;Aberta;969
+960;Analista Financeiro 960;2024-10-14;3;Aberta;748
+961;Business Partner 961;2024-10-31;7;Aberta;60
+962;Analista Financeiro 962;2022-12-01;1;Cancelada;207
+963;Assistente de RH 963;2025-05-02;8;Fechada;607
+964;Analista de Beneficios 964;2025-05-22;1;Aberta;827
+965;Desenvolvedor Python 965;2022-03-08;1;Aberta;942
+966;Estagiario Administrativo 966;2022-08-28;4;Aberta;707
+967;Estagiario Administrativo 967;2026-03-11;2;Fechada;478
+968;Analista de DP 968;2025-08-28;7;Aberta;768
+969;Assistente de RH 969;2025-07-14;7;Fechada;160
+970;Analista de DP 970;2023-12-28;1;Fechada;265
+971;Assistente de RH 971;2025-04-06;5;Fechada;652
+972;Estagiario Administrativo 972;2024-12-08;6;Fechada;944
+973;Analista de RH 973;2025-07-11;2;Aberta;982
+974;Estagiario Administrativo 974;2023-11-29;4;Aberta;170
+975;Analista de Treinamento 975;2022-09-02;1;Pausada;171
+976;Recrutador 976;2024-12-18;8;Fechada;4
+977;Estagiario Administrativo 977;2022-10-09;8;Fechada;58
+978;Analista de Treinamento 978;2023-04-10;8;Aberta;426
+979;Assistente de RH 979;2024-05-23;1;Fechada;525
+980;Assistente de RH 980;2025-06-14;8;Cancelada;159
+981;Analista de Marketing 981;2023-02-20;7;Aberta;503
+982;Analista de DP 982;2022-09-05;4;Pausada;858
+983;Analista Financeiro 983;2022-03-24;8;Fechada;574
+984;Assistente de RH 984;2022-01-15;3;Fechada;561
+985;Analista de RH 985;2025-10-11;6;Fechada;477
+986;Recrutador 986;2022-03-06;1;Aberta;264
+987;Business Partner 987;2023-08-24;4;Fechada;139
+988;Analista Financeiro 988;2024-03-20;3;Aberta;845
+989;Assistente de RH 989;2024-03-11;1;Fechada;394
+990;Analista de Beneficios 990;2025-10-01;7;Fechada;868
+991;Estagiario Administrativo 991;2023-06-16;7;Fechada;21
+992;Coordenador de Operacoes 992;2024-06-25;6;Aberta;635
+993;Analista de Treinamento 993;2022-08-31;4;Fechada;937
+994;Analista de Dados 994;2025-11-28;3;Aberta;57
+995;Analista de Treinamento 995;2022-08-25;7;Fechada;844
+996;Analista de Marketing 996;2024-03-06;2;Aberta;951
+997;Analista de RH 997;2023-03-22;4;Aberta;964
+998;Business Partner 998;2024-12-06;5;Fechada;161
+999;Desenvolvedor Python 999;2023-03-10;2;Fechada;887
+1000;Analista Financeiro 1000;2025-03-29;3;Aberta;876
