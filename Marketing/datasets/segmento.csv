@@ -1,0 +1,10 @@
+id_segmento,nome,descricao,criterio
+1,Cliente VIP,Segmento: Cliente VIP,Frequência
+2,Aniversariante do Mês,Segmento: Aniversariante do Mês,RFM
+3,Frequentador de Almoço,Segmento: Frequentador de Almoço,Manual
+4,Cliente Inativo,Segmento: Cliente Inativo,Frequência
+5,Fã de Sobremesas,Segmento: Fã de Sobremesas,RFM
+6,Delivery Recorrente,Segmento: Delivery Recorrente,Pedido
+7,Primeira Visita,Segmento: Primeira Visita,RFM
+8,Grupo/Empresa,Segmento: Grupo/Empresa,Data
+9,Cliente Fim de Semana,Segmento: Cliente Fim de Semana,Data

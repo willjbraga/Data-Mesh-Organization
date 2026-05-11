@@ -1,0 +1,228 @@
+id_campanha,nome,tipo,objetivo,data_inicio,data_fim,orcamento,gasto_real,status
+21,Campanha 21 - Páscoa,Email,Conversão,2023-11-05,2024-08-10,14036.04,17151.87,Rascunho
+56,,Social,Conversão,2023-01-26,2024-10-20,7385.64,4804.96,Encerrada
+25,Campanha 25 - Promoção,Email,Tráfego,2023-02-07,2024-10-23,1806.2,1527.23,Ativa
+153,Campanha 153 - Verão,Orgânica,Awareness,2022-01-01,2024-07-16,9169.08,10742.4,Pausada
+175,,Orgânica,Retenção,2023-05-02,2024-07-28,,,--
+149,Campanha 149 - Verão,Orgânica,Retenção,2023-05-03,2024-11-06,INDEFINIDO,9061.18,
+204,Campanha 204 - Páscoa,Orgânica,Conversão,2023-02-05,2024-07-19,10597.46,6952.72,Ativa
+33,Campanha 33 - Verão,Orgânica,Retenção,2022-06-05,2024-08-18,11555.49,11435.14,Encerrada
+65,Campanha 65 - Páscoa,Paga,Retenção,2022-05-03,2024-07-23,10017.72,12220.79,Pausada
+172,Campanha 172 - Dia das Mães,Social,Conversão,2024-05-25,2024-12-31,623.74,461.31,Ativa
+100,Campanha 100 - Dia das Mães,Social,Awareness,2022-10-18,2024-10-25,14654.6,12532.1,Ativa
+132,Campanha 132 - Dia das Mães,Paga,Retenção,2024-05-12,2024-12-08,1748.36,,
+83,Campanha 83 - Promoção,Influencer,Awareness,2022-02-25,2024-07-17,7771.03,9042.74,Rascunho
+138,Campanha 138 - Dia das Mães,Orgânica,Awareness,2022-06-10,2024-09-13,7726.67,9244.14,Encerrada
+160,Campanha 160 - Promoção,Influencer,Retenção,2023-10-04,,,9334.12,Ativa
+125,Campanha 125 - Dia das Mães,Paga,Awareness,,2024-12-22,5916.6,7356.22,Rascunho
+111,Campanha 111 - Promoção,Orgânica,Retenção,,2024-09-18,INDEFINIDO,6943.61,
+209,Campanha 209 - Natal,Orgânica,Tráfego,2022-03-31,2024-11-21,1726.85,1035.72,Ativa
+141,Campanha 141 - Natal,Email,Tráfego,2023-09-18,2024-08-07,3474.44,3250.48,Rascunho
+61,Campanha 61 - Promoção,Email,Retenção,2023-04-03,2024-10-03,10661.24,9466.49,Encerrada
+109,Campanha 109 - Promoção,Paga,Retenção,2023-11-11,2024-11-16,4143.34,3779.95,Encerrada
+171,Campanha 171 - Páscoa,Paga,Engajamento,2022-03-26,2024-09-14,9832.99,11098.48,Encerrada
+152,Campanha 152 - Natal,Orgânica,Tráfego,,2024-11-20,8739.56,7487.93,Encerrada
+47,Campanha 47 - Natal,Paga,Tráfego,2023-05-28,,11120.4,10218.56,Encerrada
+13,Campanha 13 - Natal,Social,Conversão,,2024-02-08,1535.08,1344.91,Ativa
+216,Campanha 216 - Dia das Mães,Influencer,Conversão,2024-01-19,2024-08-04,14970.34,18121.06,Ativa
+212,Campanha 212 - Natal,Email,Awareness,2023-09-11,2024-09-02,2094.86,1966.43,Pausada
+89,Campanha 89 - Promoção,Social,Engajamento,2024-02-25,2024-09-10,12817.05,,Pausada
+72,Campanha 72 - Natal,Email,Engajamento,2022-05-04,2024-12-23,,14326.45,done
+5,Campanha 5 - Promoção,Social,Conversão,2022-04-09,2024-10-24,5724.45,5415.29,Encerrada
+178,Campanha 178 - Natal,Influencer,Tráfego,2024-04-23,2024-08-14,9457.18,7997.57,Ativa
+142,Campanha 142 - Dia das Mães,Influencer,Awareness,2022-04-06,2024-11-08,INDEFINIDO,7207.91,Pausada
+57,Campanha 57 - Natal,,Retenção,2023-03-02,2024-10-25,13989.51,13969.91,Encerrada
+51,Campanha 51 - Verão,Email,Retenção,2022-05-28,2024-12-05,3158.62,3897.14,Ativa
+127,Campanha 127 - Páscoa,Orgânica,Retenção,2023-11-01,2024-08-09,6769.2,7751.29,Ativa
+185,Campanha 185 - Natal,ORGANICA,Awareness,2022-01-22,2024-12-05,3927.75,3310.3,Pausada
+94,Campanha 94 - Verão,Email,,2022-07-18,2024-12-08,11413.11,10670.91,Pausada
+106,Campanha 106 - Promoção,Paga,Retenção,2022-02-27,2024-12-17,5025.44,2854.22,Ativa
+67,Campanha 67 - Páscoa,Paga,Retenção,2024-07-27,2022-09-23,INDEFINIDO,12395.1,Rascunho
+119,Campanha 119 - Natal,Social,Engajamento,2024-04-27,2024-12-20,3445.61,,Rascunho
+116,Campanha 116 - Natal,Social,,2024-04-24,2024-08-11,5601.92,5499.36,Ativa
+47,Campanha 47 - Natal,Paga,Tráfego,2023-05-28,,11120.4,10218.56,Encerrada
+23,Campanha 23 - Páscoa,Influencer,Tráfego,2022-06-09,2024-08-05,,2906.65,Ativa
+188,Campanha 188 - Natal,Social,Awareness,2023-04-05,2024-12-10,7476.98,9427.06,Rascunho
+8,Campanha 8 - Promoção,,Engajamento,2022-04-17,2024-09-06,14008.05,11372.81,Encerrada
+148,Campanha 148 - Promoção,Paga,Awareness,2023-02-09,2024-09-25,,14595.11,Pausada
+134,Campanha 134 - Dia das Mães,Orgânica,Conversão,2023-10-26,2024-10-15,9529.1,9690.56,Encerrada
+173,,Social,Conversão,2023-07-20,2024-10-28,11982.77,8992.59,Rascunho
+75,Campanha 75 - Páscoa,emaill,,2022-06-02,2024-12-23,7713.97,4842.89,Rascunho
+2,Campanha 2 - Promoção,Orgânica,Awareness,2024-08-02,2023-08-14,7435.64,6934.58,Ativa
+112,Campanha 112 - Promoção,Influencer,Tráfego,2023-02-21,2024-10-02,6254.98,7329.89,Ativa
+102,Campanha 102 - Dia das Mães,Paga,Awareness,,,6364.43,5649.24,Rascunho
+82,Campanha 82 - Dia das Mães,Email,Conversão,2022-02-11,2024-10-02,10720.67,10169.7,Ativa
+16,Campanha 16 - Natal,Social,Engajamento,2023-13-01,2024-10-21,5693.43,3460.39,
+164,Campanha 164 - Dia das Mães,Email,Tráfego,2024-05-05,2024-11-21,3333.4,2201.04,Rascunho
+60,Campanha 60 - Páscoa,social media,Engajamento,,2024-10-30,10016.64,7346.23,Ativa
+90,Campanha 90 - Dia das Mães,Email,Awareness,2022-11-12,2024-10-23,11053.87,9455.22,Rascunho
+108,,Influencer,Retenção,2022-09-29,2024-07-13,12166.74,12162.58,Pausada
+181,Campanha 181 - Dia das Mães,Paga,,2022-10-07,2024-08-09,10858.98,13184.43,Ativa
+113,,Email,Awareness,2023-08-22,2024-10-08,14064.75,9485.36,Pausada
+66,Campanha 66 - Natal,Orgânica,Retenção,2022-06-15,2024-07-19,6134.56,7955.09,Rascunho
+177,Campanha 177 - Dia das Mães,Influencer,Engajamento,2022-07-26,2024-07-02,12456.45,12255.64,Rascunho
+157,Campanha 157 - Promoção,,Engajamento,2023-02-10,2024-07-29,7663.16,7214.31,Ativa
+70,Campanha 70 - Promoção,Influencer,Conversão,,2024-10-24,INDEFINIDO,1483.75,Encerrada
+11,Campanha 11 - Dia das Mães,,Conversão,2024-04-28,2024-10-05,9567.18,8737.59,Pausada
+71,Campanha 71 - Verão,Paga,,2022-01-15,2024-08-14,12400.72,7165.56,Ativa
+30,Campanha 30 - Verão,Paga,Conversão,2022-06-10,2024-07-05,9565.85,6590.52,Rascunho
+168,Campanha 168 - Natal,Email,,2022-02-17,2024-12-05,4765.65,2949.24,Rascunho
+78,Campanha 78 - Promoção,Influencer,Awareness,2022-06-10,2024-12-11,8882.76,8369.38,Encerrada
+54,Campanha 54 - Natal,Influencer,Engajamento,2022-08-11,2024-08-05,9723.93,4863.4,Rascunho
+81,Campanha 81 - Promoção,Orgânica,Awareness,2023-13-01,2024-12-24,,12084.13,Ativa
+197,Campanha 197 - Dia das Mães,Paga,Tráfego,,2024-10-14,INDEFINIDO,16543.46,Pausada
+14,Campanha 14 - Páscoa,Influencer,Conversão,2023-04-30,2024-10-08,,5201.69,Rascunho
+143,Campanha 143 - Páscoa,Influencer,Tráfego,32/04/2023,2024-09-15,14752.78,16881.75,Encerrada
+53,Campanha 53 - Páscoa,,Awareness,2023-11-17,2024-07-20,12632.85,7471.8,
+120,Campanha 120 - Natal,Email,Tráfego,2022-08-30,,8952.09,9111.33,Rascunho
+118,Campanha 118 - Promoção,Paga,Engajamento,2023-07-26,,1790.16,1557.33,Rascunho
+128,Campanha 128 - Páscoa,Social,Retenção,32/03/2023,2024-12-09,14612.44,15213.77,Ativa
+203,Campanha 203 - Páscoa,ORGANICA,Conversão,2022-12-08,2024-08-09,11123.54,12773.55,Rascunho
+129,Campanha 129 - Páscoa,Influencer,Awareness,2023-08-06,2024-07-13,7944.51,7217.76,Pausada
+95,Campanha 95 - Dia das Mães,Influencer,Conversão,2022-04-15,2024-08-25,3232.04,3935.48,Ativa
+124,Campanha 124 - Promoção,,Tráfego,2022-06-01,2024-08-01,4619.69,5395.63,Encerrada
+17,Campanha 17 - Promoção,Orgânica,Tráfego,2022-06-08,2024-10-24,5823.13,2914.92,Pausada
+126,Campanha 126 - Verão,Influencer,Retenção,2024-03-27,2024-11-23,12122.59,8805.4,Rascunho
+158,Campanha 158 - Dia das Mães,Paga,Awareness,2022-01-24,2024-12-25,INDEFINIDO,12511.06,Pausada
+96,Campanha 96 - Natal,Orgânica,Retenção,2023-09-04,2024-11-11,10793.48,5645.07,
+180,Campanha 180 - Natal,,Awareness,2022-05-20,2024-09-22,7189.68,4069.64,
+122,Campanha 122 - Páscoa,Email,Engajamento,2023-12-29,2024-11-13,5042.41,6468.47,Rascunho
+147,Campanha 147 - Promoção,Influencer,Retenção,2023-03-04,2024-11-01,13554.17,15249.52,Encerrada
+170,Campanha 170 - Dia das Mães,Influencer,Retenção,2023-07-18,2024-07-22,6945.33,5426.11,Rascunho
+9,Campanha 9 - Páscoa,Influencer,Awareness,2023-04-01,2024-08-04,3067.03,,Pausada
+62,Campanha 62 - Dia das Mães,Social,Engajamento,2024-09-27,,12383.2,6711.92,Encerrada
+133,Campanha 133 - Promoção,Paga,Retenção,,,7687.7,7402.71,Rascunho
+167,Campanha 167 - Verão,Social,Conversão,2022-11-09,2024-10-25,10083.18,12633.51,Ativa
+50,Campanha 50 - Promoção,Influencer,Retenção,2023-09-03,2024-11-29,6964.63,5463.75,cancelada
+98,Campanha 98 - Páscoa,Paga,Awareness,2022-12-27,2024-08-11,9387.87,8485.95,Encerrada
+41,Campanha 41 - Páscoa,social media,Conversão,2024-02-26,2024-09-15,12393.84,13716.93,Pausada
+219,Campanha 219 - Natal,Paga,Retenção,2022-07-10,2024-10-11,7634.67,4334.93,Ativa
+84,Campanha 84 - Dia das Mães,Paga,Awareness,,2024-07-28,2645.33,1641.16,Encerrada
+121,Campanha 121 - Natal,Email,Tráfego,2023-09-13,2024-12-19,11349.51,6087.98,Pausada
+205,Campanha 205 - Verão,Social,Conversão,2023-10-29,2024-07-03,1978.24,2232.24,Encerrada
+161,Campanha 161 - Dia das Mães,Paga,Retenção,2024-08-02,2022-03-08,,1279.67,Pausada
+10,Campanha 10 - Promoção,,Engajamento,2024-05-18,2024-08-04,620.6,768.1,Pausada
+103,Campanha 103 - Dia das Mães,Social,Tráfego,2023-11-27,,1896.84,1064.53,Rascunho
+137,Campanha 137 - Verão,Social,Awareness,,2024-11-20,10506.97,9585.61,Ativa
+214,Campanha 214 - Natal,Email,Retenção,NaT,2024-11-29,10841.73,11124.16,done
+195,Campanha 195 - Dia das Mães,Influencer,Retenção,2022-09-30,2024-07-02,1106.96,740.4,Pausada
+48,Campanha 48 - Páscoa,Orgânica,Retenção,2024-06-29,2024-07-12,11310.54,5858.68,Encerrada
+174,Campanha 174 - Páscoa,Paga,Tráfego,2023-03-12,2024-12-23,10512.52,,Encerrada
+194,Campanha 194 - Verão,Paga,,,2024-08-16,14752.73,17663.33,
+35,Campanha 35 - Promoção,Influencer,Awareness,2022-02-12,2024-12-03,5037.01,,Ativa
+14,Campanha 14 - Páscoa,Influencer,Conversão,2023-04-30,2024-10-08,,5201.69,Rascunho
+45,Campanha 45 - Páscoa,Email,Retenção,2023-08-02,2024-12-21,3519.81,3690.15,ENCERRADA
+81,Campanha 81 - Promoção,Orgânica,Awareness,2023-13-01,2024-12-24,,12084.13,Ativa
+105,Campanha 105 - Páscoa,Paga,Awareness,2023-02-05,2024-09-06,9445.63,7388.48,Encerrada
+80,Campanha 80 - Dia das Mães,Influencer,Retenção,2022-05-16,2024-09-30,1815.58,,Ativa
+130,Campanha 130 - Promoção,Orgânica,Retenção,,2024-12-28,7097.47,7354.45,Ativa
+88,,Paga,Conversão,2023-08-11,,13649.77,11652.6,Ativa
+211,Campanha 211 - Páscoa,Email,Tráfego,2022-06-17,2024-10-11,10309.62,12909.29,
+115,Campanha 115 - Verão,Social,Retenção,2023-02-07,2024-09-04,11471.68,8465.39,Rascunho
+136,Campanha 136 - Verão,Orgânica,Conversão,2023-05-21,2024-09-16,14989.29,11797.01,
+55,Campanha 55 - Promoção,999,Engajamento,2022-12-19,2024-07-23,7901.15,9308.42,Ativa
+184,,,Tráfego,2024-05-20,2024-11-23,9198.07,11820.74,
+24,,Orgânica,Engajamento,2024-03-09,2024-07-15,13256.99,,Ativa
+77,Campanha 77 - Verão,,Conversão,2022-05-29,2024-08-25,6116.29,3725.58,Encerrada
+43,Campanha 43 - Verão,Email,Engajamento,2022-01-25,2024-10-28,12797.01,,Encerrada
+68,,Email,Awareness,,2024-07-18,12360.66,10947.26,Pausada
+151,Campanha 151 - Dia das Mães,,Awareness,2024-07-31,2023-01-20,9156.57,6310.64,Pausada
+219,Campanha 219 - Natal,Paga,Retenção,2022-07-10,2024-10-11,7634.67,4334.93,Ativa
+39,Campanha 39 - Verão,,Tráfego,2022-01-13,2024-10-26,12208.09,12041.9,
+163,Campanha 163 - Natal,Email,Engajamento,,2024-09-01,5019.17,,Encerrada
+183,Campanha 183 - Promoção,,Conversão,2022-08-26,2024-08-24,INDEFINIDO,734.06,done
+93,Campanha 93 - Páscoa,Social,Retenção,2023-12-12,,754.4,533.84,Encerrada
+31,Campanha 31 - Natal,Social,Conversão,2023-09-20,2024-12-08,8807.03,7408.23,Encerrada
+86,Campanha 86 - Verão,Orgânica,Retenção,2023-09-26,2024-08-11,,17116.85,Ativa
+20,Campanha 20 - Verão,Orgânica,Retenção,2022-04-10,2024-07-26,3247.18,2990.5,Rascunho
+92,Campanha 92 - Verão,Social,Awareness,2022-09-26,2024-09-15,7351.85,7521.31,Encerrada
+73,Campanha 73 - Dia das Mães,Influencer,Engajamento,2023-13-01,2024-10-05,1670.48,,Rascunho
+159,Campanha 159 - Verão,Orgânica,Engajamento,2022-10-12,2024-10-16,6181.95,4746.28,Rascunho
+146,Campanha 146 - Verão,Orgânica,Engajamento,2024-09-13,2023-08-09,5886.28,7609.88,Rascunho
+144,Campanha 144 - Verão,Orgânica,Tráfego,2024-04-22,2024-10-01,6672.54,5535.82,Rascunho
+44,Campanha 44 - Natal,Social,Tráfego,2022-12-16,2024-10-10,922.2,,Ativa
+126,Campanha 126 - Verão,Influencer,Retenção,2024-03-27,2024-11-23,12122.59,8805.4,Rascunho
+200,Campanha 200 - Natal,Social,Awareness,2022-08-18,2024-11-25,9837.8,7886.06,Rascunho
+150,,Paga,,,2024-09-20,14706.9,13727.76,Rascunho
+189,Campanha 189 - Natal,,Tráfego,2023-07-21,2024-08-14,7077.25,5662.63,Encerrada
+74,Campanha 74 - Promoção,Paga,Tráfego,2023-05-27,2024-12-04,INDEFINIDO,,Ativa
+91,Campanha 91 - Páscoa,,Engajamento,2023-08-28,2024-10-05,13758.95,,
+38,Campanha 38 - Dia das Mães,Orgânica,Retenção,2024-10-06,2023-07-18,5360.3,,Ativa
+202,Campanha 202 - Promoção,Paga,Tráfego,2022-08-13,2024-11-05,4609.2,5059.28,Pausada
+218,Campanha 218 - Dia das Mães,Influencer,Awareness,2022-10-25,2024-09-15,532.4,,Ativa
+59,Campanha 59 - Páscoa,Influencer,Engajamento,32/03/2024,2024-11-26,8257.98,4200.23,Rascunho
+7,Campanha 7 - Natal,Orgânica,Awareness,2024-06-02,,7029.19,4455.48,Ativa
+58,Campanha 58 - Dia das Mães,Influencer,Tráfego,2022-02-08,2024-11-23,8913.9,11315.22,Pausada
+1,Campanha 1 - Promoção,Paga,Tráfego,2022-06-09,2024-07-28,INDEFINIDO,12838.67,Pausada
+191,Campanha 191 - Páscoa,Email,,32/01/2024,2024-09-02,9648.81,10045.77,Encerrada
+107,Campanha 107 - Natal,Influencer,Retenção,2023-01-22,2024-11-24,12220.74,7088.58,Pausada
+131,Campanha 131 - Natal,Social,Awareness,2024-06-08,,7557.48,7518.18,Ativa
+162,Campanha 162 - Promoção,Orgânica,Conversão,2024-06-20,2024-12-06,14094.98,15875.79,Ativa
+76,Campanha 76 - Páscoa,Email,Retenção,2022-04-29,2024-07-19,9094.25,6918.7,Ativa
+215,Campanha 215 - Verão,,Engajamento,2024-01-06,2024-08-28,14238.09,11749.44,ENCERRADA
+27,Campanha 27 - Promoção,Paga,,29-03-2023,2024-12-07,3395.44,,Encerrada
+198,Campanha 198 - Verão,Influencer,Tráfego,2023-12-18,2024-07-26,3328.62,2045.53,cancelada
+201,Campanha 201 - Natal,Social,Conversão,,2024-09-19,524.34,288.13,Pausada
+32,Campanha 32 - Verão,Orgânica,Retenção,2024-02-28,2024-08-07,2791.69,1547.3,Encerrada
+169,Campanha 169 - Natal,Social,Conversão,2023-04-21,2024-08-15,10570.39,11336.95,Ativa
+190,Campanha 190 - Páscoa,Influencer,Engajamento,2023-01-29,2024-11-03,1532.9,1851.74,Rascunho
+192,Campanha 192 - Promoção,Influencer,Awareness,2022-03-24,2024-11-10,2904.44,2444.08,Rascunho
+140,Campanha 140 - Promoção,Orgânica,Tráfego,2022-12-13,2024-09-19,INDEFINIDO,5534.52,Ativa
+15,,Orgânica,Tráfego,,2023-02-10,7391.42,7221.19,Pausada
+217,Campanha 217 - Verão,Email,Engajamento,2022-02-13,2024-12-03,13987.69,15539.88,Pausada
+40,Campanha 40 - Páscoa,social media,Tráfego,NaT,2024-07-10,12651.21,9346.12,
+179,,Orgânica,Retenção,2024-02-20,2024-11-19,11453.25,,Ativa
+85,Campanha 85 - Páscoa,Social,Retenção,2023-02-26,2024-11-26,5231.44,5099.01,Encerrada
+79,Campanha 79 - Dia das Mães,Influencer,Awareness,2023-08-29,2024-08-08,,3510.85,--
+42,Campanha 42 - Promoção,Influencer,Retenção,2023-12-07,2024-12-02,4664.22,4603.94,
+114,Campanha 114 - Páscoa,Paga,Engajamento,2023-01-07,2024-10-30,805.58,1025.86,
+145,Campanha 145 - Natal,,Conversão,2023-12-07,2024-11-03,2861.22,2588.34,Ativa
+123,Campanha 123 - Verão,Orgânica,Awareness,2023-07-24,2024-12-16,3239.34,1761.08,Rascunho
+171,Campanha 171 - Páscoa,Paga,Engajamento,2022-03-26,2024-09-14,9832.99,11098.48,Encerrada
+52,Campanha 52 - Dia das Mães,Influencer,Tráfego,2024-01-02,2024-07-28,11990.25,11105.33,Encerrada
+208,Campanha 208 - Verão,Paga,,2024-04-17,2024-11-15,,1669.2,Encerrada
+182,,Paga,Engajamento,2022-04-04,2024-07-05,5388.19,3522.38,Encerrada
+87,,Orgânica,Tráfego,2023-01-17,2024-10-23,4872.62,6024.25,Pausada
+139,Campanha 139 - Dia das Mães,Social,Engajamento,2024-02-12,2024-10-15,2698.36,2975.77,
+28,Campanha 28 - Páscoa,Paga,Tráfego,2023-07-05,2024-08-24,,3767.77,Ativa
+3,Campanha 3 - Páscoa,Email,Tráfego,2022-09-27,2024-08-30,5474.9,3542.98,Rascunho
+199,Campanha 199 - Natal,emaill,Awareness,2022-09-07,2024-08-24,10648.68,6222.83,Pausada
+154,Campanha 154 - Páscoa,Social,,2023-03-19,2024-08-23,,5349.09,Pausada
+161,Campanha 161 - Dia das Mães,Paga,Retenção,2024-08-02,2022-03-08,,1279.67,Pausada
+220,Campanha 220 - Verão,Orgânica,Engajamento,2023-03-26,2024-12-16,5629.2,4768.88,Pausada
+69,Campanha 69 - Natal,Email,Tráfego,2022-07-27,2024-08-15,10080.64,7450.56,Rascunho
+22,Campanha 22 - Verão,Orgânica,Engajamento,2022-01-01,2024-07-09,8005.34,10364.75,Pausada
+64,Campanha 64 - Páscoa,,,2023/12/08,2024-08-16,12559.5,6399.93,Pausada
+34,,Orgânica,Retenção,2023-05-01,2024-08-05,6424.54,8191.62,Encerrada
+12,Campanha 12 - Verão,Paga,Engajamento,2024-08-08,2022-01-20,3196.1,,Encerrada
+165,Campanha 165 - Natal,Email,Awareness,13-02-2022,,10551.7,9214.05,Rascunho
+196,Campanha 196 - Verão,Social,Engajamento,2023-02-13,2024-10-05,INDEFINIDO,15067.98,Encerrada
+206,Campanha 206 - Dia das Mães,Social,Engajamento,2024-01-10,,6251.35,4639.45,Ativa
+29,Campanha 29 - Natal,Email,Tráfego,,2024-10-01,6104.59,7837.28,Ativa
+6,Campanha 6 - Verão,Social,Engajamento,2022-03-22,2024-10-06,14370.62,17167.23,Rascunho
+99,Campanha 99 - Verão,Orgânica,Retenção,2023-08-27,2024-08-17,,2447.44,Pausada
+97,Campanha 97 - Promoção,paga,Conversão,,2024-07-09,1359.35,809.0,Ativa
+213,Campanha 213 - Natal,Email,Conversão,2023-06-24,2024-09-17,1885.34,1468.91,Ativa
+155,Campanha 155 - Verão,Paga,Tráfego,2023-11-20,2024-08-14,10697.85,,Rascunho
+4,Campanha 4 - Dia das Mães,Influencer,,2022-07-20,2024-08-07,7358.31,3736.5,Pausada
+207,Campanha 207 - Páscoa,Orgânica,Awareness,2024-08-27,2023-06-06,8803.14,6329.28,Rascunho
+193,Campanha 193 - Dia das Mães,Influencer,Conversão,06-02-2024,2024-10-10,12337.65,6184.41,Pausada
+187,Campanha 187 - Natal,Orgânica,Retenção,2024-07-02,2023-10-07,14328.09,7761.32,Encerrada
+36,Campanha 36 - Promoção,Orgânica,Retenção,2024-02-23,2024-12-09,6873.53,8299.91,Ativa
+135,Campanha 135 - Promoção,Social,Awareness,2024-06-23,2024-09-14,6544.49,8199.97,Encerrada
+186,,Email,Conversão,2023-13-01,2024-12-12,INDEFINIDO,7232.13,Encerrada
+26,Campanha 26 - Dia das Mães,Influencer,Engajamento,,2024-08-20,8101.59,5621.31,Rascunho
+104,Campanha 104 - Dia das Mães,Social,Retenção,19-11-2022,2024-10-05,8571.66,10185.61,Pausada
+166,Campanha 166 - Verão,Influencer,,01-10-2024,2023-08-23,4619.46,3118.86,Encerrada
+117,Campanha 117 - Páscoa,Orgânica,Conversão,2024-01-01,2024-12-14,10443.42,,
+63,Campanha 63 - Verão,Email,Retenção,2023-06-27,2024-12-22,8203.75,6424.05,Pausada
+110,Campanha 110 - Natal,Social,Engajamento,2024-12-08,2024-01-15,7206.06,4988.75,Ativa
+19,Campanha 19 - Páscoa,,Tráfego,,2024-07-04,7625.38,9240.54,Rascunho
+37,Campanha 37 - Verão,Email,Engajamento,2023-13-01,2024-10-14,9059.57,9694.71,Encerrada
+18,Campanha 18 - Natal,Paga,Retenção,2023-02-24,2024-12-12,10053.92,5379.07,Rascunho
+49,Campanha 49 - Páscoa,,Awareness,2022-04-15,2024-08-22,,5558.3,--
+156,Campanha 156 - Natal,Influencer,Awareness,2024-10-22,2022-07-17,11497.1,12008.07,Encerrada
+176,Campanha 176 - Natal,Paga,Retenção,2022-06-25,2024-09-22,2777.01,1634.53,Encerrada
+101,Campanha 101 - Verão,ORGANICA,Retenção,2022-05-27,2024-10-10,1974.97,2449.42,Rascunho
+210,Campanha 210 - Natal,Email,Engajamento,2022-12-27,2024-12-03,1935.63,2237.22,Encerrada
+46,Campanha 46 - Natal,Social,Engajamento,2024-02-09,2024-09-17,958.61,,Pausada
