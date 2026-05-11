@@ -1,0 +1,31 @@
+id_funcionario,nome,cpf,cargo,salario_base,data_admissao,status
+1,João Silva Santos,123.456.789-00,Cozinheiro,3500.00,2020-01-15,ativo
+2,Maria Oliveira,98765432100,Garçonete,2200.50,2019-03-20,ativo
+3,Pedro Costa,111.222.333-44,Gerente,5500,2018-06-10,ativo
+4,Ana Paula Souza,444.555.666-77,Auxiliar de Cozinha,1800.00,2021-02-28,ativo
+5,Carlos Eduardo Lima,777-888-999-00,Garçom,2200.00,2020-11-05,ativo
+6,Juliana Ferreira,12312312312,Caixa,2500.00,2019-08-12,ativo
+7,Roberto Alves,   147.258.369-10,Cozinheiro,3500.00,2021-05-18,ativo
+8,Fernanda Costa,159.753.486-20,Garçonete,2200.00,2020-09-22,inativo
+9,Lucas Martins,357.159.753-30,Auxiliar de Limpeza,1500.00,2022-01-10,ativo
+10,Patricia Rocha,753.951.357-40,Sous Chef,4200.00,2019-12-03,ativo
+11,Ricardo Santos,NULL,Garçom,2200.00,2021-07-15,ativo
+12,Camila Dias,852.963.741-50,Gerente de Salão,4800.00,2018-11-20,ativo
+13,Bruno Oliveira,963.852.741-60,Cozinheiro,3500.00,2020-04-08,ativo
+14,Tatiana Lima,741.852.963-70,Garçonete,2200.00,2021-09-30,ativo
+15,Marcos Paulo,147852369-80,Auxiliar de Cozinha,1800.00,2022-03-12,ativo
+16,Aline Souza,258.369.147-90,Caixa,2500.00,2019-05-25,ativo
+17,Felipe Costa,369.147.258-11,Garçom,2200.00,2020-12-18,inativo
+18,Gabriela Martins,147.258.369-22,Auxiliar de Limpeza,1500.00,2021-11-08,ativo
+19,Thiago Alves,258.369.147-33,Cozinheiro,3500.00,2019-07-14,ativo
+20,Vanessa Rocha,369.147.258-44,Garçonete,2200.00,2020-08-20,ativo
+21,Diego Santos,147.258.369-55,Auxiliar de Cozinha,1800.00,2021-04-05,ativo
+22,Larissa Dias,258.369.147-66,Caixa,2500.00,2022-02-28,ativo
+23,Rodrigo Lima,369.147.258-77,Garçom,2200.00,2019-10-12,ativo
+24,Bianca Costa,147.258.369-88,Gerente,5500.00,2018-09-15,ativo
+25,Gustavo Martins,258.369.147-99,Cozinheiro,3500.00,2020-06-22,ativo
+26,Amanda Alves,,Garçonete,2200.00,2021-08-17,ativo
+27,Leonardo Rocha,147.258.369-00,Auxiliar de Limpeza,1500.00,2022-05-10,ativo
+28,Priscila Santos,258.369.147-11,Sous Chef,4200.00,2019-11-28,ativo
+29,Vinicius Dias,369.147.258-22,Garçom,2200.00,2020-10-14,inativo
+30,Renata Lima,147.258.369-33,Caixa,2500.00,2021-12-20,ativo

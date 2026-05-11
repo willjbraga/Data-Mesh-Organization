@@ -1,0 +1,321 @@
+id_fluxo,data_movimento,tipo_movimento,categoria,valor,saldo_anterior,saldo_atual,descricao,id_referencia,tipo_referencia
+1,2023-01-01,entrada,saldo_inicial,50000.00,0.00,50000.00,Saldo inicial do período,NULL,NULL
+2,2023-01-02,entrada,venda,145.50,50000.00,50145.50,Venda Balcão - Mesa 01,1,conta_receber
+3,2023-01-02,entrada,venda,289.00,50145.50,50434.50,Venda Balcão - Mesa 03,2,conta_receber
+4,2023-01-02,entrada,venda,78.50,50434.50,50513.00,Venda Delivery - Pedido 001,3,conta_receber
+5,2023-01-03,entrada,venda,456.80,50513.00,50969.80,Venda Balcão - Mesa 05,4,conta_receber
+6,2023-01-03,entrada,venda,198.00,50969.80,51167.80,Venda Balcão - Mesa 02,5,conta_receber
+7,2023-01-03,entrada,venda,125.00,51167.80,51292.80,Venda Delivery - Pedido 002,6,conta_receber
+8,2023-01-04,entrada,venda,334.50,51292.80,51627.30,Venda Balcão - Mesa 07,7,conta_receber
+9,2023-01-04,entrada,venda,267.90,51627.30,51895.20,Venda Balcão - Mesa 04,8,conta_receber
+10,2023-01-04,entrada,venda,89.00,51895.20,51984.20,Venda Delivery - Pedido 003,9,conta_receber
+11,2023-01-05,saida,compra_insumo,225.00,51984.20,51759.20,Compra insumos - Arroz e Feijão,1,compra_insumo
+12,2023-01-05,saida,compra_insumo,204.00,51759.20,51555.20,Compra insumos - Feijão preto,2,compra_insumo
+13,2023-01-05,saida,compra_mercadoria,650.00,51555.20,50905.20,Compra mercadorias - Refrigerantes,1,compra_mercadoria
+14,2023-01-05,saida,compra_mercadoria,464.00,50905.20,50441.20,Compra mercadorias - Refrigerantes,2,compra_mercadoria
+15,2023-01-05,entrada,venda,512.00,50441.20,50953.20,Venda Balcão - Mesa 06,10,conta_receber
+16,2023-01-05,entrada,venda,178.50,50953.20,51131.70,Venda Balcão - Mesa 08,11,conta_receber
+17,2023-01-05,entrada,venda,156.00,51131.70,51287.70,Venda Delivery - Pedido 004,12,conta_receber
+18,2023-01-06,entrada,venda,423.00,51287.70,51710.70,Venda Balcão - Mesa 10,13,conta_receber
+19,2023-01-06,entrada,venda,298.50,51710.70,52009.20,Venda Balcão - Mesa 09,14,conta_receber
+20,2023-01-06,entrada,venda,95.00,52009.20,52104.20,Venda Delivery - Pedido 005,15,conta_receber
+21,2023-01-07,entrada,venda,2850.00,52104.20,54954.20,Venda Evento - Aniversário,16,conta_receber
+22,2023-01-07,entrada,venda,387.00,54954.20,55341.20,Venda Balcão - Mesa 12,17,conta_receber
+23,2023-01-07,entrada,venda,112.50,55341.20,55453.70,Venda Delivery - Pedido 006,18,conta_receber
+24,2023-01-08,saida,compra_insumo,1147.50,55453.70,54306.20,Compra insumos - Carne Picanha,3,compra_insumo
+25,2023-01-08,saida,compra_insumo,500.00,54306.20,53806.20,Compra insumos - Frango,4,compra_insumo
+26,2023-01-08,entrada,venda,245.00,53806.20,54051.20,Venda Balcão - Mesa 11,19,conta_receber
+27,2023-01-08,entrada,venda,567.80,54051.20,54619.00,Venda Balcão - Mesa 14,20,conta_receber
+28,2023-01-08,entrada,venda,134.00,54619.00,54753.00,Venda Delivery - Pedido 007,21,conta_receber
+29,2023-01-09,entrada,venda,412.50,54753.00,55165.50,Venda Balcão - Mesa 13,22,conta_receber
+30,2023-01-09,entrada,venda,189.00,55165.50,55354.50,Venda Balcão - Mesa 15,23,conta_receber
+31,2023-01-09,entrada,venda,98.50,55354.50,55453.00,Venda Delivery - Pedido 008,24,conta_receber
+32,2023-01-10,saida,compra_insumo,420.00,55453.00,55033.00,Compra insumos - Leite,5,compra_insumo
+33,2023-01-10,saida,compra_insumo,480.00,55033.00,54553.00,Compra insumos - Queijo mussarela,6,compra_insumo
+34,2023-01-10,saida,despesa,8500.00,54553.00,46053.00,Aluguel Janeiro 2023,1,gasto_empresa
+35,2023-01-10,entrada,venda,356.00,46053.00,46409.00,Venda Balcão - Mesa 16,25,conta_receber
+36,2023-01-10,entrada,venda,478.90,46409.00,46887.90,Venda Balcão - Mesa 18,26,conta_receber
+37,2023-01-10,entrada,venda,145.00,46887.90,47032.90,Venda Delivery - Pedido 009,27,conta_receber
+38,2023-01-11,entrada,venda,234.50,47032.90,47267.40,Venda Balcão - Mesa 17,28,conta_receber
+39,2023-01-11,entrada,venda,523.00,47267.40,47790.40,Venda Balcão - Mesa 20,29,conta_receber
+40,2023-01-11,entrada,venda,167.50,47790.40,47957.90,Venda Delivery - Pedido 010,30,conta_receber
+41,2023-01-12,saida,compra_insumo,110.00,47957.90,47847.90,Compra insumos - Tomate,7,compra_insumo
+42,2023-01-12,saida,compra_insumo,75.00,47847.90,47772.90,Compra insumos - Alface,8,compra_insumo
+43,2023-01-12,saida,compra_mercadoria,510.00,47772.90,47262.90,Compra mercadorias - Suco laranja,3,compra_mercadoria
+44,2023-01-12,entrada,venda,389.00,47262.90,47651.90,Venda Balcão - Mesa 19,31,conta_receber
+45,2023-01-12,entrada,venda,276.50,47651.90,47928.40,Venda Balcão - Mesa 21,32,conta_receber
+46,2023-01-12,entrada,venda,123.00,47928.40,48051.40,Venda Delivery - Pedido 011,33,conta_receber
+47,2023-01-13,entrada,venda,445.80,48051.40,48497.20,Venda Balcão - Mesa 22,34,conta_receber
+48,2023-01-13,entrada,venda,198.00,48497.20,48695.20,Venda Balcão - Mesa 24,35,conta_receber
+49,2023-01-13,entrada,venda,189.50,48695.20,48884.70,Venda Delivery - Pedido 012,36,conta_receber
+50,2023-01-14,entrada,venda,5600.00,48884.70,54484.70,Venda Evento - Casamento,37,conta_receber
+51,2023-01-14,entrada,venda,512.00,54484.70,54996.70,Venda Balcão - Mesa 23,38,conta_receber
+52,2023-01-14,entrada,venda,156.00,54996.70,55152.70,Venda Delivery - Pedido 013,39,conta_receber
+53,2023-01-15,saida,compra_insumo,160.00,55152.70,54992.70,Compra insumos - Pão francês,9,compra_insumo
+54,2023-01-15,saida,compra_mercadoria,480.00,54992.70,54512.70,Compra mercadorias - Suco uva,4,compra_mercadoria
+55,2023-01-15,saida,compra_mercadoria,402.50,54512.70,54110.20,Compra mercadorias - Suco maracujá,5,compra_mercadoria
+56,2023-01-15,saida,despesa,1850.00,54110.20,52260.20,Energia Elétrica Janeiro,2,gasto_empresa
+57,2023-01-15,saida,despesa,450.00,52260.20,51810.20,Água Janeiro,3,gasto_empresa
+58,2023-01-15,entrada,venda,367.50,51810.20,52177.70,Venda Balcão - Mesa 25,40,conta_receber
+59,2023-01-15,entrada,venda,289.00,52177.70,52466.70,Venda Balcão - Mesa 26,41,conta_receber
+60,2023-01-15,entrada,venda,134.50,52466.70,52601.20,Venda Delivery - Pedido 014,42,conta_receber
+61,2023-01-16,entrada,venda,478.00,52601.20,53079.20,Venda Balcão - Mesa 28,43,conta_receber
+62,2023-01-16,entrada,venda,234.50,53079.20,53313.70,Venda Balcão - Mesa 27,44,conta_receber
+63,2023-01-16,entrada,venda,178.00,53313.70,53491.70,Venda Delivery - Pedido 015,45,conta_receber
+64,2023-01-17,entrada,venda,556.80,53491.70,54048.50,Venda Balcão - Mesa 30,46,conta_receber
+65,2023-01-17,entrada,venda,312.00,54048.50,54360.50,Venda Balcão - Mesa 29,47,conta_receber
+66,2023-01-17,entrada,venda,145.50,54360.50,54506.00,Venda Delivery - Pedido 016,48,conta_receber
+67,2023-01-18,saida,compra_insumo,15.00,54506.00,54491.00,Compra insumos - Sal refinado,10,compra_insumo
+68,2023-01-18,saida,compra_insumo,125.00,54491.00,54366.00,Compra insumos - Pimenta,11,compra_insumo
+69,2023-01-18,saida,compra_mercadoria,760.00,54366.00,53606.00,Compra mercadorias - Cerveja Heineken,6,compra_mercadoria
+70,2023-01-18,saida,compra_mercadoria,630.00,53606.00,52976.00,Compra mercadorias - Cerveja Stella,7,compra_mercadoria
+71,2023-01-18,entrada,venda,423.50,52976.00,53399.50,Venda Balcão - Mesa 31,49,conta_receber
+72,2023-01-18,entrada,venda,267.00,53399.50,53666.50,Venda Balcão - Mesa 32,50,conta_receber
+73,2023-01-18,entrada,venda,198.00,53666.50,53864.50,Venda Delivery - Pedido 017,51,conta_receber
+74,2023-01-19,entrada,venda,489.00,53864.50,54353.50,Venda Balcão - Mesa 34,52,conta_receber
+75,2023-01-19,entrada,venda,345.50,54353.50,54699.00,Venda Balcão - Mesa 33,53,conta_receber
+76,2023-01-19,entrada,venda,167.50,54699.00,54866.50,Venda Delivery - Pedido 018,54,conta_receber
+77,2023-01-20,saida,compra_insumo,450.00,54866.50,54416.50,Compra insumos - Carne suína Lombo,12,compra_insumo
+78,2023-01-20,saida,compra_mercadoria,840.00,54416.50,53576.50,Compra mercadorias - Azeite extra virgem,8,compra_mercadoria
+79,2023-01-20,saida,compra_mercadoria,440.00,53576.50,53136.50,Compra mercadorias - Vinagre balsâmico,9,compra_mercadoria
+80,2023-01-20,saida,despesa,380.00,53136.50,52756.50,Internet e Telefonia Janeiro,4,gasto_empresa
+81,2023-01-20,entrada,venda,534.00,52756.50,53290.50,Venda Balcão - Mesa 35,55,conta_receber
+82,2023-01-20,entrada,venda,298.50,53290.50,53589.00,Venda Balcão - Mesa 36,56,conta_receber
+83,2023-01-20,entrada,venda,189.00,53589.00,53778.00,Venda Delivery - Pedido 019,57,conta_receber
+84,2023-01-21,entrada,venda,4200.00,53778.00,57978.00,Venda Evento - Formatura,58,conta_receber
+85,2023-01-21,entrada,venda,456.80,57978.00,58434.80,Venda Balcão - Mesa 38,59,conta_receber
+86,2023-01-21,entrada,venda,156.50,58434.80,58591.30,Venda Delivery - Pedido 020,60,conta_receber
+87,2023-01-22,saida,compra_insumo,975.00,58591.30,57616.30,Compra insumos - Salmão fresco,13,compra_insumo
+88,2023-01-22,saida,compra_mercadoria,1125.00,57616.30,56491.30,Compra mercadorias - Vinho Malbec,10,compra_mercadoria
+89,2023-01-22,saida,compra_mercadoria,840.00,56491.30,55651.30,Compra mercadorias - Vinho Chardonnay,11,compra_mercadoria
+90,2023-01-22,saida,despesa,1200.00,55651.30,54451.30,Gás Janeiro,5,gasto_empresa
+91,2023-01-22,saida,servico,1200.00,54451.30,53251.30,Serviço Gás e Energia,221,conta_pagar
+92,2023-01-22,entrada,venda,378.00,53251.30,53629.30,Venda Balcão - Mesa 37,61,conta_receber
+93,2023-01-22,entrada,venda,289.50,53629.30,53918.80,Venda Balcão - Mesa 40,62,conta_receber
+94,2023-01-22,entrada,venda,134.00,53918.80,54052.80,Venda Delivery - Pedido 021,63,conta_receber
+95,2023-01-23,entrada,venda,512.00,54052.80,54564.80,Venda Balcão - Mesa 39,64,conta_receber
+96,2023-01-23,entrada,venda,367.50,54564.80,54932.30,Venda Balcão - Mesa 41,65,conta_receber
+97,2023-01-23,entrada,venda,178.50,54932.30,55110.80,Venda Delivery - Pedido 022,66,conta_receber
+98,2023-01-24,entrada,venda,445.00,55110.80,55555.80,Venda Balcão - Mesa 42,67,conta_receber
+99,2023-01-24,entrada,venda,312.50,55555.80,55868.30,Venda Balcão - Mesa 44,68,conta_receber
+100,2023-01-24,entrada,venda,198.00,55868.30,56066.30,Venda Delivery - Pedido 023,69,conta_receber
+101,2023-01-25,saida,compra_insumo,425.00,56066.30,55641.30,Compra insumos - Massa espaguete,14,compra_insumo
+102,2023-01-25,saida,compra_mercadoria,160.00,55641.30,55481.30,Compra mercadorias - Detergente,12,compra_mercadoria
+103,2023-01-25,saida,compra_mercadoria,260.00,55481.30,55221.30,Compra mercadorias - Desinfetante,13,compra_mercadoria
+104,2023-01-25,saida,despesa,850.00,55221.30,54371.30,Manutenção fogão industrial,6,gasto_empresa
+105,2023-01-25,entrada,venda,567.80,54371.30,54939.10,Venda Balcão - Mesa 43,70,conta_receber
+106,2023-01-25,entrada,venda,389.00,54939.10,55328.10,Venda Balcão - Mesa 45,71,conta_receber
+107,2023-01-25,entrada,venda,167.50,55328.10,55495.60,Venda Delivery - Pedido 024,72,conta_receber
+108,2023-01-26,entrada,venda,478.50,55495.60,55974.10,Venda Balcão - Mesa 46,73,conta_receber
+109,2023-01-26,entrada,venda,334.00,55974.10,56308.10,Venda Balcão - Mesa 48,74,conta_receber
+110,2023-01-26,entrada,venda,189.50,56308.10,56497.60,Venda Delivery - Pedido 025,75,conta_receber
+111,2023-01-27,entrada,venda,523.00,56497.60,57020.60,Venda Balcão - Mesa 47,76,conta_receber
+112,2023-01-27,entrada,venda,412.50,57020.60,57433.10,Venda Balcão - Mesa 49,77,conta_receber
+113,2023-01-27,entrada,venda,156.00,57433.10,57589.10,Venda Delivery - Pedido 026,78,conta_receber
+114,2023-01-28,saida,compra_insumo,550.00,57589.10,57039.10,Compra insumos - Queijo parmesão,15,compra_insumo
+115,2023-01-28,saida,compra_mercadoria,720.00,57039.10,56319.10,Compra mercadorias - Álcool gel,14,compra_mercadoria
+116,2023-01-28,saida,despesa,500.00,56319.10,55819.10,Anúncio Facebook Ads,7,gasto_empresa
+117,2023-01-28,entrada,venda,3800.00,55819.10,59619.10,Venda Evento - Aniversário Corporativo,79,conta_receber
+118,2023-01-28,entrada,venda,489.00,59619.10,60108.10,Venda Balcão - Mesa 50,80,conta_receber
+119,2023-01-28,entrada,venda,178.50,60108.10,60286.60,Venda Delivery - Pedido 027,81,conta_receber
+120,2023-01-29,entrada,venda,356.50,60286.60,60643.10,Venda Balcão - Mesa 51,82,conta_receber
+121,2023-01-29,entrada,venda,298.00,60643.10,60941.10,Venda Balcão - Mesa 52,83,conta_receber
+122,2023-01-29,entrada,venda,145.00,60941.10,61086.10,Venda Delivery - Pedido 028,84,conta_receber
+123,2023-01-30,saida,despesa,1200.00,61086.10,59886.10,IPTU 1ª parcela,8,gasto_empresa
+124,2023-01-30,entrada,venda,534.80,59886.10,60420.90,Venda Balcão - Mesa 54,85,conta_receber
+125,2023-01-30,entrada,venda,367.00,60420.90,60787.90,Venda Balcão - Mesa 53,86,conta_receber
+126,2023-01-30,entrada,venda,198.50,60787.90,60986.40,Venda Delivery - Pedido 029,87,conta_receber
+127,2023-01-31,saida,despesa,650.00,60986.40,60336.40,Seguro estabelecimento,9,gasto_empresa
+128,2023-01-31,entrada,venda,445.50,60336.40,60781.90,Venda Balcão - Mesa 55,88,conta_receber
+129,2023-01-31,entrada,venda,389.00,60781.90,61170.90,Venda Balcão - Mesa 56,89,conta_receber
+130,2023-01-31,entrada,venda,167.00,61170.90,61337.90,Venda Delivery - Pedido 030,90,conta_receber
+131,2023-02-01,entrada,venda,512.50,61337.90,61850.40,Venda Balcão - Mesa 58,91,conta_receber
+132,2023-02-01,entrada,venda,334.00,61850.40,62184.40,Venda Balcão - Mesa 57,92,conta_receber
+133,2023-02-01,entrada,venda,189.00,62184.40,62373.40,Venda Delivery - Pedido 031,93,conta_receber
+134,2023-02-02,saida,compra_insumo,225.00,62373.40,62148.40,Compra insumos - Arroz tipo 1,16,compra_insumo
+135,2023-02-02,saida,compra_insumo,216.00,62148.40,61932.40,Compra insumos - Feijão carioca,17,compra_insumo
+136,2023-02-02,saida,compra_mercadoria,850.00,61932.40,61082.40,Compra mercadorias - Guardanapo papel,15,compra_mercadoria
+137,2023-02-02,saida,compra_mercadoria,960.00,61082.40,60122.40,Compra mercadorias - Papel toalha,16,compra_mercadoria
+138,2023-02-02,saida,despesa,320.00,60122.40,59802.40,Produtos limpeza,10,gasto_empresa
+139,2023-02-02,entrada,venda,478.00,59802.40,60280.40,Venda Balcão - Mesa 60,94,conta_receber
+140,2023-02-02,entrada,venda,412.50,60280.40,60692.90,Venda Balcão - Mesa 59,95,conta_receber
+141,2023-02-02,entrada,venda,156.50,60692.90,60849.40,Venda Delivery - Pedido 032,96,conta_receber
+142,2023-02-03,entrada,venda,556.80,60849.40,61406.20,Venda Balcão - Mesa 61,97,conta_receber
+143,2023-02-03,entrada,venda,389.00,61406.20,61795.20,Venda Balcão - Mesa 62,98,conta_receber
+144,2023-02-03,entrada,venda,178.00,61795.20,61973.20,Venda Delivery - Pedido 033,99,conta_receber
+145,2023-02-04,entrada,venda,3200.00,61973.20,65173.20,Venda Evento - Confraternização,100,conta_receber
+146,2023-02-04,entrada,venda,489.50,65173.20,65662.70,Venda Balcão - Mesa 64,101,conta_receber
+147,2023-02-04,entrada,venda,198.00,65662.70,65860.70,Venda Delivery - Pedido 034,102,conta_receber
+148,2023-02-05,saida,compra_insumo,1260.00,65860.70,64600.70,Compra insumos - Carne Contrafilé,18,compra_insumo
+149,2023-02-05,saida,compra_insumo,525.00,64600.70,64075.70,Compra insumos - Frango Peito,19,compra_insumo
+150,2023-02-05,saida,compra_mercadoria,2250.00,64075.70,61825.70,Compra mercadorias - Copo descartável,17,compra_mercadoria
+151,2023-02-05,saida,pagamento_funcionario,3150.00,61825.70,58675.70,Pagamento Funcionário - João Silva,1,pagamento_funcionario
+152,2023-02-05,saida,pagamento_funcionario,1980.45,58675.70,56695.25,Pagamento Funcionário - Maria Oliveira,2,pagamento_funcionario
+153,2023-02-05,saida,pagamento_funcionario,5450.00,56695.25,51245.25,Pagamento Funcionário - Pedro Costa,3,pagamento_funcionario
+154,2023-02-05,saida,pagamento_funcionario,1620.00,51245.25,49625.25,Pagamento Funcionário - Ana Paula,4,pagamento_funcionario
+155,2023-02-05,saida,pagamento_funcionario,2080.00,49625.25,47545.25,Pagamento Funcionário - Carlos Eduardo,5,pagamento_funcionario
+156,2023-02-05,saida,pagamento_funcionario,2250.00,47545.25,45295.25,Pagamento Funcionário - Juliana,6,pagamento_funcionario
+157,2023-02-05,saida,pagamento_funcionario,3150.00,45295.25,42145.25,Pagamento Funcionário - Roberto,7,pagamento_funcionario
+158,2023-02-05,saida,pagamento_funcionario,1980.00,42145.25,40165.25,Pagamento Funcionário - Fernanda,8,pagamento_funcionario
+159,2023-02-05,saida,pagamento_funcionario,1350.00,40165.25,38815.25,Pagamento Funcionário - Lucas,9,pagamento_funcionario
+160,2023-02-05,saida,pagamento_funcionario,4080.00,38815.25,34735.25,Pagamento Funcionário - Patricia,10,pagamento_funcionario
+161,2023-02-05,entrada,venda,423.00,34735.25,35158.25,Venda Balcão - Mesa 63,103,conta_receber
+162,2023-02-05,entrada,venda,356.50,35158.25,35514.75,Venda Balcão - Mesa 65,104,conta_receber
+163,2023-02-05,entrada,venda,167.50,35514.75,35682.25,Venda Delivery - Pedido 035,105,conta_receber
+164,2023-02-06,entrada,venda,534.00,35682.25,36216.25,Venda Balcão - Mesa 66,106,conta_receber
+165,2023-02-06,entrada,venda,398.00,36216.25,36614.25,Venda Balcão - Mesa 68,107,conta_receber
+166,2023-02-06,entrada,venda,189.50,36614.25,36803.75,Venda Delivery - Pedido 036,108,conta_receber
+167,2023-02-07,entrada,venda,467.80,36803.75,37271.55,Venda Balcão - Mesa 67,109,conta_receber
+168,2023-02-07,entrada,venda,334.50,37271.55,37606.05,Venda Balcão - Mesa 69,110,conta_receber
+169,2023-02-07,entrada,venda,156.00,37606.05,37762.05,Venda Delivery - Pedido 037,111,conta_receber
+170,2023-02-08,saida,compra_insumo,420.00,37762.05,37342.05,Compra insumos - Leite integral,20,compra_insumo
+171,2023-02-08,saida,compra_insumo,560.00,37342.05,36782.05,Compra insumos - Manteiga,21,compra_insumo
+172,2023-02-08,saida,compra_mercadoria,2160.00,36782.05,34622.05,Compra mercadorias - Prato descartável,18,compra_mercadoria
+173,2023-02-08,entrada,venda,512.00,34622.05,35134.05,Venda Balcão - Mesa 70,112,conta_receber
+174,2023-02-08,entrada,venda,389.50,35134.05,35523.55,Venda Balcão - Mesa 71,113,conta_receber
+175,2023-02-08,entrada,venda,178.50,35523.55,35702.05,Venda Delivery - Pedido 038,114,conta_receber
+176,2023-02-09,entrada,venda,445.00,35702.05,36147.05,Venda Balcão - Mesa 73,115,conta_receber
+177,2023-02-09,entrada,venda,367.00,36147.05,36514.05,Venda Balcão - Mesa 72,116,conta_receber
+178,2023-02-09,entrada,venda,198.00,36514.05,36712.05,Venda Delivery - Pedido 039,117,conta_receber
+179,2023-02-10,saida,compra_insumo,100.00,36712.05,36612.05,Compra insumos - Cebola,22,compra_insumo
+180,2023-02-10,saida,compra_insumo,140.00,36612.05,36472.05,Compra insumos - Batata,23,compra_insumo
+181,2023-02-10,saida,compra_mercadoria,540.00,36472.05,35932.05,Compra mercadorias - Refrigerante Fanta,19,compra_mercadoria
+182,2023-02-10,saida,compra_mercadoria,360.00,35932.05,35572.05,Compra mercadorias - Água mineral,20,compra_mercadoria
+183,2023-02-10,saida,despesa,8500.00,35572.05,27072.05,Aluguel Fevereiro 2023,11,gasto_empresa
+184,2023-02-10,entrada,venda,578.50,27072.05,27650.55,Venda Balcão - Mesa 74,118,conta_receber
+185,2023-02-10,entrada,venda,412.00,27650.55,28062.55,Venda Balcão - Mesa 75,119,conta_receber
+186,2023-02-10,entrada,venda,167.50,28062.55,28230.05,Venda Delivery - Pedido 040,120,conta_receber
+187,2023-02-11,entrada,venda,4800.00,28230.05,33030.05,Venda Evento - Bodas de Prata,121,conta_receber
+188,2023-02-11,entrada,venda,489.00,33030.05,33519.05,Venda Balcão - Mesa 76,122,conta_receber
+189,2023-02-11,entrada,venda,189.50,33519.05,33708.55,Venda Delivery - Pedido 041,123,conta_receber
+190,2023-02-12,saida,compra_insumo,160.00,33708.55,33548.55,Compra insumos - Pão francês,24,compra_insumo
+191,2023-02-12,saida,compra_mercadoria,472.50,33548.55,33076.05,Compra mercadorias - Suco abacaxi,21,compra_mercadoria
+192,2023-02-12,entrada,venda,523.50,33076.05,33599.55,Venda Balcão - Mesa 78,124,conta_receber
+193,2023-02-12,entrada,venda,356.00,33599.55,33955.55,Venda Balcão - Mesa 77,125,conta_receber
+194,2023-02-12,entrada,venda,156.50,33955.55,34112.05,Venda Delivery - Pedido 042,126,conta_receber
+195,2023-02-13,entrada,venda,467.00,34112.05,34579.05,Venda Balcão - Mesa 79,127,conta_receber
+196,2023-02-13,entrada,venda,398.50,34579.05,34977.55,Venda Balcão - Mesa 80,128,conta_receber
+197,2023-02-13,entrada,venda,178.00,34977.55,35155.55,Venda Delivery - Pedido 043,129,conta_receber
+198,2023-02-14,entrada,venda,534.80,35155.55,35690.35,Venda Balcão - Mesa 82,130,conta_receber
+199,2023-02-14,entrada,venda,423.00,35690.35,36113.35,Venda Balcão - Mesa 81,131,conta_receber
+200,2023-02-14,entrada,venda,198.50,36113.35,36311.85,Venda Delivery - Pedido 044,132,conta_receber
+201,2023-02-15,saida,compra_insumo,96.00,36311.85,36215.85,Compra insumos - Açúcar cristal,25,compra_insumo
+202,2023-02-15,saida,compra_insumo,330.00,36215.85,35885.85,Compra insumos - Café em pó,26,compra_insumo
+203,2023-02-15,saida,compra_mercadoria,630.00,35885.85,35255.85,Compra mercadorias - Cerveja Budweiser,22,compra_mercadoria
+204,2023-02-15,saida,compra_mercadoria,576.00,35255.85,34679.85,Compra mercadorias - Cerveja Corona,23,compra_mercadoria
+205,2023-02-15,saida,despesa,1920.00,34679.85,32759.85,Energia Elétrica Fevereiro,12,gasto_empresa
+206,2023-02-15,saida,despesa,480.00,32759.85,32279.85,Água Fevereiro,13,gasto_empresa
+207,2023-02-15,entrada,venda,489.50,32279.85,32769.35,Venda Balcão - Mesa 83,133,conta_receber
+208,2023-02-15,entrada,venda,367.00,32769.35,33136.35,Venda Balcão - Mesa 84,134,conta_receber
+209,2023-02-15,entrada,venda,167.50,33136.35,33303.85,Venda Delivery - Pedido 045,135,conta_receber
+210,2023-02-16,entrada,venda,556.00,33303.85,33859.85,Venda Balcão - Mesa 86,136,conta_receber
+211,2023-02-16,entrada,venda,412.50,33859.85,34272.35,Venda Balcão - Mesa 85,137,conta_receber
+212,2023-02-16,entrada,venda,189.00,34272.35,34461.35,Venda Delivery - Pedido 046,138,conta_receber
+213,2023-02-17,entrada,venda,478.00,34461.35,34939.35,Venda Balcão - Mesa 87,139,conta_receber
+214,2023-02-17,entrada,venda,389.50,34939.35,35328.85,Venda Balcão - Mesa 88,140,conta_receber
+215,2023-02-17,entrada,venda,156.50,35328.85,35485.35,Venda Delivery - Pedido 047,141,conta_receber
+216,2023-02-18,saida,compra_insumo,462.50,35485.35,35022.85,Compra insumos - Linguiça toscana,27,compra_insumo
+217,2023-02-18,saida,compra_mercadoria,875.00,35022.85,34147.85,Compra mercadorias - Azeite português,24,compra_mercadoria
+218,2023-02-18,entrada,venda,2600.00,34147.85,36747.85,Venda Evento - Chá de Bebê,142,conta_receber
+219,2023-02-18,entrada,venda,512.50,36747.85,37260.35,Venda Balcão - Mesa 90,143,conta_receber
+220,2023-02-18,entrada,venda,178.50,37260.35,37438.85,Venda Delivery - Pedido 048,144,conta_receber
+221,2023-02-19,entrada,venda,445.00,37438.85,37883.85,Venda Balcão - Mesa 89,145,conta_receber
+222,2023-02-19,entrada,venda,367.50,37883.85,38251.35,Venda Balcão - Mesa 91,146,conta_receber
+223,2023-02-19,entrada,venda,198.00,38251.35,38449.35,Venda Delivery - Pedido 049,147,conta_receber
+224,2023-02-20,saida,compra_insumo,960.00,38449.35,37489.35,Compra insumos - Camarão,28,compra_insumo
+225,2023-02-20,saida,compra_mercadoria,1056.00,37489.35,36433.35,Compra mercadorias - Vinho Cabernet,25,compra_mercadoria
+226,2023-02-20,saida,compra_mercadoria,684.00,36433.35,35749.35,Compra mercadorias - Vinho rosé,26,compra_mercadoria
+227,2023-02-20,saida,despesa,380.00,35749.35,35369.35,Internet e Telefonia Fevereiro,14,gasto_empresa
+228,2023-02-20,entrada,venda,534.00,35369.35,35903.35,Venda Balcão - Mesa 92,148,conta_receber
+229,2023-02-20,entrada,venda,423.50,35903.35,36326.85,Venda Balcão - Mesa 93,149,conta_receber
+230,2023-02-20,entrada,venda,167.50,36326.85,36494.35,Venda Delivery - Pedido 050,150,conta_receber
+231,2023-02-21,entrada,venda,489.00,36494.35,36983.35,Venda Balcão - Mesa 95,151,conta_receber
+232,2023-02-21,entrada,venda,398.00,36983.35,37381.35,Venda Balcão - Mesa 94,152,conta_receber
+233,2023-02-21,entrada,venda,189.50,37381.35,37570.85,Venda Delivery - Pedido 051,153,conta_receber
+234,2023-02-22,saida,compra_insumo,360.00,37570.85,37210.85,Compra insumos - Massa penne,29,compra_insumo
+235,2023-02-22,saida,compra_mercadoria,630.00,37210.85,36580.85,Compra mercadorias - Sabão em pó,27,compra_mercadoria
+236,2023-02-22,saida,despesa,1150.00,36580.85,35430.85,Gás Fevereiro,15,gasto_empresa
+237,2023-02-22,saida,servico,1150.00,35430.85,34280.85,Serviço Gás e Energia,222,conta_pagar
+238,2023-02-22,entrada,venda,567.80,34280.85,34848.65,Venda Balcão - Mesa 96,154,conta_receber
+239,2023-02-22,entrada,venda,412.00,34848.65,35260.65,Venda Balcão - Mesa 97,155,conta_receber
+240,2023-02-22,entrada,venda,156.00,35260.65,35416.65,Venda Delivery - Pedido 052,156,conta_receber
+241,2023-02-23,entrada,venda,478.50,35416.65,35895.15,Venda Balcão - Mesa 98,157,conta_receber
+242,2023-02-23,entrada,venda,389.00,35895.15,36284.15,Venda Balcão - Mesa 99,158,conta_receber
+243,2023-02-23,entrada,venda,178.50,36284.15,36462.65,Venda Delivery - Pedido 053,159,conta_receber
+244,2023-02-24,entrada,venda,523.00,36462.65,36985.65,Venda Balcão - Mesa 100,160,conta_receber
+245,2023-02-24,entrada,venda,367.50,36985.65,37353.15,Venda Balcão - Mesa 101,161,conta_receber
+246,2023-02-24,entrada,venda,198.00,37353.15,37551.15,Venda Delivery - Pedido 054,162,conta_receber
+247,2023-02-25,saida,compra_insumo,384.00,37551.15,37167.15,Compra insumos - Queijo gorgonzola,30,compra_insumo
+248,2023-02-25,saida,compra_mercadoria,202.50,37167.15,36964.65,Compra mercadorias - Água sanitária,28,compra_mercadoria
+249,2023-02-25,saida,despesa,1200.00,36964.65,35764.65,Serviços contábeis Fevereiro,16,gasto_empresa
+250,2023-02-25,entrada,venda,3500.00,35764.65,39264.65,Venda Evento - Reunião Empresarial,163,conta_receber
+251,2023-02-25,entrada,venda,489.50,39264.65,39754.15,Venda Balcão - Mesa 103,164,conta_receber
+252,2023-02-25,entrada,venda,167.50,39754.15,39921.65,Venda Delivery - Pedido 055,165,conta_receber
+253,2023-02-26,entrada,venda,556.00,39921.65,40477.65,Venda Balcão - Mesa 102,166,conta_receber
+254,2023-02-26,entrada,venda,423.00,40477.65,40900.65,Venda Balcão - Mesa 104,167,conta_receber
+255,2023-02-26,entrada,venda,189.50,40900.65,41090.15,Venda Delivery - Pedido 056,168,conta_receber
+256,2023-02-27,entrada,venda,467.00,41090.15,41557.15,Venda Balcão - Mesa 105,169,conta_receber
+257,2023-02-27,entrada,venda,398.50,41557.15,41955.65,Venda Balcão - Mesa 106,170,conta_receber
+258,2023-02-27,entrada,venda,156.50,41955.65,42112.15,Venda Delivery - Pedido 057,171,conta_receber
+259,2023-02-28,saida,compra_mercadoria,160.00,42112.15,41952.15,Compra mercadorias - Sacola plástica,29,compra_mercadoria
+260,2023-02-28,saida,despesa,450.00,41952.15,41502.15,Google Ads,17,gasto_empresa
+261,2023-02-28,entrada,venda,534.80,41502.15,42036.95,Venda Balcão - Mesa 108,172,conta_receber
+262,2023-02-28,entrada,venda,412.50,42036.95,42449.45,Venda Balcão - Mesa 107,173,conta_receber
+263,2023-02-28,entrada,venda,178.00,42449.45,42627.45,Venda Delivery - Pedido 058,174,conta_receber
+264,2023-03-01,entrada,venda,489.00,42627.45,43116.45,Venda Balcão - Mesa 109,175,conta_receber
+265,2023-03-01,entrada,venda,367.00,43116.45,43483.45,Venda Balcão - Mesa 110,176,conta_receber
+266,2023-03-01,entrada,venda,198.50,43483.45,43681.95,Venda Delivery - Pedido 059,177,conta_receber
+267,2023-03-02,saida,despesa,280.00,43681.95,43401.95,Frete entrega,18,gasto_empresa
+268,2023-03-02,entrada,venda,556.50,43401.95,43958.45,Venda Balcão - Mesa 111,178,conta_receber
+269,2023-03-02,entrada,venda,423.00,43958.45,44381.45,Venda Balcão - Mesa 112,179,conta_receber
+270,2023-03-02,entrada,venda,167.50,44381.45,44548.95,Venda Delivery - Pedido 060,180,conta_receber
+271,2023-03-03,saida,compra_insumo,270.00,44548.95,44278.95,Compra insumos - Arroz tipo 1,31,compra_insumo
+272,2023-03-03,saida,compra_insumo,238.00,44278.95,44040.95,Compra insumos - Feijão preto,32,compra_insumo
+273,2023-03-03,saida,compra_mercadoria,216.00,44040.95,43824.95,Compra mercadorias - Embalagem marmitex,30,compra_mercadoria
+274,2023-03-05,saida,pagamento_funcionario,3150.00,43824.95,40674.95,Pagamento Funcionário - João Silva,11,pagamento_funcionario
+275,2023-03-05,saida,pagamento_funcionario,1980.45,40674.95,38694.50,Pagamento Funcionário - Maria Oliveira,12,pagamento_funcionario
+276,2023-03-05,saida,pagamento_funcionario,4950.00,38694.50,33744.50,Pagamento Funcionário - Pedro Costa,13,pagamento_funcionario
+277,2023-03-05,saida,pagamento_funcionario,1620.00,33744.50,32124.50,Pagamento Funcionário - Ana Paula,14,pagamento_funcionario
+278,2023-03-05,saida,pagamento_funcionario,1980.00,32124.50,30144.50,Pagamento Funcionário - Carlos Eduardo,15,pagamento_funcionario
+279,2023-03-05,saida,pagamento_funcionario,2250.00,30144.50,27894.50,Pagamento Funcionário - Juliana,16,pagamento_funcionario
+280,2023-03-05,saida,pagamento_funcionario,3150.00,27894.50,24744.50,Pagamento Funcionário - Roberto,17,pagamento_funcionario
+281,2023-03-05,saida,pagamento_funcionario,1980.00,24744.50,22764.50,Pagamento Funcionário - Fernanda,18,pagamento_funcionario
+282,2023-03-05,saida,pagamento_funcionario,1350.00,22764.50,21414.50,Pagamento Funcionário - Lucas,19,pagamento_funcionario
+283,2023-03-05,saida,pagamento_funcionario,3780.00,21414.50,17634.50,Pagamento Funcionário - Patricia,20,pagamento_funcionario
+284,2023-03-05,saida,pagamento_funcionario,1980.00,17634.50,15654.50,Pagamento Funcionário - Ricardo,21,pagamento_funcionario
+285,2023-03-05,saida,pagamento_funcionario,4720.00,15654.50,10934.50,Pagamento Funcionário - Camila,22,pagamento_funcionario
+286,2023-03-05,saida,pagamento_funcionario,3150.00,10934.50,7784.50,Pagamento Funcionário - Bruno,23,pagamento_funcionario
+287,2023-03-05,saida,pagamento_funcionario,1980.00,7784.50,5804.50,Pagamento Funcionário - Tatiana,24,pagamento_funcionario
+288,2023-03-05,saida,pagamento_funcionario,1620.00,5804.50,4184.50,Pagamento Funcionário - Marcos,25,pagamento_funcionario
+289,2023-03-05,saida,despesa,180.00,4184.50,4004.50,Telefone fixo,19,gasto_empresa
+290,2023-03-06,saida,compra_insumo,1064.00,4004.50,2940.50,Compra insumos - Carne Alcatra,33,compra_insumo
+291,2023-03-06,saida,compra_insumo,495.00,2940.50,2445.50,Compra insumos - Frango Coxa,34,compra_insumo
+292,2023-03-08,saida,despesa,220.00,2445.50,2225.50,Material escritório,20,gasto_empresa
+293,2023-03-09,saida,compra_insumo,504.00,2225.50,1721.50,Compra insumos - Leite integral,35,compra_insumo
+294,2023-03-09,saida,compra_insumo,175.00,1721.50,1546.50,Compra insumos - Iogurte natural,36,compra_insumo
+295,2023-03-10,saida,despesa,8500.00,1546.50,-6953.50,Aluguel Março 2023,21,gasto_empresa
+296,2023-03-12,saida,compra_insumo,90.00,-6953.50,-7043.50,Compra insumos - Cenoura,37,compra_insumo
+297,2023-03-12,saida,compra_insumo,105.00,-7043.50,-7148.50,Compra insumos - Pimentão,38,compra_insumo
+298,2023-03-15,saida,compra_insumo,176.00,-7148.50,-7324.50,Compra insumos - Pão francês,39,compra_insumo
+299,2023-03-15,saida,despesa,1780.00,-7324.50,-9104.50,Energia Elétrica Março,22,gasto_empresa
+300,2023-03-15,saida,despesa,420.00,-9104.50,-9524.50,Água Março,23,gasto_empresa
+301,2023-03-18,saida,compra_insumo,105.00,-9524.50,-9629.50,Compra insumos - Orégano,40,compra_insumo
+302,2023-03-18,saida,compra_insumo,140.00,-9629.50,-9769.50,Compra insumos - Alho em pó,41,compra_insumo
+303,2023-03-20,saida,compra_insumo,432.00,-9769.50,-10201.50,Compra insumos - Bacon,42,compra_insumo
+304,2023-03-20,saida,despesa,380.00,-10201.50,-10581.50,Internet e Telefonia Março,24,gasto_empresa
+305,2023-03-22,saida,compra_insumo,550.00,-10581.50,-11131.50,Compra insumos - Tilápia,43,compra_insumo
+306,2023-03-22,saida,despesa,1250.00,-11131.50,-12381.50,Gás Março,25,gasto_empresa
+307,2023-03-22,saida,servico,1250.00,-12381.50,-13631.50,Serviço Gás e Energia,223,conta_pagar
+308,2023-03-25,saida,compra_insumo,360.00,-13631.50,-13991.50,Compra insumos - Massa lasanha,44,compra_insumo
+309,2023-03-25,saida,despesa,1200.00,-13991.50,-15191.50,Manutenção geladeira,26,gasto_empresa
+310,2023-03-28,saida,compra_insumo,504.00,-15191.50,-15695.50,Compra insumos - Queijo provolone,45,compra_insumo
+311,2023-03-28,saida,despesa,850.00,-15695.50,-16545.50,Uniformes novos,27,gasto_empresa
+312,2023-03-30,saida,despesa,1500.00,-16545.50,-18045.50,Treinamento equipe,28,gasto_empresa
+313,2023-03-31,saldo,ajuste_saldo,18045.50,-18045.50,0.00,Ajuste de saldo para fechamento do mês,NULL,NULL
+314,2023-04-01,entrada,saldo_inicial,45000.00,0.00,45000.00,Saldo inicial Abril,NULL,NULL
+315,2023-04-02,saida,despesa,400.00,45000.00,44600.00,Instagram Ads,29,gasto_empresa
+316,2023-04-04,saida,compra_insumo,247.50,44600.00,44352.50,Compra insumos - Arroz tipo 1,46,compra_insumo
+317,2023-04-04,saida,compra_insumo,230.40,44352.50,44122.10,Compra insumos - Feijão carioca,47,compra_insumo
+318,2023-04-05,saida,despesa,320.00,44122.10,43802.10,Frete entrega,30,gasto_empresa
+319,2023-04-05,saida,pagamento_funcionario,3150.00,43802.10,40652.10,Pagamento Funcionário - João Silva,41,pagamento_funcionario
+320,2023-04-05,saida,pagamento_funcionario,1980.45,40652.10,38671.65,Pagamento Funcionário - Maria Oliveira,42,pagamento_funcionario
