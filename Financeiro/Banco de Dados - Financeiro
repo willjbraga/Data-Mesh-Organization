@@ -1,0 +1,107 @@
+Modelo de Banco de Dados - Financeiro
+Tabelas e Estrutura
+1. Funcionarios
+•	PK: id_funcionario (INT)
+•	nome (VARCHAR)
+•	cpf (VARCHAR)
+•	cargo (VARCHAR)
+•	salario_base (DECIMAL)
+•	data_admissao (DATE)
+•	status (ENUM: 'ativo', 'inativo')
+________________________________________
+2. Fornecedores
+•	PK: id_fornecedor (INT)
+•	nome_empresa (VARCHAR)
+•	cnpj (VARCHAR)
+•	tipo (ENUM: 'insumos', 'mercadorias', 'servicos')
+•	telefone (VARCHAR)
+•	email (VARCHAR)
+•	endereco (TEXT)
+________________________________________
+3. Categorias_Despesa
+•	PK: id_categoria (INT)
+•	nome (VARCHAR)
+•	tipo (ENUM: 'fixa', 'variavel')
+•	descricao (TEXT)
+________________________________________
+4. Pagamento_Funcionarios
+•	PK: id_pagamento (INT)
+•	FK: id_funcionario (INT)
+•	mes_referencia (DATE)
+•	salario_bruto (DECIMAL)
+•	descontos (DECIMAL)
+•	bonus (DECIMAL)
+•	salario_liquido (DECIMAL)
+•	data_pagamento (DATE)
+•	status (ENUM: 'pendente', 'pago', 'atrasado')
+________________________________________
+5. Compras_Insumos
+•	PK: id_compra_insumo (INT)
+•	FK: id_fornecedor (INT)
+•	data_compra (DATE)
+•	descricao (TEXT)
+•	quantidade (DECIMAL)
+•	unidade_medida (VARCHAR)
+•	valor_unitario (DECIMAL)
+•	valor_total (DECIMAL)
+•	data_vencimento (DATE)
+•	status_pagamento (ENUM: 'pendente', 'pago', 'atrasado')
+________________________________________
+6. Compras_Mercadorias
+•	PK: id_compra_mercadoria (INT)
+•	FK: id_fornecedor (INT)
+•	data_compra (DATE)
+•	descricao (TEXT)
+•	quantidade (INT)
+•	valor_unitario (DECIMAL)
+•	valor_total (DECIMAL)
+•	data_vencimento (DATE)
+•	status_pagamento (ENUM: 'pendente', 'pago', 'atrasado')
+________________________________________
+7. Gastos_Empresa
+•	PK: id_gasto (INT)
+•	FK: id_categoria (INT)
+•	descricao (VARCHAR)
+•	valor (DECIMAL)
+•	data_gasto (DATE)
+•	tipo_pagamento (ENUM: 'dinheiro', 'cartao', 'pix', 'boleto')
+•	comprovante (VARCHAR)
+•	observacoes (TEXT)
+________________________________________
+8. Contas_Pagar
+•	PK: id_conta_pagar (INT)
+•	FK: id_fornecedor (INT) - NULLABLE
+•	FK: id_categoria (INT)
+•	descricao (VARCHAR)
+•	valor (DECIMAL)
+•	data_emissao (DATE)
+•	data_vencimento (DATE)
+•	data_pagamento (DATE) - NULLABLE
+•	status (ENUM: 'pendente', 'pago', 'atrasado', 'cancelado')
+•	tipo_origem (ENUM: 'insumo', 'mercadoria', 'gasto', 'outro')
+•	id_origem (INT) - NULLABLE
+________________________________________
+9. Contas_Receber
+•	PK: id_conta_receber (INT)
+•	descricao (VARCHAR)
+•	valor (DECIMAL)
+•	data_emissao (DATE)
+•	data_vencimento (DATE)
+•	data_recebimento (DATE) - NULLABLE
+•	status (ENUM: 'pendente', 'recebido', 'atrasado', 'cancelado')
+•	tipo_recebimento (ENUM: 'venda', 'servico', 'outro')
+•	cliente (VARCHAR) - NULLABLE
+________________________________________
+10. Fluxo_Caixa
+•	PK: id_fluxo (INT)
+•	data (DATE)
+•	tipo (ENUM: 'entrada', 'saida')
+•	categoria (VARCHAR)
+•	valor (DECIMAL)
+•	saldo_anterior (DECIMAL)
+•	saldo_atual (DECIMAL)
+•	descricao (TEXT)
+•	id_referencia (INT) - NULLABLE
+•	tipo_referencia (VARCHAR) - NULLABLE
+
+
