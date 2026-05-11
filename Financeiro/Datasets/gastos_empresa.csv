@@ -1,0 +1,151 @@
+id_gasto,id_categoria,descricao,valor,data_gasto,tipo_pagamento,comprovante,observacoes
+1,1,Aluguel Janeiro 2023,8500.00,2023-01-10,boleto,COMP001,Pagamento em dia
+2,2,Energia Elétrica Janeiro,1850.00,2023-01-15,boleto,COMP002,Consumo alto
+3,3,Água Janeiro,450.00,2023-01-15,boleto,COMP003,NULL
+4,4,Internet e Telefonia Janeiro,380.00,2023-01-20,cartao,COMP004,Plano empresarial
+5,5,Gás Janeiro,1200.00,2023-01-22,dinheiro,COMP005,3 botijões
+6,6,Manutenção fogão industrial,850.00,2023-01-25,pix,COMP006,Reparo urgente
+7,7,Anúncio Facebook Ads,500.00,2023-01-28,cartao,COMP007,Campanha mensal
+8,8,IPTU 1ª parcela,1200.00,2023-01-30,boleto,COMP008,NULL
+9,9,Seguro estabelecimento,650.00,2023-01-31,boleto,COMP009,Renovação anual
+10,10,Produtos limpeza,320.00,2023-02-02,dinheiro,COMP010,Compra emergencial
+11,1,Aluguel Fevereiro 2023,8500.00,2023-02-10,boleto,COMP011,NULL
+12,2,Energia Elétrica Fevereiro,1920.00,2023-02-15,boleto,COMP012,Aumento tarifa
+13,3,Água Fevereiro,480.00,2023-02-15,boleto,COMP013,NULL
+14,4,Internet e Telefonia Fevereiro,380.00,2023-02-20,cartao,COMP014,NULL
+15,5,Gás Fevereiro,1150.00,2023-02-22,dinheiro,COMP015,3 botijões
+16,11,Serviços contábeis Fevereiro,1200.00,2023-02-25,pix,COMP016,Mensalidade
+17,7,Google Ads,450.00,2023-02-28,cartao,COMP017,Campanha online
+18,12,Frete entrega,280.00,2023-03-02,pix,COMP018,Delivery
+19,13,Telefone fixo,180.00,2023-03-05,boleto,COMP019,NULL
+20,14,Material escritório,220.00,2023-03-08,cartao,COMP020,Papelaria
+21,1,Aluguel Março 2023,8500.00,2023-03-10,boleto,COMP021,NULL
+22,2,Energia Elétrica Março,1780.00,2023-03-15,boleto,COMP022,NULL
+23,3,Água Março,420.00,2023-03-15,boleto,COMP023,NULL
+24,4,Internet e Telefonia Março,380.00,2023-03-20,cartao,COMP024,NULL
+25,5,Gás Março,1250.00,2023-03-22,dinheiro,COMP025,3 botijões
+26,6,Manutenção geladeira,1200.00,2023-03-25,pix,COMP026,Troca compressor
+27,15,Uniformes novos,850.00,2023-03-28,cartao,COMP027,10 uniformes
+28,16,Treinamento equipe,1500.00,2023-03-30,pix,COMP028,Curso atendimento
+29,7,Instagram Ads,400.00,2023-04-02,cartao,COMP029,NULL
+30,12,Frete entrega,320.00,2023-04-05,pix,COMP030,Delivery
+31,1,Aluguel Abril 2023,8500.00,2023-04-10,boleto,COMP031,NULL
+32,2,Energia Elétrica Abril,1650.00,2023-04-15,boleto,COMP032,Consumo reduzido
+33,3,Água Abril,390.00,2023-04-15,boleto,COMP033,NULL
+34,4,Internet e Telefonia Abril,380.00,2023-04-20,cartao,COMP034,NULL
+35,5,Gás Abril,1100.00,2023-04-22,dinheiro,COMP035,3 botijões
+36,11,Serviços contábeis Abril,1200.00,2023-04-25,pix,COMP036,NULL
+37,17,Liquidificador industrial,2800.00,2023-04-28,cartao,COMP037,Equipamento novo
+38,18,Renovação alvará,450.00,2023-04-30,boleto,COMP038,Taxa anual
+39,19,Tarifas bancárias,180.00,2023-05-02,NULL,COMP039,Débito automático
+40,7,Marketing digital,550.00,2023-05-05,cartao,COMP040,Campanha completa
+41,1,Aluguel Maio 2023,8500.00,2023-05-10,boleto,COMP041,NULL
+42,2,Energia Elétrica Maio,1820.00,2023-05-15,boleto,COMP042,NULL
+43,3,Água Maio,460.00,2023-05-15,boleto,COMP043,NULL
+44,4,Internet e Telefonia Maio,380.00,2023-05-20,cartao,COMP044,NULL
+45,5,Gás Maio,1180.00,2023-05-22,dinheiro,COMP045,3 botijões
+46,6,Manutenção ar condicionado,680.00,2023-05-25,pix,COMP046,Limpeza preventiva
+47,12,Frete entrega,350.00,2023-05-28,pix,COMP047,NULL
+48,14,Material escritório,180.00,2023-05-30,cartao,COMP048,NULL
+49,7,Panfletos impressos,320.00,2023-06-02,dinheiro,COMP049,5000 unidades
+50,15,Uniformes reposição,420.00,2023-06-05,cartao,COMP050,5 uniformes
+51,1,Aluguel Junho 2023,8500.00,2023-06-10,boleto,COMP051,NULL
+52,2,Energia Elétrica Junho,1950.00,2023-06-15,boleto,COMP052,Inverno - mais consumo
+53,3,Água Junho,440.00,2023-06-15,boleto,COMP053,NULL
+54,4,Internet e Telefonia Junho,380.00,2023-06-20,cartao,COMP054,NULL
+55,5,Gás Junho,1300.00,2023-06-22,dinheiro,COMP055,4 botijões
+56,11,Serviços contábeis Junho,1200.00,2023-06-25,pix,COMP056,NULL
+57,6,Manutenção exaustor,520.00,2023-06-28,pix,COMP057,NULL
+58,19,Tarifas bancárias,195.00,2023-06-30,NULL,COMP058,NULL
+59,7,Google Ads,480.00,2023-07-02,cartao,COMP059,NULL
+60,12,Frete entrega,380.00,2023-07-05,pix,COMP060,NULL
+61,1,Aluguel Julho 2023,8500.00,2023-07-10,boleto,COMP061,NULL
+62,2,Energia Elétrica Julho,2100.00,2023-07-15,boleto,COMP062,Pico consumo
+63,3,Água Julho,470.00,2023-07-15,boleto,COMP063,NULL
+64,4,Internet e Telefonia Julho,380.00,2023-07-20,cartao,COMP064,NULL
+65,5,Gás Julho,1350.00,2023-07-22,dinheiro,COMP065,4 botijões
+66,17,Batedeira industrial,3200.00,2023-07-25,cartao,COMP066,Equipamento novo
+67,16,Treinamento cozinha,1800.00,2023-07-28,pix,COMP067,Curso especialização
+68,7,Facebook e Instagram Ads,650.00,2023-07-30,cartao,COMP068,Campanha verão
+69,14,Material escritório,240.00,2023-08-02,cartao,COMP069,NULL
+70,15,Uniformes novos,920.00,2023-08-05,cartao,COMP070,12 uniformes
+71,1,Aluguel Agosto 2023,8500.00,2023-08-10,boleto,COMP071,NULL
+72,2,Energia Elétrica Agosto,1880.00,2023-08-15,boleto,COMP072,NULL
+73,3,Água Agosto,450.00,2023-08-15,boleto,COMP073,NULL
+74,4,Internet e Telefonia Agosto,380.00,2023-08-20,cartao,COMP074,NULL
+75,5,Gás Agosto,1220.00,2023-08-22,dinheiro,COMP075,3 botijões
+76,11,Serviços contábeis Agosto,1200.00,2023-08-25,pix,COMP076,NULL
+77,6,Manutenção freezer,980.00,2023-08-28,pix,COMP077,Troca termostato
+78,19,Tarifas bancárias,210.00,2023-08-31,NULL,COMP078,NULL
+79,7,Marketing digital,520.00,2023-09-02,cartao,COMP079,NULL
+80,12,Frete entrega,420.00,2023-09-05,pix,COMP080,NULL
+81,1,Aluguel Setembro 2023,8500.00,2023-09-10,boleto,COMP081,NULL
+82,2,Energia Elétrica Setembro,1750.00,2023-09-15,boleto,COMP082,NULL
+83,3,Água Setembro,430.00,2023-09-15,boleto,COMP083,NULL
+84,4,Internet e Telefonia Setembro,380.00,2023-09-20,cartao,COMP084,NULL
+85,5,Gás Setembro,1180.00,2023-09-22,dinheiro,COMP085,3 botijões
+86,6,Manutenção elétrica,1450.00,2023-09-25,pix,COMP086,Troca fiação
+87,15,Uniformes reposição,580.00,2023-09-28,cartao,COMP087,7 uniformes
+88,7,Google Ads,490.00,2023-09-30,cartao,COMP088,NULL
+89,14,Material escritório,200.00,2023-10-02,cartao,COMP089,NULL
+90,12,Frete entrega,390.00,2023-10-05,pix,COMP090,NULL
+91,1,Aluguel Outubro 2023,8500.00,2023-10-10,boleto,COMP091,NULL
+92,2,Energia Elétrica Outubro,1820.00,2023-10-15,boleto,COMP092,NULL
+93,3,Água Outubro,460.00,2023-10-15,boleto,COMP093,NULL
+94,4,Internet e Telefonia Outubro,380.00,2023-10-20,cartao,COMP094,NULL
+95,5,Gás Outubro,1250.00,2023-10-22,dinheiro,COMP095,3 botijões
+96,11,Serviços contábeis Outubro,1200.00,2023-10-25,pix,COMP096,NULL
+97,17,Processador alimentos,2400.00,2023-10-28,cartao,COMP097,NULL
+98,19,Tarifas bancárias,225.00,2023-10-31,NULL,COMP098,NULL
+99,7,Instagram Ads,460.00,2023-11-02,cartao,COMP099,NULL
+100,16,Treinamento atendimento,1200.00,2023-11-05,pix,COMP100,NULL
+101,1,Aluguel Novembro 2023,8500.00,2023-11-10,boleto,COMP101,NULL
+102,2,Energia Elétrica Novembro,1980.00,2023-11-15,boleto,COMP102,Aumento consumo
+103,3,Água Novembro,490.00,2023-11-15,boleto,COMP103,NULL
+104,4,Internet e Telefonia Novembro,380.00,2023-11-20,cartao,COMP104,NULL
+105,5,Gás Novembro,1320.00,2023-11-22,dinheiro,COMP105,4 botijões
+106,6,Manutenção coifa,720.00,2023-11-25,pix,COMP106,Limpeza profunda
+107,15,Uniformes novos,1050.00,2023-11-28,cartao,COMP107,15 uniformes
+108,7,Marketing digital,580.00,2023-11-30,cartao,COMP108,Campanha fim de ano
+109,12,Frete entrega,450.00,2023-12-02,pix,COMP109,NULL
+110,14,Material escritório,280.00,2023-12-05,cartao,COMP110,NULL
+111,1,Aluguel Dezembro 2023,8500.00,2023-12-10,boleto,COMP111,NULL
+112,2,Energia Elétrica Dezembro,2250.00,2023-12-15,boleto,COMP112,Pico verão
+113,3,Água Dezembro,520.00,2023-12-15,boleto,COMP113,NULL
+114,4,Internet e Telefonia Dezembro,380.00,2023-12-20,cartao,COMP114,NULL
+115,5,Gás Dezembro,1400.00,2023-12-22,dinheiro,COMP115,4 botijões
+116,11,Serviços contábeis Dezembro,1200.00,2023-12-26,pix,COMP116,NULL
+117,6,Manutenção geral,1850.00,2023-12-28,pix,COMP117,Revisão anual
+118,19,Tarifas bancárias,240.00,2023-12-29,NULL,COMP118,NULL
+119,7,Campanha Natal,1200.00,2023-12-15,cartao,COMP119,Promoção especial
+120,7,Campanha Ano Novo,950.00,2023-12-28,cartao,COMP120,Réveillon
+121,6,Manutenção cadeiras,380.00,2023-01-18,pix,COMP121,Reparo estofado
+122,6,Manutenção mesas,420.00,2023-02-12,pix,COMP122,Verniz
+123,10,Produtos limpeza,290.00,2023-03-08,dinheiro,COMP123,NULL
+124,10,Produtos limpeza,310.00,2023-04-10,dinheiro,COMP124,NULL
+125,10,Produtos limpeza,285.00,2023-05-12,dinheiro,COMP125,NULL
+126,10,Produtos limpeza,320.00,2023-06-14,dinheiro,COMP126,NULL
+127,10,Produtos limpeza,295.00,2023-07-16,dinheiro,COMP127,NULL
+128,10,Produtos limpeza,305.00,2023-08-18,dinheiro,COMP128,NULL
+129,10,Produtos limpeza,315.00,2023-09-20,dinheiro,COMP129,NULL
+130,10,Produtos limpeza,300.00,2023-10-22,dinheiro,COMP130,NULL
+131,10,Produtos limpeza,330.00,2023-11-24,dinheiro,COMP131,NULL
+132,10,Produtos limpeza,340.00,2023-12-26,dinheiro,COMP132,NULL
+133,12,Frete entrega,290.00,2023-01-08,pix,COMP133,NULL
+134,12,Frete entrega,310.00,2023-02-10,pix,COMP134,NULL
+135,12,Frete entrega,295.00,2023-03-12,pix,COMP135,NULL
+136,12,Frete entrega,340.00,2023-04-14,pix,COMP136,NULL
+137,12,Frete entrega,330.00,2023-06-16,pix,COMP137,NULL
+138,12,Frete entrega,360.00,2023-08-18,pix,COMP138,NULL
+139,12,Frete entrega,370.00,2023-10-20,pix,COMP139,NULL
+140,12,Frete entrega,410.00,2023-11-22,pix,COMP140,NULL
+141,13,Telefone móvel,220.00,2023-01-25,boleto,COMP141,Linha gerente
+142,13,Telefone móvel,220.00,2023-02-25,boleto,COMP142,NULL
+143,13,Telefone móvel,220.00,2023-04-25,boleto,COMP143,NULL
+144,13,Telefone móvel,220.00,2023-06-25,boleto,COMP144,NULL
+145,13,Telefone móvel,220.00,2023-08-25,boleto,COMP145,NULL
+146,13,Telefone móvel,220.00,2023-10-25,boleto,COMP146,NULL
+147,13,Telefone móvel,220.00,2023-12-25,boleto,COMP147,NULL
+148,18,Taxa bombeiros,280.00,2023-06-15,boleto,COMP148,Anual
+149,18,Taxa vigilância sanitária,350.00,2023-08-20,boleto,COMP149,Anual
+150,20,Depreciação equipamentos,1500.00,2023-12-31,NULL,COMP150,Lançamento contábil

@@ -1,0 +1,31 @@
+id_fornecedor,nome_empresa,cnpj,tipo,telefone,email
+1,Distribuidora Alimentos Ltda,12.345.678/0001-90,insumos,(11) 3456-7890,contato@distribuidoraalimentos.com.br
+2,Hortifruti São Paulo,98765432000191,insumos,11987654321,vendas@hortifrutsp.com
+3,Carnes Nobres EIRELI,11.222.333/0001-44,insumos,(11) 2345-6789,carnes@nobres.com.br
+4,Bebidas & Cia,44.555.666/0001-77,mercadorias,(11) 3456-7891,contato@bebidasecia.com
+5,Laticínios Bom Leite,77.888.999/0001-00,insumos,11 98765-4322,vendas@bomleite.com.br
+6,Padaria Central,12.312.312/0001-12,insumos,(11)23456789,padaria@central.com
+7,Temperos & Especiarias,   14.725.836/0001-10,insumos,(11) 3456-7892,temperos@especiarias.com.br
+8,Limpeza Total Produtos,15.975.348/0001-20,mercadorias,1134567893,limpeza@total.com
+9,Embalagens Descartáveis,35.715.975/0001-30,mercadorias,(11) 3456-7894,embalagens@descartaveis.com.br
+10,Açougue Premium,75.395.135/0001-40,insumos,11 98765-4323,acougue@premium.com.br
+11,Verduras Frescas,NULL,insumos,(11) 3456-7895,verduras@frescas.com
+12,Pescados do Mar,85.296.374/0001-50,insumos,11987654324,pescados@mar.com.br
+13,Vinhos Importados,96.385.274/0001-60,mercadorias,(11) 3456-7896,vinhos@importados.com
+14,Massas Artesanais,74.185.296/0001-70,insumos,1134567897,massas@artesanais.com.br
+15,Queijos Especiais,14785236900180,insumos,(11) 3456-7898,queijos@especiais.com
+16,Sucos Naturais,25.836.914/0001-90,mercadorias,11 98765-4325,sucos@naturais.com.br
+17,Café Gourmet,36.914.725/0001-11,insumos,(11) 3456-7899,cafe@gourmet.com
+18,Sobremesas Delícia,14.725.836/0001-22,insumos,1134567800,sobremesas@delicia.com.br
+19,Utensílios Cozinha,25.836.914/0001-33,mercadorias,(11) 3456-7801,utensilios@cozinha.com
+20,Uniformes Profissionais,36.914.725/0001-44,mercadorias,11 98765-4326,uniformes@profissionais.com.br
+21,Gás e Energia,14.725.836/0001-55,servicos,(11) 3456-7802,gas@energia.com
+22,Manutenção Equipamentos,25.836.914/0001-66,servicos,1134567803,manutencao@equipamentos.com.br
+23,Frutas Tropicais,36.914.725/0001-77,insumos,(11) 3456-7804,frutas@tropicais.com
+24,Congelados Express,14.725.836/0001-88,insumos,11 98765-4327,congelados@express.com.br
+25,Temperos Naturais,,insumos,(11) 3456-7805,temperos@naturais.com
+26,Azeites Premium,25.836.914/0001-99,mercadorias,1134567806,azeites@premium.com.br
+27,Pães Artesanais,36.914.725/0001-00,insumos,(11) 3456-7807,paes@artesanais.com
+28,Refrigerantes Distribuidora,14.725.836/0001-11,mercadorias,11 98765-4328,refrigerantes@distribuidora.com.br
+29,Cervejas Importadas,25.836.914/0001-22,mercadorias,(11) 3456-7808,cervejas@importadas.com
+30,Descartáveis Eco,36.914.725/0001-33,mercadorias,1134567809,descartaveis@eco.com.br

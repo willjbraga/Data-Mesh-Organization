@@ -1,0 +1,230 @@
+1,1,Compra insumos - Arroz e Feijão,429.00,2023-01-05,2023-02-05,2023-02-03,pago
+2,3,Compra insumos - Carnes,1647.50,2023-01-08,2023-02-08,2023-02-03,pago
+3,5,Compra insumos - Laticínios,900.00,2023-01-10,2023-02-10,2023-02-08,pago
+4,2,Compra insumos - Hortaliças,185.00,2023-01-12,2023-01-22,2023-01-20,pago
+5,6,Compra insumos - Pães,160.00,2023-01-15,2023-01-25,2023-01-24,pago
+6,7,Compra insumos - Temperos,140.00,2023-01-18,2023-02-18,2023-02-16,pago
+7,10,Compra insumos - Carne suína,450.00,2023-01-20,2023-02-20,2023-02-18,pago
+8,12,Compra insumos - Peixes,975.00,2023-01-22,2023-02-22,2023-02-20,pago
+9,14,Compra insumos - Massas,425.00,2023-01-25,2023-02-25,2023-02-23,pago
+10,15,Compra insumos - Queijos,550.00,2023-01-28,2023-02-28,2023-02-26,pago
+11,4,Compra mercadorias - Bebidas,1114.00,2023-01-05,2023-02-05,2023-02-03,pago
+12,16,Compra mercadorias - Sucos,882.50,2023-01-15,2023-02-15,2023-02-13,pago
+13,29,Compra mercadorias - Cervejas,1390.00,2023-01-18,2023-02-18,2023-02-16,pago
+14,26,Compra mercadorias - Azeites,1280.00,2023-01-20,2023-02-20,2023-02-18,pago
+15,13,Compra mercadorias - Vinhos,1965.00,2023-01-22,2023-02-22,2023-02-20,pago
+16,8,Compra mercadorias - Limpeza,1140.00,2023-01-25,2023-02-25,2023-02-23,pago
+17,9,Compra mercadorias - Descartáveis,5370.00,2023-01-28,2023-02-28,2023-02-28,pago
+18,1,Compra insumos - Arroz e Feijão,441.00,2023-02-02,2023-03-02,2023-03-01,pago
+19,3,Compra insumos - Carnes,1785.00,2023-02-05,2023-03-05,2023-03-03,pago
+20,5,Compra insumos - Laticínios,980.00,2023-02-08,2023-03-08,2023-03-06,pago
+21,2,Compra insumos - Hortaliças,240.00,2023-02-10,2023-02-20,2023-02-18,pago
+22,6,Compra insumos - Pães,160.00,2023-02-12,2023-02-22,2023-02-20,pago
+23,7,Compra insumos - Temperos,426.00,2023-02-15,2023-03-15,2023-03-13,pago
+24,10,Compra insumos - Linguiça,462.50,2023-02-18,2023-03-18,2023-03-16,pago
+25,12,Compra insumos - Camarão,960.00,2023-02-20,2023-03-20,2023-03-18,pago
+26,14,Compra insumos - Massas,360.00,2023-02-22,2023-03-22,2023-03-20,pago
+27,15,Compra insumos - Queijos,384.00,2023-02-25,2023-03-25,2023-03-23,pago
+28,4,Compra mercadorias - Bebidas,900.00,2023-02-10,2023-03-10,2023-03-08,pago
+29,16,Compra mercadorias - Sucos,472.50,2023-02-12,2023-03-12,2023-03-10,pago
+30,29,Compra mercadorias - Cervejas,1206.00,2023-02-15,2023-03-15,2023-03-13,pago
+31,26,Compra mercadorias - Azeites,875.00,2023-02-18,2023-03-18,2023-03-16,pago
+32,13,Compra mercadorias - Vinhos,1740.00,2023-02-20,2023-03-20,2023-03-18,pago
+33,8,Compra mercadorias - Limpeza,832.50,2023-02-22,2023-03-22,2023-03-20,pago
+34,9,Compra mercadorias - Descartáveis,376.00,2023-02-25,2023-03-25,2023-03-26,pago
+35,1,Compra insumos - Arroz e Feijão,508.00,2023-03-03,2023-04-03,2023-04-01,pago
+36,3,Compra insumos - Carnes,1559.00,2023-03-06,2023-04-06,2023-04-04,pago
+37,5,Compra insumos - Laticínios,679.00,2023-03-09,2023-04-09,2023-04-07,pago
+38,2,Compra insumos - Hortaliças,195.00,2023-03-12,2023-03-22,2023-03-20,pago
+39,6,Compra insumos - Pães,176.00,2023-03-15,2023-03-25,2023-03-23,pago
+40,7,Compra insumos - Temperos,245.00,2023-03-18,2023-04-18,2023-04-18,pago
+41,10,Compra insumos - Bacon,432.00,2023-03-20,2023-04-20,2023-04-20,pago
+42,12,Compra insumos - Tilápia,550.00,2023-03-22,2023-04-22,2023-04-20,pago
+43,14,Compra insumos - Massas,360.00,2023-03-25,2023-04-25,2023-04-23,pago
+44,15,Compra insumos - Queijos,504.00,2023-03-28,2023-04-28,2023-04-26,pago
+45,4,Compra mercadorias - Bebidas,902.00,2023-03-05,2023-04-05,2023-04-03,pago
+46,16,Compra mercadorias - Sucos,838.00,2023-03-10,2023-04-10,2023-04-08,pago
+47,29,Compra mercadorias - Cervejas,1350.00,2023-03-15,2023-04-15,2023-04-13,pago
+48,26,Compra mercadorias - Azeites,896.00,2023-03-20,2023-04-20,2023-04-18,pago
+49,13,Compra mercadorias - Vinhos,1881.00,2023-03-22,2023-04-22,2023-04-20,pago
+50,8,Compra mercadorias - Limpeza,508.00,2023-03-25,2023-04-25,2023-04-26,pago
+51,1,Compra insumos - Arroz e Feijão,477.90,2023-04-04,2023-05-04,2023-05-02,pago
+52,3,Compra insumos - Carnes,1593.00,2023-04-07,2023-05-07,2023-05-05,pago
+53,5,Compra insumos - Laticínios,642.00,2023-04-10,2023-05-10,2023-05-08,pago
+54,2,Compra insumos - Hortaliças,189.00,2023-04-12,2023-04-22,2023-04-20,pago
+55,6,Compra insumos - Pães,168.00,2023-04-15,2023-04-25,2023-04-23,pago
+56,7,Compra insumos - Temperos,236.00,2023-04-18,2023-05-18,2023-05-16,pago
+57,10,Compra insumos - Costela suína,456.00,2023-04-20,2023-05-20,2023-05-18,pago
+58,12,Compra insumos - Atum,684.00,2023-04-22,2023-05-22,2023-05-20,pago
+59,14,Compra insumos - Massas,308.00,2023-04-25,2023-05-25,2023-05-23,pago
+60,15,Compra insumos - Queijos,408.00,2023-04-28,2023-05-28,2023-05-26,pago
+61,4,Compra mercadorias - Bebidas,913.50,2023-04-10,2023-05-10,2023-05-08,pago
+62,16,Compra mercadorias - Sucos,460.00,2023-04-15,2023-05-15,2023-05-13,pago
+63,29,Compra mercadorias - Cervejas,1144.00,2023-04-18,2023-05-18,2023-05-16,pago
+64,26,Compra mercadorias - Azeites,836.00,2023-04-22,2023-05-22,2023-05-18,pago
+65,13,Compra mercadorias - Vinhos,1712.00,2023-04-25,2023-05-25,2023-05-23,pago
+66,8,Compra mercadorias - Limpeza,176.00,2023-04-28,2023-05-28,2023-05-23,pago
+67,9,Compra mercadorias - Descartáveis,1275.00,2023-04-30,2023-05-30,2023-05-30,pago
+68,1,Compra insumos - Arroz e Feijão,519.40,2023-05-05,2023-06-05,2023-06-03,pago
+69,3,Compra insumos - Carnes,1854.00,2023-05-08,2023-06-08,2023-06-06,pago
+70,5,Compra insumos - Laticínios,695.50,2023-05-10,2023-06-10,2023-06-08,pago
+71,2,Compra insumos - Hortaliças,171.00,2023-05-12,2023-05-22,2023-05-20,pago
+72,6,Compra insumos - Pães,184.00,2023-05-15,2023-05-25,2023-05-23,pago
+73,7,Compra insumos - Temperos,236.00,2023-05-18,2023-06-18,2023-06-16,pago
+74,10,Compra insumos - Pernil,462.00,2023-05-20,2023-06-20,2023-06-18,pago
+75,12,Compra insumos - Bacalhau,1275.00,2023-05-22,2023-06-22,2023-06-20,pago
+76,14,Compra insumos - Massas,375.00,2023-05-25,2023-06-25,2023-06-23,pago
+77,15,Compra insumos - Queijos,464.00,2023-05-28,2023-06-28,2023-06-26,pago
+78,4,Compra mercadorias - Bebidas,885.50,2023-05-12,2023-06-12,2023-06-10,pago
+79,16,Compra mercadorias - Sucos,378.00,2023-05-18,2023-06-18,2023-06-16,pago
+80,29,Compra mercadorias - Cervejas,1082.00,2023-05-20,2023-06-20,2023-06-18,pago
+81,26,Compra mercadorias - Azeites,840.00,2023-05-25,2023-06-25,2023-06-23,pago
+82,13,Compra mercadorias - Vinhos,1686.00,2023-05-28,2023-06-28,2023-06-26,pago
+83,8,Compra mercadorias - Limpeza,200.00,2023-05-30,2023-06-30,2023-06-30,pago
+84,1,Compra insumos - Arroz e Feijão,478.80,2023-06-02,2023-07-02,2023-07-03,pago
+85,3,Compra insumos - Carnes,1721.40,2023-06-05,2023-07-05,2023-07-03,pago
+86,5,Compra insumos - Laticínios,945.00,2023-06-08,2023-07-08,2023-07-06,pago
+87,2,Compra insumos - Hortaliças,156.00,2023-06-10,2023-06-20,2023-06-18,pago
+88,6,Compra insumos - Pães,172.00,2023-06-12,2023-06-22,2023-06-20,pago
+89,7,Compra insumos - Temperos,200.00,2023-06-15,2023-07-15,2023-06-30,pago
+90,10,Compra insumos - Salsicha,420.00,2023-06-18,2023-07-18,2023-07-18,pago
+91,12,Compra insumos - Lula,704.00,2023-06-20,2023-07-20,2023-07-18,pago
+92,14,Compra insumos - Massas,308.00,2023-06-22,2023-07-22,2023-07-20,pago
+93,15,Compra insumos - Queijos,720.00,2023-06-25,2023-07-25,2023-07-23,pago
+94,4,Compra mercadorias - Bebidas,1205.00,2023-06-15,2023-07-15,2023-07-13,pago
+95,16,Compra mercadorias - Sucos,418.00,2023-06-20,2023-07-20,2023-07-18,pago
+96,8,Compra mercadorias - Limpeza,601.00,2023-06-25,2023-07-25,2023-07-03,pago
+97,9,Compra mercadorias - Descartáveis,2880.00,2023-06-28,2023-07-28,2023-07-06,pago
+98,4,Compra mercadorias - Bebidas,1205.00,2023-06-15,2023-07-15,2023-07-10,pago
+99,16,Compra mercadorias - Sucos,418.00,2023-06-20,2023-07-20,2023-07-16,pago
+100,29,Compra mercadorias - Cervejas,1151.00,2023-06-22,2023-07-22,2023-07-20,pago
+101,1,Compra insumos - Arroz e Feijão,551.00,2023-07-03,2023-08-03,2023-08-01,pago
+102,3,Compra insumos - Carnes,2031.50,2023-07-06,2023-08-06,2023-08-04,pago
+103,5,Compra insumos - Laticínios,752.50,2023-07-09,2023-08-09,2023-08-07,pago
+104,2,Compra insumos - Hortaliças,158.00,2023-07-11,2023-07-21,2023-07-18,pago
+105,6,Compra insumos - Pães,192.00,2023-07-14,2023-07-24,2023-07-20,pago
+106,7,Compra insumos - Temperos,370.00,2023-07-17,2023-08-17,2023-08-03,pago
+107,10,Compra insumos - Mortadela,320.00,2023-07-19,2023-08-19,2023-08-03,pago
+108,12,Compra insumos - Polvo,1140.00,2023-07-21,2023-08-21,2023-08-03,pago
+109,14,Compra insumos - Massas,297.00,2023-07-24,2023-08-24,2023-08-03,pago
+110,15,Compra insumos - Queijos,574.00,2023-07-27,2023-08-27,2023-08-03,pago
+111,8,Compra mercadorias - Limpeza,654.50,2023-07-10,2023-08-10,2023-08-06,pago
+112,9,Compra mercadorias - Descartáveis,5120.00,2023-07-15,2023-08-15,2023-08-08,pago
+113,4,Compra mercadorias - Bebidas,956.00,2023-07-18,2023-08-18,2023-08-10,pago
+114,8,Compra mercadorias - Limpeza,601.00,2023-07-20,2023-08-20,2023-08-03,pago
+115,9,Compra mercadorias - Descartáveis,6300.00,2023-07-22,2023-08-22,2023-07-08,pago
+116,4,Compra mercadorias - Bebidas,885.50,2023-07-25,2023-08-25,2023-07-13,pago
+117,16,Compra mercadorias - Sucos,400.00,2023-07-22,2023-08-22,2023-07-16,pago
+118,29,Compra mercadorias - Cervejas,1016.50,2023-07-25,2023-08-25,2023-07-20,pago
+119,1,Compra insumos - Arroz e Feijão,511.20,2023-08-04,2023-09-04,2023-09-02,pago
+120,3,Compra insumos - Carnes,1792.00,2023-08-07,2023-09-07,2023-09-05,pago
+121,5,Compra insumos - Laticínios,1199.60,2023-08-10,2023-09-10,2023-09-08,pago
+122,2,Compra insumos - Hortaliças,152.00,2023-08-12,2023-08-22,2023-08-20,pago
+123,6,Compra insumos - Pães,180.00,2023-08-15,2023-08-25,2023-08-23,pago
+124,7,Compra insumos - Temperos,308.00,2023-08-18,2023-09-18,2023-09-02,pago
+125,10,Compra insumos - Presunto,528.00,2023-08-20,2023-09-20,2023-09-02,pago
+126,12,Compra insumos - Sardinha,504.00,2023-08-22,2023-09-22,2023-09-02,pago
+127,14,Compra insumos - Massas,364.00,2023-08-25,2023-09-25,2023-09-02,pago
+128,15,Compra insumos - Queijos,585.00,2023-08-28,2023-09-28,2023-09-02,pago
+129,8,Compra mercadorias - Limpeza,1120.00,2023-08-10,2023-09-10,2023-09-08,pago
+130,9,Compra mercadorias - Descartáveis,638.00,2023-08-15,2023-09-15,2023-09-13,pago
+131,4,Compra mercadorias - Bebidas,857.40,2023-08-20,2023-09-20,2023-09-18,pago
+132,8,Compra mercadorias - Limpeza,1120.00,2023-08-25,2023-09-25,2023-09-08,pago
+133,9,Compra mercadorias - Descartáveis,1400.00,2023-08-28,2023-09-28,2023-09-10,pago
+134,4,Compra mercadorias - Bebidas,906.00,2023-08-30,2023-09-30,2023-09-16,pago
+135,16,Compra mercadorias - Sucos,385.00,2023-08-25,2023-09-25,2023-09-20,pago
+136,29,Compra mercadorias - Cervejas,965.00,2023-08-28,2023-09-28,2023-09-23,pago
+137,1,Compra insumos - Arroz e Feijão,555.60,2023-09-05,2023-10-05,2023-10-03,pago
+138,3,Compra insumos - Carnes,1628.00,2023-09-08,2023-10-08,2023-10-06,pago
+139,5,Compra insumos - Laticínios,1296.40,2023-09-11,2023-10-11,2023-10-09,pago
+140,2,Compra insumos - Hortaliças,111.00,2023-09-13,2023-09-23,2023-09-21,pago
+141,6,Compra insumos - Pães,188.00,2023-09-16,2023-09-26,2023-09-23,pago
+142,7,Compra insumos - Temperos,260.00,2023-09-19,2023-10-19,2023-10-03,pago
+143,10,Compra insumos - Linguiça calabresa,507.00,2023-09-21,2023-10-21,2023-10-03,pago
+144,12,Compra insumos - Merluza,672.00,2023-09-23,2023-10-23,2023-10-03,pago
+145,14,Compra insumos - Massas,384.00,2023-09-26,2023-10-26,2023-10-03,pago
+146,15,Compra insumos - Queijos,572.00,2023-09-29,2023-10-29,2023-10-03,pago
+147,8,Compra mercadorias - Limpeza,890.00,2023-09-12,2023-10-12,2023-10-10,pago
+148,9,Compra mercadorias - Descartáveis,1720.00,2023-09-18,2023-10-18,2023-10-16,pago
+149,4,Compra mercadorias - Bebidas,873.00,2023-09-22,2023-10-22,2023-10-20,pago
+150,16,Compra mercadorias - Sucos,475.00,2023-09-28,2023-10-28,2023-10-26,pago
+151,1,Compra insumos - Arroz e Feijão,534.60,2023-10-06,2023-11-06,2023-11-04,pago
+152,3,Compra insumos - Carnes,2085.00,2023-10-09,2023-11-09,2023-11-07,pago
+153,5,Compra insumos - Laticínios,785.10,2023-10-12,2023-11-12,2023-11-10,pago
+154,2,Compra insumos - Hortaliças,142.00,2023-10-14,2023-10-24,2023-10-21,pago
+155,6,Compra insumos - Pães,196.00,2023-10-17,2023-10-27,2023-10-26,pago
+156,7,Compra insumos - Temperos,220.00,2023-10-20,2023-11-20,2023-11-04,pago
+157,10,Compra insumos - Paio,528.00,2023-10-22,2023-11-22,2023-11-04,pago
+158,12,Compra insumos - Dourado,840.00,2023-10-24,2023-11-24,2023-11-04,pago
+159,14,Compra insumos - Massas,360.00,2023-10-27,2023-11-27,2023-11-04,pago
+160,15,Compra insumos - Queijos,600.00,2023-10-30,2023-11-30,2023-11-04,pago
+161,8,Compra mercadorias - Limpeza,590.00,2023-10-15,2023-11-15,2023-11-10,pago
+162,9,Compra mercadorias - Descartáveis,1315.00,2023-10-20,2023-11-20,2023-11-18,pago
+163,4,Compra mercadorias - Bebidas,1104.00,2023-10-25,2023-11-25,2023-11-22,pago
+164,8,Compra mercadorias - Limpeza,590.00,2023-10-28,2023-11-28,2023-11-10,pago
+165,9,Compra mercadorias - Descartáveis,1315.00,2023-10-30,2023-11-30,2023-11-18,pago
+166,4,Compra mercadorias - Bebidas,1104.00,2023-11-02,2023-12-02,2023-11-22,pago
+167,16,Compra mercadorias - Sucos,462.00,2023-11-02,2023-12-02,2023-11-28,pendente
+168,26,Compra mercadorias - Azeites,840.00,2023-11-08,2023-12-08,2023-11-04,pago
+169,13,Compra mercadorias - Vinhos,1594.00,2023-11-10,2023-12-10,2023-11-08,pago
+170,8,Compra mercadorias - Limpeza,590.00,2023-11-15,2023-12-15,2023-11-10,pago
+171,9,Compra mercadorias - Descartáveis,1315.00,2023-11-18,2023-12-18,2023-11-18,pago
+172,4,Compra mercadorias - Bebidas,1104.00,2023-11-20,2023-12-20,2023-11-22,pago
+173,16,Compra mercadorias - Sucos,462.00,2023-11-22,2023-12-22,2023-11-28,pendente
+174,29,Compra mercadorias - Cervejas,1060.00,2023-11-25,2023-12-25,2023-11-28,pendente
+175,1,Compra insumos - Arroz e Feijão,616.50,2023-12-04,2024-01-04,NULL,pendente
+176,3,Compra insumos - Carnes,2130.00,2023-12-07,2024-01-07,NULL,pendente
+177,5,Compra insumos - Laticínios,792.00,2023-12-10,2024-01-10,NULL,pendente
+178,2,Compra insumos - Hortaliças,195.50,2023-12-12,2023-12-22,NULL,pendente
+179,6,Compra insumos - Pães,208.00,2023-12-15,2023-12-25,NULL,pendente
+180,7,Compra insumos - Temperos,360.00,2023-12-18,2024-01-18,NULL,pendente
+181,10,Compra insumos - Salame,700.00,2023-12-20,2024-01-20,NULL,pendente
+182,12,Compra insumos - Linguado,1224.00,2023-12-22,2024-01-22,NULL,pendente
+183,14,Compra insumos - Massas,368.00,2023-12-25,2024-01-25,NULL,pendente
+184,15,Compra insumos - Queijos,1056.00,2023-12-28,2024-01-28,NULL,pendente
+185,23,Compra insumos - Frutas,285.00,2023-03-08,2023-03-18,2023-03-15,pago
+186,23,Compra insumos - Frutas,290.00,2023-03-15,2023-03-25,2023-03-22,pago
+187,17,Compra insumos - Café,700.00,2023-04-05,2023-05-05,2023-05-03,pago
+188,17,Compra insumos - Café,630.00,2023-04-12,2023-05-12,2023-05-10,pago
+189,18,Compra insumos - Sobremesas,255.00,2023-04-18,2023-05-18,2023-05-16,pago
+190,18,Compra insumos - Sobremesas,175.00,2023-04-25,2023-05-25,2023-05-23,pago
+191,23,Compra insumos - Frutas,360.00,2023-05-06,2023-05-16,2023-05-13,pago
+192,23,Compra insumos - Frutas,180.00,2023-05-13,2023-05-23,2023-05-20,pago
+193,23,Compra insumos - Frutas,176.00,2023-05-20,2023-05-30,2023-05-27,pago
+194,17,Compra insumos - Café,864.00,2023-06-08,2023-07-08,2023-07-06,pago
+195,18,Compra insumos - Sobremesas,240.00,2023-06-15,2023-07-15,2023-07-13,pago
+196,18,Compra insumos - Sobremesas,225.00,2023-06-22,2023-07-22,2023-07-20,pago
+197,23,Compra insumos - Frutas,192.00,2023-07-05,2023-07-15,2023-07-12,pago
+198,23,Compra insumos - Frutas,140.00,2023-07-12,2023-07-22,2023-07-19,pago
+199,26,Compra mercadorias - Azeites,884.00,2023-08-02,2023-09-02,2023-08-30,pago
+200,13,Compra mercadorias - Vinhos,1684.00,2023-08-05,2023-09-05,2023-09-02,pago
+201,1,Compra insumos - Arroz e Feijão,287.80,2023-11-03,2023-12-03,2023-11-04,pago
+202,3,Compra insumos - Carnes,1899.30,2023-11-06,2023-12-06,NULL,pendente
+203,5,Compra insumos - Laticínios,1030.40,2023-11-09,2023-12-09,NULL,pendente
+204,2,Compra insumos - Hortaliças,106.00,2023-11-11,2023-11-21,2023-11-18,pago
+205,6,Compra insumos - Pães,176.00,2023-11-14,2023-11-24,2023-11-21,pago
+206,7,Compra insumos - Temperos,194.00,2023-11-17,2023-12-17,NULL,pendente
+207,10,Compra insumos - Coppa,576.00,2023-11-19,2023-12-19,NULL,pendente
+208,12,Compra insumos - Robalo,928.00,2023-11-21,2023-12-21,NULL,pendente
+209,14,Compra insumos - Massas,315.00,2023-11-24,2023-12-24,NULL,pendente
+210,15,Compra insumos - Queijos,392.00,2023-11-27,2023-12-27,NULL,pendente
+211,8,Compra mercadorias - Limpeza,598.50,2023-11-18,2023-12-18,NULL,pendente
+212,9,Compra mercadorias - Descartáveis,960.00,2023-11-22,2023-12-22,NULL,pendente
+213,4,Compra mercadorias - Bebidas,853.30,2023-11-28,2023-12-28,NULL,pendente
+214,16,Compra mercadorias - Sucos,483.00,2023-12-05,2024-01-05,NULL,pendente
+215,29,Compra mercadorias - Cervejas,1060.00,2023-12-08,2024-01-08,NULL,pendente
+216,26,Compra mercadorias - Azeites,798.00,2023-12-12,2024-01-12,NULL,pendente
+217,13,Compra mercadorias - Vinhos,1600.00,2023-12-15,2024-01-15,NULL,pendente
+218,8,Compra mercadorias - Limpeza,527.00,2023-12-20,2024-01-20,NULL,pendente
+219,9,Compra mercadorias - Descartáveis,844.50,2023-12-25,2024-01-25,NULL,pendente
+220,4,Compra mercadorias - Bebidas,332.50,2023-12-02,2024-01-02,NULL,pendente
+221,21,Serviço - Gás e Energia,1200.00,2023-01-22,2023-02-22,2023-02-20,pago
+222,21,Serviço - Gás e Energia,1150.00,2023-02-22,2023-03-22,2023-03-20,pago
+223,21,Serviço - Gás e Energia,1250.00,2023-03-22,2023-04-22,2023-04-20,pago
+224,21,Serviço - Gás e Energia,1100.00,2023-04-22,2023-05-22,2023-05-20,pago
+225,21,Serviço - Gás e Energia,1180.00,2023-05-22,2023-06-22,2023-06-20,pago
+226,21,Serviço - Gás e Energia,1300.00,2023-06-22,2023-07-22,2023-07-20,pago
+227,21,Serviço - Gás e Energia,1350.00,2023-07-22,2023-08-22,2023-08-20,pago
+228,21,Serviço - Gás e Energia,1220.00,2023-08-22,2023-09-22,2023-09-20,pago
+229,21,Serviço - Gás e Energia,1180.00,2023-09-22,2023-10-22,2023-10-20,pago
+230,21,Serviço - Gás e Energia,1250.00,2023-10-22,2023-11-22,2023-11-20,pago
