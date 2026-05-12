@@ -1,6 +1,6 @@
 ## 📂 Estrutura do Repositório
 
-O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada domínio (Marketing, Finanças e Logística) é responsável por seu próprio pipeline, consumindo recursos compartilhados da pasta `00_common`.
+O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada domínio (Marketing, Finanças e RH) é responsável por seu próprio pipeline, consumindo recursos compartilhados da pasta `00_common`.
 
 ```text
 .
@@ -8,21 +8,21 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 │   ├── base_pipelines.py    # Classes Base POO (Bronze, Silver, Gold)
 │   └── utils.py             # Funções auxiliares e constantes globais
 │
-├── 01_marketing/            # Domínio de Marketing (Seu Domínio)
+├── 01_marketing/            # Domínio de Marketing
 │   ├── notebooks/
 │   │   ├── 01_ingestao.py   # Bronze: Postgres -> Delta
 │   │   ├── 02_limpeza.py    # Silver: Uso da SilverPipeline (Regex, Datas)
 │   │   └── 03_negocio.py    # Gold: KPIs de Marketing e Conversão
 │   └── tests/               # Testes unitários do domínio
 │
-├── 02_financas/             # Domínio de Finanças (Colega A)
+├── 02_financas/             # Domínio de Finanças
 │   ├── notebooks/
 │   │   ├── 01_ingestao.py
 │   │   ├── 02_limpeza.py
 │   │   └── 03_negocio.py    # Gold: KPIs Financeiros e Faturamento
 │   └── tests/
 │
-├── 03_logistica/            # Domínio de Logística (Colega B)
+├── 03_recursos_humanos/            # Domínio de Recursos Humanos
 │   ├── notebooks/
 │   │   ├── 01_ingestao.py
 │   │   ├── 02_limpeza.py
