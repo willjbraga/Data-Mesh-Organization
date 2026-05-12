@@ -1,23 +1,41 @@
-projeto-data-mesh-grupo/
+## 📂 Estrutura do Repositório
+
+O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada domínio (Marketing, Finanças e Logística) é responsável por seu próprio pipeline, consumindo recursos compartilhados da pasta `00_common`.
+
+```text
+.
+├── 00_common/               # Recursos compartilhados (Core do Framework)
+│   ├── base_pipelines.py    # Classes Base POO (Bronze, Silver, Gold)
+│   └── utils.py             # Funções auxiliares e constantes globais
 │
-├── .github/                # Workflows para automação (opcional)
-├── 00_common/              # O "Coração" do projeto (POO)
-│   ├── base_pipeline.py    # Classe SilverPipeline que você criou
-│   └── utils.py            # Funções auxiliares (limpeza de nomes, etc.)
+├── 01_marketing/            # Domínio de Marketing (Seu Domínio)
+│   ├── notebooks/
+│   │   ├── 01_ingestao.py   # Bronze: Postgres -> Delta
+│   │   ├── 02_limpeza.py    # Silver: Uso da SilverPipeline (Regex, Datas)
+│   │   └── 03_negocio.py    # Gold: KPIs de Marketing e Conversão
+│   └── tests/               # Testes unitários do domínio
 │
-├── 01_marketing/           # Seu Domínio
-│   ├── bronze/             # Ingestão do Postgres (Notebooks/Scripts)
-│   ├── silver/             # Notebook usando a base_pipeline
-│   └── gold/               # Agregações de Marketing
+├── 02_financas/             # Domínio de Finanças (Colega A)
+│   ├── notebooks/
+│   │   ├── 01_ingestao.py
+│   │   ├── 02_limpeza.py
+│   │   └── 03_negocio.py    # Gold: KPIs Financeiros e Faturamento
+│   └── tests/
 │
-├── 02_financas/            # Domínio do Colega A
-│   ├── bronze/
-│   └── silver/
+├── 03_logistica/            # Domínio de Logística (Colega B)
+│   ├── notebooks/
+│   │   ├── 01_ingestao.py
+│   │   ├── 02_limpeza.py
+│   │   └── 03_negocio.py    # Gold: KPIs de Entrega e SLA
+│   └── tests/
 │
-├── 03_logistica/           # Domínio do Colega B
-│   └── ...
+├── 04_gold_global/          # Camada Gold Transversal (Cross-Domain)
+│   └── fato_vendas.py       # Tabela Fato unindo os 3 domínios
 │
-├── 04_gold_global/         # Tabelas Fato que cruzam os 3 domínios
-├── data_modeling/          # Imagens dos DERs e documentação SQL
-├── requirements.txt        # Bibliotecas necessárias (pyspark, etc.)
-└── README.md               # Documentação principal do projeto
+├── data_modeling/           # Documentação da Modelagem
+│   ├── der_postgresql.png   # DER da Origem
+│   └── star_schema_gold.png # Desenho da camada Gold
+│
+├── .gitignore               # Arquivos ignorados (tokens, logs, pycache)
+├── requirements.txt         # Dependências do projeto (pyspark, etc)
+└── README.md                # Documentação principal 
