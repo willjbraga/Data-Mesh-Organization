@@ -99,8 +99,8 @@ id_compra_insumo,id_fornecedor,data_compra,descricao,quantidade,unidade_medida,v
 98,2,2023-07-11,Acelga,8,kg,8.50,68.00,2023-07-21,pago
 99,6,2023-07-14,Pão francês,240,unidade,0.80,192.00,2023-07-24,pago
 100,7,2023-07-17,Páprica,5,kg,38.00,190.00,2023-08-17,pago
-101,7,2023-07-17,Curry4,kg,45.00,180.00,2023-08-17,pago
-102,10,2023-,Mortadela,20,kg,16.00,320.00,2023-08-19,pago
+101,7,2023-07-17,Curry,4,kg,45.00,180.00,2023-08-17,pago
+102,10,2023-07-19,Mortadela,20,kg,16.00,320.00,2023-08-19,pago
 103,12,2023-07-21,Polvo,12,kg,95.00,1140.00,2023-08-21,pago
 104,14,2023-07-24,Massa conchiglione,22,kg,13.50,297.00,2023-08-24,pago
 105,15,2023-07-27,Queijo roquefort,7,kg,82.00,574.00,2023-08-27,pago
