@@ -33,7 +33,8 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 .
 ├── 00_common/               # Recursos compartilhados (Core do Framework)
 │   ├── base_pipelines.py    # Classes Base POO (Bronze, Silver, Gold)
-│   └── utils.py             # Funções auxiliares e constantes globais
+│   ├── utils.py             # Funções auxiliares e constantes globais
+|   └── contracts/           # Arquivos YAML com os schemas esperados
 │
 ├── 01_marketing/            # Domínio de Marketing
 │   ├── notebooks/
@@ -60,8 +61,9 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 │   └── fato_vendas.py       # Tabela Fato unindo os 3 domínios
 │
 ├── docs/                    # Documentação da Modelagem
-│   ├── der_postgresql.png   # DER da Origem
-│   └── star_schema_gold.png # Desenho da camada Gold
+|   ├── arquitetura/        # Diagramas (ex: fluxo Medallion no Mesh)
+│   ├── dominios/           # Regras de negócio específicas (Marketing, RH)
+│   └── contratos/          # Explicação detalhada dos contratos de interface
 |
 ├── datasets/                # Datasets usados
 |   ├── recursos_humanos/    # Datasets de rh
