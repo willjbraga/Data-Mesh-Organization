@@ -1,4 +1,4 @@
-id_conta_ricao,valor,data_emissao,data_vencimento,data_recebimento,status,_pagamento
+id_conta_ricao,valor,data_emissao,data_vencimento,data_recebimento,status,forma_pagamento
 1,Venda Balcão - Mesa 01,145.50,2023-01-02,2023-01-02,2023-01-02,recebido,dinheiro
 2,Venda Balcão - Mesa 03,289.00,2023-01-02,2023-01-02,2023-01-02,recebido,cartao_debito
 3,Venda Delivery - Pedido 001,78.50,2023-01-02,2023-01-02,2023-01-02,recebido,pix
