@@ -1,11 +1,28 @@
 ## 🔐 Configuração de Segredos e Ambiente
-Devido às limitações da versão Databricks Community Edition, que não suporta o uso nativo de dbutils.secrets, implementamos uma solução baseada em variáveis de ambiente.
 
-Na pasta 00_common, utilizamos o arquivo config_env.py para definir as credenciais.
+Devido às limitações da versão **Databricks Community Edition**, que não suporta o uso nativo de `dbutils.secrets`, implementamos uma solução baseada em variáveis de ambiente para a gestão de credenciais.
 
-Este arquivo é carregado no cluster para expor chaves sensíveis de forma segura durante a execução.
+### 🛠️ Funcionamento
+1. **Segurança:** Utilizamos o arquivo `00_common/config_env.py` para definir os segredos. Este arquivo está listado no `.gitignore` e **nunca** deve ser enviado ao repositório para evitar o vazamento de senhas.
+2. **Padronização por Domínio:** Para suportar a arquitetura de Data Mesh, as classes base realizam a busca dos segredos concatenando o **Domínio** (ex: Marketing, RH, Finanças) com o nome do recurso. 
+3. **Injeção de Dependência:** O arquivo deve ser carregado no cluster no início de cada execução através do comando `%run`.
 
-Importante: Por questões de segurança, este arquivo está listado no .gitignore e nunca deve ser enviado ao repositório remoto.
+### 📝 Exemplo de Conteúdo (`config_env.py`)
+
+Cada colaborador deve criar este arquivo localmente na pasta `00_common/` seguindo o padrão abaixo:
+
+```python
+import os
+
+# Padrão: [DOMÍNIO] + _ + [NOME_DO_SEGREDO]
+
+# Credenciais de Marketing
+os.environ["MARKETING_SUPABASE_USER"] = "usuario_marketing"
+os.environ["MARKETING_SUPABASE_PASS"] = "senha_secreta_123"
+
+# Credenciais de Finanças
+os.environ["FINANCAS_SUPABASE_USER"] = "usuario_financas"
+os.environ["FINANCAS_SUPABASE_PASS"] = "senha_segura_456"
 
 ## 📂 Estrutura do Repositório
 
