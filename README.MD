@@ -23,6 +23,7 @@ os.environ["MARKETING_SUPABASE_PASS"] = "senha_secreta_123"
 # Credenciais de Finanças
 os.environ["FINANCAS_SUPABASE_USER"] = "usuario_financas"
 os.environ["FINANCAS_SUPABASE_PASS"] = "senha_segura_456"
+```
 
 ## 📂 Estrutura do Repositório
 
