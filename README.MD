@@ -1,3 +1,12 @@
+## 🔐 Configuração de Segredos e Ambiente
+Devido às limitações da versão Databricks Community Edition, que não suporta o uso nativo de dbutils.secrets, implementamos uma solução baseada em variáveis de ambiente.
+
+Na pasta 00_common, utilizamos o arquivo config_env.py para definir as credenciais.
+
+Este arquivo é carregado no cluster para expor chaves sensíveis de forma segura durante a execução.
+
+Importante: Por questões de segurança, este arquivo está listado no .gitignore e nunca deve ser enviado ao repositório remoto.
+
 ## 📂 Estrutura do Repositório
 
 O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada domínio (Marketing, Finanças e RH) é responsável por seu próprio pipeline, consumindo recursos compartilhados da pasta `00_common`.
