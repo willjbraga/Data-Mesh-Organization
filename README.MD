@@ -4,8 +4,7 @@ Devido às limitações da versão **Databricks Community Edition**, que não su
 
 ### 🛠️ Funcionamento
 1. **Segurança:** Utilizamos o arquivo `00_common/config_env.py` para definir os segredos. Este arquivo está listado no `.gitignore` e **nunca** deve ser enviado ao repositório para evitar o vazamento de senhas.
-2. **Padronização por Domínio:** Para suportar a arquitetura de Data Mesh, as classes base realizam a busca dos segredos concatenando o **Domínio** (ex: Marketing, RH, Finanças) com o nome do recurso. 
-3. **Injeção de Dependência:** O arquivo deve ser carregado no cluster no início de cada execução através do comando `%run`.
+2. **Injeção de Dependência:** O arquivo deve ser carregado no cluster no início de cada execução através do comando `%run`.
 
 ### 📝 Exemplo de Conteúdo (`config_env.py`)
 
@@ -14,15 +13,11 @@ Cada colaborador deve criar este arquivo localmente na pasta `00_common/` seguin
 ```python
 import os
 
-# Padrão: [DOMÍNIO] + _ + [NOME_DO_SEGREDO]
-
 # Credenciais de Marketing
-os.environ["MARKETING_SUPABASE_USER"] = "usuario_marketing"
-os.environ["MARKETING_SUPABASE_PASS"] = "senha_secreta_123"
-
-# Credenciais de Finanças
-os.environ["FINANCAS_SUPABASE_USER"] = "usuario_financas"
-os.environ["FINANCAS_SUPABASE_PASS"] = "senha_segura_456"
+os.environ["SUPABASE_USER"] = "usuario_marketing"
+os.environ["SUPABASE_PASS"] = "senha_secreta_123"
+os.environ["SUPABASE_HOST"] = "host_do_supabase"
+os.environ["SUPABASE_DB"] = "postgres"
 ```
 
 ## 📂 Estrutura do Repositório
