@@ -28,7 +28,7 @@ class BronzePipeline(BasePipeline):
                 f"Domínio '{dominio}' inválido. "
                 f"Use um de: {sorted(self._dominios_validos)}"
             )
-        super().__init__(dominio=dominio.upper())
+        super().__init__()
         self.dominio = dominio
         self.schema = 'bronze'
         self.catalog = f'{self.dominio}_prod'
