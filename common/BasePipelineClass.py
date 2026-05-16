@@ -17,7 +17,21 @@ class BasePipeline:
         get_connection_properties(): Retorna um dicionário com as propriedades de conexão necessárias para o JDBC.
     '''
     def __init__(self, dominio: str, schema: str):
+        '''
+        Inicializa a classe base configurando os atributos de conexão e metadados do catálogo.
 
+        Args:
+            dominio (str): O domínio responsável pelos dados. Deve ser um dos valores definidos em _dominios_validos.
+            schema (str): A camada de dados alvo no DataBricks(ex: 'bronze', 'silver', 'gold').
+            catalog (str): O caminho completo do catálogo baseado no domínio e ambiente (ex: 'rh_prod', 'fin_prod', 'mkt_prod').
+            db_user (str): Nome de usuário para conexão com o banco de dados, obtido de variáveis de ambiente.
+            db_pass (str): Senha para conexão com o banco de dados, obtida de variáveis de ambiente.
+            db_host (str): Host do banco de dados, obtido de variáveis de ambiente.
+            db_name (str): Nome do banco de dados, obtido de variáveis de ambiente.
+
+        Raises:
+            ValueError: Se o domínio fornecido não estiver na lista de domínios permitidos
+        '''
         self._dominios_validos = ('rh', 'fin' , 'mkt')
 
         if dominio not in self._dominios_validos:
@@ -37,9 +51,21 @@ class BasePipeline:
         self.db_name = os.getenv(f"SUPABASE_DB")
 
     def get_jdbc_url(self):
+        '''
+        Retorna a URL de conexão JDBC formatada para o banco de dados Postgres.
+
+        Returns:
+            str: A URL de conexão JDBC.
+        '''
         return f"jdbc:postgresql://{self.db_host}:5432/{self.db_name}"
     
     def get_connection_properties(self):
+        '''
+        Retorna um dicionário com as propriedades de conexão necessárias para o JDBC.
+
+        Returns:
+            dict: Um dicionário contendo as propriedades de conexão.
+        '''
         return {
             "user": self.db_user,
             "password": self.db_pass,
