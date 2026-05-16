@@ -7,10 +7,13 @@ class BasePipeline:
     Esta classe serve como um ponto central para métodos e atributos compartilhados entre diferentes pipelines (Bronze, Silver, Gold).
     
     Attributes:
-        db_user (str): Nome de usuário para conexão com o banco de dados.
-        db_pass (str): Senha para conexão com o banco de dados.
-        db_host (str): Host do banco de dados.
-        db_name (str): Nome do banco de dados.
+        dominio (str): O domínio responsável pelos dados. Deve ser um dos valores definidos em _dominios_validos.
+        schema (str): A camada de dados alvo no DataBricks(ex: 'bronze', 'silver', 'gold').
+        catalog (str): O caminho completo do catálogo baseado no domínio e ambiente (ex: 'rh_prod', 'fin_prod', 'mkt_prod').
+        db_user (str): Nome de usuário para conexão com o banco de dados, obtido de variáveis de ambiente.
+        db_pass (str): Senha para conexão com o banco de dados, obtida de variáveis de ambiente.
+        db_host (str): Host do banco de dados, obtido de variáveis de ambiente.
+        db_name (str): Nome do banco de dados, obtido de variáveis de ambiente.
 
     Methods:
         get_jdbc_url(): Retorna a URL de conexão JDBC formatada.
@@ -23,11 +26,6 @@ class BasePipeline:
         Args:
             dominio (str): O domínio responsável pelos dados. Deve ser um dos valores definidos em _dominios_validos.
             schema (str): A camada de dados alvo no DataBricks(ex: 'bronze', 'silver', 'gold').
-            catalog (str): O caminho completo do catálogo baseado no domínio e ambiente (ex: 'rh_prod', 'fin_prod', 'mkt_prod').
-            db_user (str): Nome de usuário para conexão com o banco de dados, obtido de variáveis de ambiente.
-            db_pass (str): Senha para conexão com o banco de dados, obtida de variáveis de ambiente.
-            db_host (str): Host do banco de dados, obtido de variáveis de ambiente.
-            db_name (str): Nome do banco de dados, obtido de variáveis de ambiente.
 
         Raises:
             ValueError: Se o domínio fornecido não estiver na lista de domínios permitidos
