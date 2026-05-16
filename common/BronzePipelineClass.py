@@ -12,7 +12,6 @@ class BronzePipeline(BasePipeline):
         schema (str): Nome da camada alvo (padrão: 'bronze').
         catalog (str): Caminho completo do catálogo baseado no domínio e ambiente.
     """
-    _dominios_validos = ('rh', 'financas' , 'marketing')
     def __init__(self, dominio: str):
         """Inicializa a pipeline configurando os metadados do catálogo.
 
@@ -23,15 +22,8 @@ class BronzePipeline(BasePipeline):
         Raises:
             ValueError: Se o domínio fornecido não estiver na lista de domínios permitidos.
         """
-        if dominio not in self._dominios_validos:
-            raise ValueError(
-                f"Domínio '{dominio}' inválido. "
-                f"Use um de: {sorted(self._dominios_validos)}"
-            )
-        super().__init__()
-        self.dominio = dominio
-        self.schema = 'bronze'
-        self.catalog = f'{self.dominio}_prod'
+        
+        super().__init__(dominio, 'bronze')
 
     def extract_from_postgres(self, table_name):
         """Realiza a leitura dos dados brutos do Supabase via protocolo JDBC.

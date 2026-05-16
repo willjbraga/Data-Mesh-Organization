@@ -16,7 +16,20 @@ class BasePipeline:
         get_jdbc_url(): Retorna a URL de conexão JDBC formatada.
         get_connection_properties(): Retorna um dicionário com as propriedades de conexão necessárias para o JDBC.
     '''
-    def __init__(self):
+    def __init__(self, dominio: str, schema: str):
+
+        self._dominios_validos = ('rh', 'fin' , 'mkt')
+
+        if dominio not in self._dominios_validos:
+            raise ValueError(
+                f"Domínio '{dominio}' inválido. "
+                f"Use um de: {sorted(self._dominios_validos)}"
+            )
+        
+        self.dominio = dominio
+        self.schema = schema
+        self.catalog = f'{self.dominio}_prod'
+
         # Não usamos mais dbutils.secrets
         self.db_user = os.getenv(f"SUPABASE_USER")
         self.db_pass = os.getenv(f"SUPABASE_PASS")
