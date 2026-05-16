@@ -3,8 +3,18 @@ import os
 class BasePipeline:
     '''
     Classe base para pipelines de dados, fornecendo métodos comuns como acesso a segredos.
-     - Busca segredos em variáveis de ambiente no arquivo config_env.py (Databricks Community Edition não permite uso de dbutils.secrets).
-     - Permite que pipelines herdem e utilizem esses métodos.
+
+    Esta classe serve como um ponto central para métodos e atributos compartilhados entre diferentes pipelines (Bronze, Silver, Gold).
+    
+    Attributes:
+        db_user (str): Nome de usuário para conexão com o banco de dados.
+        db_pass (str): Senha para conexão com o banco de dados.
+        db_host (str): Host do banco de dados.
+        db_name (str): Nome do banco de dados.
+
+    Methods:
+        get_jdbc_url(): Retorna a URL de conexão JDBC formatada.
+        get_connection_properties(): Retorna um dicionário com as propriedades de conexão necessárias para o JDBC.
     '''
     def __init__(self):
         # Não usamos mais dbutils.secrets
