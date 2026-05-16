@@ -7,31 +7,19 @@ class BronzePipeline(BasePipeline):
     Medallion, garantindo que os dados sejam extraídos da fonte (Postgres/Supabase) 
     e persistidos como tabelas Delta no catálogo correto do domínio.
 
-    Attributes:
-        dominio (str): Nome do domínio de dados (ex: 'marketing', 'rh', 'financas').
-        schema (str): Nome da camada alvo (padrão: 'bronze').
-        catalog (str): Caminho completo do catálogo baseado no domínio e ambiente.
+    Methods:
+        extract_from_postgres(table_name): Realiza a leitura dos dados brutos do Supabase via protocolo JDBC.
+        load_to_bronze(df, table_name): Persiste os dados no formato Delta no Unity Catalog, aplicando a estratégia de overwrite.
+        run(source_table): Executa o fluxo fim-a-fim de ingestão (Extração e Carga), encapsulando a lógica de orquestração.
     """
-    _dominios_validos = ('rh', 'financas' , 'marketing')
     def __init__(self, dominio: str):
         """Inicializa a pipeline configurando os metadados do catálogo.
 
         Args:
-            dominio (str): O domínio responsável pelos dados. Deve ser um dos 
-                valores definidos em _dominios_validos.
-
-        Raises:
-            ValueError: Se o domínio fornecido não estiver na lista de domínios permitidos.
+            dominio (str): O domínio responsável pelos dados. Deve ser um dos valores definidos em _dominios_validos.
         """
-        if dominio not in self._dominios_validos:
-            raise ValueError(
-                f"Domínio '{dominio}' inválido. "
-                f"Use um de: {sorted(self._dominios_validos)}"
-            )
-        super().__init__()
-        self.dominio = dominio
-        self.schema = 'bronze'
-        self.catalog = f'{self.dominio}_prod'
+        
+        super().__init__(dominio, 'bronze')
 
     def extract_from_postgres(self, table_name):
         """Realiza a leitura dos dados brutos do Supabase via protocolo JDBC.
