@@ -32,7 +32,7 @@ class BronzePipeline(BasePipeline):
         """
         print(f"Extraindo dados de: {table_name}...")
         
-        return spark.read.jdbc(
+        return self.spark.read.jdbc(
             url=self.get_jdbc_url(),
             table=table_name,
             properties=self.get_connection_properties()

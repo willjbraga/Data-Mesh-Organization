@@ -1,4 +1,10 @@
 import os
+import sys
+sys.path.append("..") # Pasta pai do projeto, para acessar o módulo common
+import common.config_env
+import importlib
+importlib.reload(common.config_env)
+from pyspark.sql import SparkSession
 
 class BasePipeline:
     '''
@@ -37,6 +43,8 @@ class BasePipeline:
                 f"Domínio '{dominio}' inválido. "
                 f"Use um de: {sorted(self._dominios_validos)}"
             )
+        
+        self.spark = SparkSession.builder.getOrCreate()
         
         self.dominio = dominio
         self.schema = schema
