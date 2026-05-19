@@ -8,7 +8,7 @@ class SilverPipeline(BasePipeline):
         full_table_path = f"{self.catalog}.bronze.{table_name}"
         print(f"Extraindo dados de: {full_table_path}...")
         
-        return spark.table(full_table_path)
+        return self.spark.table(full_table_path)
     
     def load_to_silver(self, df, table_name):
         full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
