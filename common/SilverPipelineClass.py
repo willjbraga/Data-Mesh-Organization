@@ -1,4 +1,5 @@
 from common.BasePipelineClass import BasePipeline
+from pyspark.sql import DataFrame
 
 class SilverPipeline(BasePipeline):
     def __init__(self, dominio: str):
@@ -23,7 +24,7 @@ class SilverPipeline(BasePipeline):
         print("Carga Silver finalizada com sucesso!")
 
     def run(self, source_table):
-        from pyspark.sql.function import current_timestamp
+        from pyspark.sql.functions import current_timestamp
         print(f"Iniciando pipeline Silver para o domínio '{self.dominio}'...")
         
         # Extração dos dados da camada Bronze
