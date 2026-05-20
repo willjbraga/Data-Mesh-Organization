@@ -27,9 +27,11 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 ```text
 .
 ├── 00_common/               # Recursos compartilhados (Core do Framework)
-│   ├── base_pipelines.py    # Classes Base POO (Bronze, Silver, Gold)
-│   ├── utils.py             # Funções auxiliares e constantes globais
-|   └── contracts/           # Arquivos YAML com os schemas esperados
+│   ├── BasePipelineClass
+|   ├── BronzePipelineClass
+|   ├── SilverPipelineClass
+|   ├── GoldPipelineClass
+│   └── utils.py             # Funções auxiliares e constantes globais
 │
 ├── 01_marketing/            # Domínio de Marketing
 │   ├── notebooks/
@@ -58,7 +60,8 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 ├── docs/                    # Documentação da Modelagem
 |   ├── arquitetura/        # Diagramas (ex: fluxo Medallion no Mesh)
 │   ├── dominios/           # Regras de negócio específicas (Marketing, RH)
-│   └── contratos/          # Explicação detalhada dos contratos de interface
+|
+├── Contratos/               # Arquivos YAML dos contratos de dados
 |
 ├── datasets/                # Datasets usados
 |   ├── recursos_humanos/    # Datasets de rh
