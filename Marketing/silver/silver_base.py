@@ -11,6 +11,7 @@ class MarketingSilverPipeline(SilverPipeline):
                   date_cols: list = None,
                   datetime_cols: list = None,
                   int_cols: list = None,
+                  string_cols: list = None,
                   decimal_cols: list = None) -> 'pyspark.sql.DataFrame':
         # Transformação da classe pai
         df = super().transform(df)
@@ -92,5 +93,15 @@ class MarketingSilverPipeline(SilverPipeline):
                 # Filtra para remover linhas onde o código falhou no cast
                 df = df.filter(F.col(f'{col}_limpa').isNotNull())
                 df = df.drop(col).withColumnRenamed(f'{col}_limpa', col)
+
+        # === TRATAMENTO DE STRINGS ===
+        if string_cols:
+            for col in string_cols:
+                df = df \
+                    .withColumn(col, F.trim(F.lower(F.col(col)))) \
+                    .withColumn(col, self.remove_acentos_udf(F.col(col))) \
+                    .withColumn(col, F.replace(F.col(col), ' ', '_')) \
+                    .withColumn(col, F.when(F.col(col).isin('n/a', 'na', '--', '???'), None).otherwise(F.col(col)))
+                df = df.filter(F.col(col).isNotNull())
             
         return df
