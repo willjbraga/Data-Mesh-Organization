@@ -14,13 +14,18 @@ class SegmentoMktPipeline(MarketingSilverPipeline):
         df = super().transform(df)
 
         # Nomes são transformados em minúsculo e espaços em branco são removidos
+        # Além disso, caracteres acentuados são convertidos para suas formas sem acentos
         df = df \
             .withColumn('nome', F.trim(F.lower(F.col('nome')))) \
             .withColumn('descricao', F.trim(F.lower(F.col('descricao')))) \
             .withColumn('criterio', F.trim(F.lower(F.col('criterio')))) \
             .withColumn('descricao', F.replace(F.col('descricao'), 'Segmento: ', '')) \
             .withColumn('nome', F.replace(F.col('nome'), '/', '_')) \
-            .withColumn('nome', F.replace(F.col('nome'), ' ', '_'))
+            .withColumn('nome', F.replace(F.col('nome'), ' ', '_')) \
+            .withColumn('descricao', F.replace(F.col('descricao'), ' ', '_')) \
+            .withColumn('nome', self.remove_acentos_udf(F.col('nome'))) \
+            .withColumn('descricao', self.remove_acentos_udf(F.col('descricao'))) \
+            .withColumn('criterio', self.remove_acentos_udf(F.col('criterio')))
         
         return df
         
