@@ -1,5 +1,4 @@
 import pyspark
-
 from Marketing.silver.silver_base import MarketingSilverPipeline
 from pyspark.sql import DataFrame
 import pyspark.sql.functions as F
