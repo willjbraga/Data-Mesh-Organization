@@ -1,10 +1,15 @@
+import pyspark
 from common.BasePipelineClass import BasePipeline
 from pyspark.sql import DataFrame
-from pyspark.sql.functions import current_timestamp
+from pyspark.sql.functions import current_timestamp, udf
+from pyspark.sql.types import StringType
+import unidecode
 
 class SilverPipeline(BasePipeline):
     def __init__(self, dominio: str):
         super().__init__(dominio, 'silver')
+        # Cria o UDF (User Defined Function) para o PySpark
+        self.remove_acentos_udf = udf(self.remove_acentos, StringType())
 
     def extract_from_bronze(self, table_name) -> 'pyspark.sql.DataFrame':
         full_table_path = f"{self.catalog}.bronze.{table_name}"
@@ -47,3 +52,7 @@ class SilverPipeline(BasePipeline):
         
         print(f"Pipeline Silver para o domínio '{self.dominio}' concluída com sucesso!")
 
+    def remove_acentos(texto):
+        if texto is None:
+            return None
+        return unidecode.unidecode(texto)
