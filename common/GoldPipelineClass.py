@@ -1,3 +1,4 @@
+import pyspark
 from common.BasePipelineClass import BasePipeline
 from pyspark.sql import DataFrame
 from abc import abstractmethod
