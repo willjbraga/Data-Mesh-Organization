@@ -67,13 +67,14 @@ class MarketingSilverPipeline(SilverPipeline):
                 # O cast transforma valores inválidos (como letras) em null automaticamente
                 df = df.withColumn(
                     f'{col}_limpa', 
-                    F.regexp_replace(F.col(col).cast("string"), r"[^0-9]", "").cast("int")
-                )
+                    F.regexp_replace(F.col(col).cast("string"), r"[^-0-9]", "").cast("int")
+                ) \
+                .withColumn(col, F.when(F.col(f'{col}_limpa') < 0, None).otherwise(F.col(f'{col}_limpa'))) # Excluir valores negativos
                 
                 # Filtra para remover linhas onde o código falhou no cast
-                df = df.filter(F.col(f'{col}_limpa').isNotNull())
+                df = df.filter(F.col(col).isNotNull())
                 
-                df = df.drop(col).withColumnRenamed(f'{col}_limpa', col)
+                df = df.drop(f'{col}_limpa')
         
         # === TRATAMENTO DE DECIMAIS ===
         if decimal_cols:
@@ -81,18 +82,19 @@ class MarketingSilverPipeline(SilverPipeline):
                 # O regexp_replace remove caracteres inválidos mas mantém pontos e vírgulas
                 df = df.withColumn(
                     f'{col}_limpa', 
-                    F.regexp_replace(F.col(col).cast("string"), r"[^0-9,.]", "")
+                    F.regexp_replace(F.col(col).cast("string"), r"[^-0-9,.]", "")
                 )
                 
                 # 2. Agora que sobrou só o número limpo, trocamos a vírgula pelo ponto decimal do Spark
                 df = df.withColumn(
                     f'{col}_limpa', 
                     F.regexp_replace(F.col(f'{col}_limpa'), ",", ".").cast("decimal(18,2)")
-                )
+                ) \
+                .withColumn(col, F.when(F.col(f'{col}_limpa') < 0, None).otherwise(F.col(f'{col}_limpa'))) # Excluir valores negativos
                 
                 # Filtra para remover linhas onde o código falhou no cast
-                df = df.filter(F.col(f'{col}_limpa').isNotNull())
-                df = df.drop(col).withColumnRenamed(f'{col}_limpa', col)
+                df = df.filter(F.col(col).isNotNull())
+                df = df.drop(f'{col}_limpa')
 
         # === TRATAMENTO DE STRINGS ===
         if string_cols:
