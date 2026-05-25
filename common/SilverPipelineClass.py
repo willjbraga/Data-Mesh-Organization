@@ -7,8 +7,6 @@ from pyspark.sql.types import StringType
 class SilverPipeline(BasePipeline):
     def __init__(self, dominio: str):
         super().__init__(dominio, 'silver')
-        # Cria o UDF (User Defined Function) para o PySpark
-        self.remove_acentos_udf = udf(self.remove_acentos, StringType())
 
     def extract_from_bronze(self, table_name) -> 'pyspark.sql.DataFrame':
         full_table_path = f"{self.catalog}.bronze.{table_name}"

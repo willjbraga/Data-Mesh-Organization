@@ -53,7 +53,7 @@ class MarketingSilverPipeline(SilverPipeline):
                 # 2. Tenta converter usando a lista de formatos de Timestamp
                 df = df.withColumn(
                     f'{col}_limpa',
-                    F.coalesce(*[F.try_to_timestamp(F.col(col), fmt) for fmt in datetime_formats])
+                    F.coalesce(*[F.try_to_timestamp(F.col(col), F.lit(fmt)) for fmt in datetime_formats])
                 )
                 
                 # 3. Filtro de segurança: se a data/hora do evento for inválida, removemos a linha
@@ -107,7 +107,7 @@ class MarketingSilverPipeline(SilverPipeline):
                 df = df \
                     .withColumn(col, F.trim(F.lower(F.col(col)))) \
                     .withColumn(col, F.translate(F.col(col), com_acento, sem_acento)) \
-                    .withColumn(col, F.replace(F.col(col), ' ', '_')) \
+                    .withColumn(col, F.replace(F.col(col), F.lit(' '), F.lit('_'))) \
                     .withColumn(col, F.when(F.col(col).isin('n/a', 'na', '--', '???'), None).otherwise(F.col(col)))
                 df = df.filter(F.col(col).isNotNull())
             
