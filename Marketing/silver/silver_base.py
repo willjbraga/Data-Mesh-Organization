@@ -98,10 +98,15 @@ class MarketingSilverPipeline(SilverPipeline):
 
         # === TRATAMENTO DE STRINGS ===
         if string_cols:
+
+            # Lista de caracteres com acento e seus respectivos substitutos
+            com_acento = "áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇ"
+            sem_acento = "aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC"
+
             for col in string_cols:
                 df = df \
                     .withColumn(col, F.trim(F.lower(F.col(col)))) \
-                    .withColumn(col, self.remove_acentos_udf(F.col(col))) \
+                    .withColumn(col, F.translate(F.col(col), com_acento, sem_acento)) \
                     .withColumn(col, F.replace(F.col(col), ' ', '_')) \
                     .withColumn(col, F.when(F.col(col).isin('n/a', 'na', '--', '???'), None).otherwise(F.col(col)))
                 df = df.filter(F.col(col).isNotNull())
