@@ -9,23 +9,15 @@ class SegmentoMktPipeline(MarketingSilverPipeline):
 
     def transform(self, df:DataFrame) -> 'pyspark.sql.DataFrame':
         print('Iniciando tratamento de segmento...')
-        date_cols = ['data_inicio', 'data_fim']
+        string_cols = ['nome', 'descricao', 'criterio']
 
-        df = super().transform(df)
+        df = super().transform(df, string_cols=string_cols)
 
         # Nomes são transformados em minúsculo e espaços em branco são removidos
         # Além disso, caracteres acentuados são convertidos para suas formas sem acentos
         df = df \
-            .withColumn('nome', F.trim(F.lower(F.col('nome')))) \
-            .withColumn('descricao', F.trim(F.lower(F.col('descricao')))) \
-            .withColumn('criterio', F.trim(F.lower(F.col('criterio')))) \
-            .withColumn('descricao', F.replace(F.col('descricao'), 'Segmento: ', '')) \
-            .withColumn('nome', F.replace(F.col('nome'), '/', '_')) \
-            .withColumn('nome', F.replace(F.col('nome'), ' ', '_')) \
-            .withColumn('descricao', F.replace(F.col('descricao'), ' ', '_')) \
-            .withColumn('nome', self.remove_acentos_udf(F.col('nome'))) \
-            .withColumn('descricao', self.remove_acentos_udf(F.col('descricao'))) \
-            .withColumn('criterio', self.remove_acentos_udf(F.col('criterio')))
+            .withColumn('descricao', F.replace(F.col('descricao'), F.lit('Segmento: '), F.lit(''))) \
+            .withColumn('nome', F.replace(F.col('nome'), F.lit('/'), F.lit('_')))
         
         return df
         

@@ -14,7 +14,7 @@ class CampanhaMktPipeline(MarketingSilverPipeline):
         string_cols = ['nome', 'tipo', 'objetivo', 'status']
 
         df = df \
-            .withColumn('nome', F.replace(F.col('nome'), ' -', '')) # Campanha 11 - Dia das Mães -> Campanha 11 Dia das Mães
+            .withColumn('nome', F.replace(F.col('nome'), F.lit(' -'), F.lit(''))) # Campanha 11 - Dia das Mães -> Campanha 11 Dia das Mães
 
         df = super().transform(df, date_cols=date_cols, decimal_cols=decimal_cols, string_cols=string_cols)
 
