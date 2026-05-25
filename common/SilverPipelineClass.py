@@ -3,7 +3,6 @@ from common.BasePipelineClass import BasePipeline
 from pyspark.sql import DataFrame
 from pyspark.sql.functions import current_timestamp, udf
 from pyspark.sql.types import StringType
-import unidecode
 
 class SilverPipeline(BasePipeline):
     def __init__(self, dominio: str):
@@ -52,7 +51,3 @@ class SilverPipeline(BasePipeline):
         
         print(f"Pipeline Silver para o domínio '{self.dominio}' concluída com sucesso!")
 
-    def remove_acentos(texto):
-        if texto is None:
-            return None
-        return unidecode.unidecode(texto)
