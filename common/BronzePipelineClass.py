@@ -58,6 +58,24 @@ class BronzePipeline(BasePipeline):
             .saveAsTable(full_table_path)
         
         print("Carga Bronze finalizada com sucesso!")
+    
+    def export_to_volume(self, df, table_name):
+        """Salva os mesmos dados brutos em formato Parquet puro dentro de um Volume do Unity Catalog.
+        Isso resolve o bloqueio do DBFS e evita configurações de storage externo.
+        """
+        # Nome do volume que você criou no Databricks
+        nome_volume = "arquivos_parquet"
+        
+        # ATENÇÃO: Caminhos de Volume começam com /Volumes/ e NÃO usam dbfs:/
+        volume_path = f"/Volumes/{self.catalog}/{self.schema}/{nome_volume}/{table_name}"
+        
+        print(f"[Unity Catalog Volumes] Salvando cópia Parquet em: {volume_path}...")
+        
+        # df = df.coalesce(1) # Descomente se sua aplicação exigir um arquivo único ao invés de partições
+        
+        df.write.format("parquet") \
+            .mode("overwrite") \
+            .save(volume_path)
 
     def run(self, source_table):
         """Executa o fluxo fim-a-fim de ingestão (Extração e Carga).
@@ -70,3 +88,4 @@ class BronzePipeline(BasePipeline):
         """
         df_raw = self.extract_from_postgres(source_table)
         self.load_to_bronze(df_raw, source_table)
+        self.export_to_volume(df_raw, source_table)
