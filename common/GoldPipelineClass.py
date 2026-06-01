@@ -38,10 +38,10 @@ class GoldPipeline(BasePipeline):
         print(f"Iniciando pipeline Gold para o domínio '{self.dominio}'...")
         
         # 1. Extrai da Silver
-        df_silver = self.extract_from_silver(source_table)
+        #df_silver = self.extract_from_silver(source_table)
         
         # 2. Aplica a regra de negócio/agregação customizada do domínio
-        df_gold = self.create_business_view(df_silver)
+        df_gold = self.create_business_view()
         
         # 3. Salva no catálogo da Gold
         self.load_to_gold(df_gold, target_table)
