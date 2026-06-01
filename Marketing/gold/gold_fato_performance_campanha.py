@@ -90,8 +90,5 @@ class GoldFatoPerformanceCampanha(GoldPipeline):
         # ==============================================================================
         # 6. PERSISTÊNCIA NA GOLD (Como tabela gerenciada Delta no Unity Catalog)
         # ==============================================================================
-        df_gold.write.format("delta") \
-            .mode("overwrite") \
-            .saveAsTable("mkt_prod.gold.fato_performance_campanha")
-
         print("Tabela fato_performance_campanha criada e atualizada com sucesso na Gold!")
+        return df_gold
