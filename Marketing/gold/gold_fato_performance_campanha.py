@@ -31,7 +31,7 @@ class GoldFatoPerformanceCampanha(GoldPipeline):
             F.sum("total_enviados").alias("total_emails_enviados"),
             F.sum("total_abertos").alias("total_emails_abertos"),
             F.sum("total_cliques").alias("total_cliques_emails"),
-            F.sum("descadastrados").alias("total_emails_descadastrados")
+            F.sum("descadastros").alias("total_emails_descadastrados")
         )
 
         # Agregação de Redes Sociais
