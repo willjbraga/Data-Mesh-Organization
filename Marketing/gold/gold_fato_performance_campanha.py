@@ -5,7 +5,7 @@ class GoldFatoPerformanceCampanha(GoldPipeline):
     def __init__(self):
         super().__init__('mkt')
 
-    def create_business_view(self, df_silver):
+    def create_business_view(self):
         # ==============================================================================
         # 1. LEITURA DAS TABELAS DA CAMADA SILVER
         # ==============================================================================
