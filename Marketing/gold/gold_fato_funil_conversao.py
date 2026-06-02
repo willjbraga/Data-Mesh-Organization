@@ -32,7 +32,7 @@ class GoldFatoFunilConversao(GoldPipeline):
         
         # 2º Unimos com a tabela Cliente para capturar a data de conversão (se houver)
         df_funil_base = df_funil_base.join(
-            df_cliente.select("id_cliente", F.col("data_cadastro").alias("data_conversao")), 
+            df_cliente.select("id_cliente", F.col("data_cadastro").alias("data_fechamento_cliente")), 
             "id_cliente", 
             "left"
         )
@@ -49,17 +49,17 @@ class GoldFatoFunilConversao(GoldPipeline):
             F.sum(F.when(F.col("status") == "perdido", 1).otherwise(0)).alias("leads_perdidos"),
             F.sum(F.when(F.col("status") == "convertido", 1).otherwise(0)).alias("leads_convertidos"),
             # Calcula a média de dias que levou para o lead virar cliente
-            F.round(F.avg(F.datediff("data_conversao", "data_entrada")), 1).alias("tempo_medio_conversao_dias")
+            F.round(F.avg(F.datediff("data_fechamento_cliente", "data_entrada")), 1).alias("tempo_medio_conversao_dias")
         )
 
         # ==============================================================================
         # 5. CÁLCULO DAS PORCENTAGENS DE FONTE (Usando Window Functions)
         # ==============================================================================
         # Janela global para somar o total absoluto de leads do período e calcular o share
-        janela_total = Window.partitionBy() 
+        janela_diaria = Window.partitionBy("data_referencia") 
         
         df_gold = df_agregado \
-            .withColumn("total_geral_leads_periodo", F.sum("total_leads").over(janela_total)) \
+            .withColumn("total_geral_leads_periodo", F.sum("total_leads").over(janela_diaria)) \
             .withColumn(
                 "porcentagem_representacao_fonte",
                 F.round((F.col("total_leads") / F.col("total_geral_leads_periodo")) * 100, 2)
