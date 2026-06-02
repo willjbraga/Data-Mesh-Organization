@@ -15,3 +15,8 @@ class GoldFatoFunilConversao(GoldPipeline):
         # ==============================================================================
         # 2. AGREGAÇÕES PARA O FUNIL DE CONVERSÃO
         # ==============================================================================
+        agg_leads = df_leads.groupBy("id_cliente").agg(
+            F.count("id_lead").alias("total_leads"),
+            F.sum(F.when(F.col("status") == "perdido", 1).otherwise(0)).alias("leads_perdidos"),
+            F.sum(F.when(F.col("status") == "convertido", 1).otherwise(0)).alias("leads_convertidos")
+        )
