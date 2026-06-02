@@ -34,24 +34,21 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 │   └── utils.py             # Funções auxiliares e constantes globais
 │
 ├── 01_marketing/            # Domínio de Marketing
-│   ├── notebooks/
-│   │   ├── 01_ingestao.py   # Bronze: Postgres -> Delta
-│   │   ├── 02_limpeza.py    # Silver: Uso da SilverPipeline (Regex, Datas)
-│   │   └── 03_negocio.py    # Gold: KPIs de Marketing e Conversão
+│   ├── bronze/
+|   ├── silver/
+|   ├── gold/
 │   └── tests/               # Testes unitários do domínio
 │
 ├── 02_financas/             # Domínio de Finanças
-│   ├── notebooks/
-│   │   ├── 01_ingestao.py
-│   │   ├── 02_limpeza.py
-│   │   └── 03_negocio.py    # Gold: KPIs Financeiros e Faturamento
+│   ├── bronze/
+|   ├── silver/
+|   ├── gold/
 │   └── tests/
 │
 ├── 03_recursos_humanos/     # Domínio de Recursos Humanos
-│   ├── notebooks/
-│   │   ├── 01_ingestao.py
-│   │   ├── 02_limpeza.py
-│   │   └── 03_negocio.py    # Gold: KPIs de Entrega e SLA
+│   ├── bronze/
+|   ├── silver/
+|   ├── gold/
 │   └── tests/
 │
 ├── 04_gold_global/          # Camada Gold Transversal (Cross-Domain)
