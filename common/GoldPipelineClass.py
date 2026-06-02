@@ -33,12 +33,10 @@ class GoldPipeline(BasePipeline):
         """
         raise NotImplementedError("O método 'create_business_view' precisa ser implementado pelo domínio.")
     
-    def run(self, source_table: str, target_table: str):
+    def run(self, target_table: str):
         """Executa o fluxo fim-a-fim da camada Gold."""
         print(f"Iniciando pipeline Gold para o domínio '{self.dominio}'...")
         
-        # 1. Extrai da Silver
-        #df_silver = self.extract_from_silver(source_table)
         
         # 2. Aplica a regra de negócio/agregação customizada do domínio
         df_gold = self.create_business_view()
