@@ -1,12 +1,12 @@
 from silver_base import FinanceiroSilverPipeline
-from pyspark.sql.functions import col, trim, lower, current_timestamp
 
 class CategoriasDespesaFinPipeline(FinanceiroSilverPipeline):
     def run(self, name):
-        df = self.spark.read.csv(f"{self.caminho_base_bronze}{name}.csv", header=True, inferSchema=True)
+        # Lê da Bronze via Unity Catalog (fin_prod.bronze.categorias_despesa)
+        df = self.extract_from_bronze(name)
 
-        df_silver = df \
-            .withColumn("tipo", lower(trim(col("tipo")))) \
-            .withColumn("data_processamento_silver", current_timestamp())
+        # Tratamento específico desta tabela
+        df_silver = self.transform(df, string_cols=["tipo"])
 
-        df_silver.write.format("delta").mode("overwrite").save(f"{self.caminho_base_silver}{name}")
+        # Salva na Silver via Unity Catalog (fin_prod.silver.categorias_despesa)
+        self.load_to_silver(df_silver, name)

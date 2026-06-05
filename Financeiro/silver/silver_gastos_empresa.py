@@ -1,18 +1,37 @@
 from silver_base import FinanceiroSilverPipeline
-from pyspark.sql.functions import col, to_date, trim, lower, lit, when, current_timestamp
+import pyspark.sql.functions as F
 
 class GastosEmpresaFinPipeline(FinanceiroSilverPipeline):
     def run(self, name):
-        df = self.spark.read.csv(f"{self.caminho_base_bronze}{name}.csv", header=True, inferSchema=True)
+        # Lê da Bronze via Unity Catalog (fin_prod.bronze.gastos_empresa)
+        df = self.extract_from_bronze(name)
 
-        # Tratamento de segurança: remove espaços em branco do início e do fim dos nomes das colunas
-        df = df.toDF(*[c.strip() for c in df.columns])
+        # tipo_pagamento: cobre null E a string "NULL" -> "nao_informado"
+        df = df.withColumn(
+            "tipo_pagamento",
+            F.when(
+                F.col("tipo_pagamento").isNull() | (F.upper(F.col("tipo_pagamento")) == "NULL"),
+                F.lit("nao_informado")
+            ).otherwise(F.col("tipo_pagamento"))
+        )
 
-        df_silver = df \
-            .withColumn("data_gasto", to_date(col("data_gasto"), "yyyy-MM-dd")) \
-            .withColumn("tipo_pagamento", lower(trim(col("tipo_pagamento")))) \
-            .withColumn("tipo_pagamento", when(col("tipo_pagamento").isNull(), lit("nao_informado")).otherwise(col("tipo_pagamento"))) \
-            .withColumn("observacoes", when(col("observacoes") == "NULL", lit(None)).otherwise(col("observacoes"))) \
-            .withColumn("data_processamento_silver", current_timestamp())
+        # observacoes: sentinela "NULL" -> None; senão mantém legível
+        df = df.withColumn(
+            "observacoes",
+            F.when(F.upper(F.col("observacoes")) == "NULL", F.lit(None))
+             .otherwise(F.trim(F.col("observacoes")))
+        )
 
-        df_silver.write.format("delta").mode("overwrite").save(f"{self.caminho_base_silver}{name}")
+        # descricao: texto livre -> legível (só trim)
+        df = df.withColumn("descricao", F.trim(F.col("descricao")))
+
+        # Apenas o categórico tipo_pagamento recebe snake_case
+        df_silver = self.transform(
+            df,
+            date_cols=["data_gasto"],
+            decimal_cols=["valor"],
+            string_cols=["tipo_pagamento"],
+        )
+
+        # Salva na Silver via Unity Catalog (fin_prod.silver.gastos_empresa)
+        self.load_to_silver(df_silver, name)

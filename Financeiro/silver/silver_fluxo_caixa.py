@@ -1,16 +1,19 @@
 from silver_base import FinanceiroSilverPipeline
-from pyspark.sql.functions import col, to_date, trim, lower, current_timestamp
 
 class FluxoCaixaFinPipeline(FinanceiroSilverPipeline):
     def run(self, name):
-        df = self.spark.read.csv(f"{self.caminho_base_bronze}{name}.csv", header=True, inferSchema=True)
+        # Lê da Bronze via Unity Catalog (fin_prod.bronze.fluxo_caixa)
+        df = self.extract_from_bronze(name)
 
-        df_silver = df \
-            .withColumn("data_movimento", to_date(col("data_movimento"), "yyyy-MM-dd")) \
-            .withColumn("tipo_movimento", lower(trim(col("tipo_movimento")))) \
-            .withColumn("categoria", lower(trim(col("categoria")))) \
-            .withColumn("id_referencia", col("id_referencia").cast("integer")) \
-            .withColumn("tipo_referencia", lower(trim(col("tipo_referencia")))) \
-            .withColumn("data_processamento_silver", current_timestamp())
+        # Bronze já vem tipada (int/date/decimal/timestamp).
+        # id_referencia vem como string -> convertemos para int (é um ID numérico).
+        # tratar_negativos=False: saldos podem ser legitimamente negativos.
+        df_silver = self.transform(
+            df,
+            int_cols=["id_referencia"],
+            string_cols=["tipo_movimento", "categoria", "tipo_referencia", "descricao"],
+            tratar_negativos=False,
+        )
 
-        df_silver.write.format("delta").mode("overwrite").save(f"{self.caminho_base_silver}{name}")
+        # Salva na Silver via Unity Catalog (fin_prod.silver.fluxo_caixa)
+        self.load_to_silver(df_silver, name)

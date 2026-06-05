@@ -1,15 +1,27 @@
 from silver_base import FinanceiroSilverPipeline
-from pyspark.sql.functions import col, regexp_replace, trim, lower, current_timestamp
+import pyspark.sql.functions as F
 
 class FornecedoresFinPipeline(FinanceiroSilverPipeline):
     def run(self, name):
-        df = self.spark.read.csv(f"{self.caminho_base_bronze}{name}.csv", header=True, inferSchema=True)
+        # Lê da Bronze via Unity Catalog (fin_prod.bronze.fornecedores)
+        df = self.extract_from_bronze(name)
 
-        df_silver = df \
-            .withColumn("cnpj", regexp_replace(col("cnpj"), "[^0-9]", "")) \
-            .withColumn("telefone", regexp_replace(col("telefone"), "[^0-9]", "")) \
-            .withColumn("tipo", lower(trim(col("tipo")))) \
-            .withColumn("email", lower(trim(col("email")))) \
-            .withColumn("data_processamento_silver", current_timestamp())
+        # CNPJ e telefone: só dígitos, preservando zeros à esquerda
+        df = self.limpar_documento(df, "cnpj")
+        df = self.limpar_documento(df, "telefone")
 
-        df_silver.write.format("delta").mode("overwrite").save(f"{self.caminho_base_silver}{name}")
+        # Flag de validade do CNPJ (14 dígitos) para auditoria
+        df = self.validar_documento(df, "cnpj", tamanho=14, col_flag="cnpj_valido")
+
+        # email e nome_empresa: legíveis (só lower/trim, SEM snake_case nem perder acento)
+        df = df.withColumn("email", F.lower(F.trim(F.col("email"))))
+        df = df.withColumn("nome_empresa", F.trim(F.col("nome_empresa")))
+
+        # Apenas o categórico 'tipo' recebe o tratamento padrão (snake_case)
+        df_silver = self.transform(
+            df,
+            string_cols=["tipo"],
+        )
+
+        # Salva na Silver via Unity Catalog (fin_prod.silver.fornecedores)
+        self.load_to_silver(df_silver, name)
