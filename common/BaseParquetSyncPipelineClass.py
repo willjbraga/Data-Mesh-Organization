@@ -20,7 +20,6 @@ class BaseParquetSyncPipeline:
         self.dbutils = self._get_dbutils()
         
         self.dominio = dominio
-        self.camada = camada
         self.tabelas = tabelas
         self.codec = codec
         
