@@ -1,4 +1,4 @@
-from Marketing.test.test_marketing_class import MarketingParquetSyncPipeline
+from Marketing.tests.test_marketing_class import MarketingParquetSyncPipeline
 
 pipeline_marketing = MarketingParquetSyncPipeline(codec="snappy")
 
