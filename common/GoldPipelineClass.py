@@ -1,5 +1,6 @@
 import pyspark
 from common.BasePipelineClass import BasePipeline
+from common.MeshContractEnforcer import MeshContractEnforcer
 from pyspark.sql import DataFrame
 from abc import abstractmethod
 
@@ -40,6 +41,9 @@ class GoldPipeline(BasePipeline):
         
         # 2. Aplica a regra de negócio/agregação customizada do domínio
         df_gold = self.create_business_view()
-        
-        # 3. Salva no catálogo da Gold
-        self.load_to_gold(df_gold, target_table)
+
+        enforcer = MeshContractEnforcer(contract_yaml_path=f"contracts/{self.dominio}/gold_{target_table}.yaml")
+        if enforcer.enforce(df_gold):
+
+            # 3. Salva no catálogo da Gold
+            self.load_to_gold(df_gold, target_table)
