@@ -47,3 +47,6 @@ class GoldPipeline(BasePipeline):
 
             # 3. Salva no catálogo da Gold
             self.load_to_gold(df_gold, target_table)
+            print(f"Pipeline Gold para '{target_table}' concluída com sucesso!")
+        else:
+            print(f"Pipeline Gold para '{target_table}' falhou na validação de contrato.")
