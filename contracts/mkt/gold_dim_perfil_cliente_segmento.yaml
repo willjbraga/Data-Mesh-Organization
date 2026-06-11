@@ -1,0 +1,66 @@
+# Data Contract Specification v1.0
+id: "mkt:data_product:dim_perfil_cliente_segmento"
+version: "1.0.0"
+domain: "marketing"
+data_product_name: "dim_perfil_cliente_segmento"
+owner: "team-crm-marketing@empresa.com"
+status: "active"
+
+# 1. Definição Estrutural e Semântica (Modelo de Dados)
+schema:
+  - name: "id_cliente"
+    type: "integer"
+    description: "ID único identificador do cliente"
+    primary_key: true
+  - name: "nome"
+    type: "string"
+    description: "Nome completo do cliente"
+  - name: "email"
+    type: "string"
+    description: "Endereço de e-mail principal do cliente (PII)"
+  - name: "telefone"
+    type: "string"
+    description: "Número de telefone/celular de contato do cliente (PII)"
+  - name: "cidade"
+    type: "string"
+    description: "Cidade de residência ou faturamento do cliente"
+  - name: "origem"
+    type: "string"
+    description: "Canal original de captação do cliente"
+  - name: "ingest_timestamp"
+    type: "timestamp"
+    description: "Data e hora exata em que o perfil foi processado e atualizado na camada Gold"
+  - name: "data_cadastro"
+    type: "date"
+    description: "Data em que o usuário foi oficialmente cadastrado como cliente"
+  - name: "fonte"
+    type: "string"
+    description: "Fonte de tráfego que originou o primeiro contato (ex: Google, Meta, Orgânico)"
+  - name: "total_interacoes"
+    type: "integer"
+    description: "Quantidade total de interações/pontos de contato que o cliente já teve no histórico"
+  - name: "quantidade_segmentos"
+    type: "integer"
+    description: "Número total de segmentos de mercado/CRM aos quais este cliente pertence atualmente"
+
+# 2. Governança, Privacidade e Segurança (Crítico para LGPD / GDPR)
+governance:
+  classification: "confidential" # Classificado como confidencial devido aos dados de contato
+  contains_pii: true             # Sinaliza para a plataforma self-serve a presença de dados sensíveis
+  pii_columns:
+    - "nome"
+    - "email"
+    - "telefone"
+
+# 3. Acordo de Nível de Serviço (SLA / Qualidade do Produto de Dados)
+service_level_agreements:
+  freshness: "daily"             # Atualização diária é suficiente para análises de perfil e CRM
+  completeness:
+    column: "id_cliente"
+    min_threshold_pct: 100.0     # O ID do cliente é obrigatório em todas as linhas
+  
+  # Regras de integridade customizadas (Garantindo valores não-negativos)
+  integrity:
+    non_negative_columns:
+      - "total_interacoes"
+      - "quantidade_segmentos"
