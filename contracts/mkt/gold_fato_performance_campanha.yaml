@@ -77,3 +77,14 @@ service_level_agreements:
   completeness:
     column: "id_campanha"
     min_threshold_pct: 100.0 # Nenhuma linha pode ter o ID da campanha nulo
+  integrity:
+    non_negative_columns:
+      - "total_impressoes"
+      - "total_cliques"
+      - "total_emails_enviados"
+      - "total_emails_abertos"
+      - "total_cliques_emails"
+      - "total_emails_descadastrados"
+      - "total_curtidas"
+      - "total_comentarios"
+      - "total_compartilhamentos"
