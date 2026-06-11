@@ -1,0 +1,43 @@
+id: "mkt:data_product:fato_funil_conversao"
+version: "1.0.0"
+domain: "marketing"
+data_product_name: "fato_funil_conversao"
+owner: "team-marketing-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "data_referencia"
+    type: "date"
+    description: "Data em que o lead entrou no funil"
+    primary_key: true
+  - name: "fonte_trafego"
+    type: "string"
+    description: "Origem do tráfego (ex: Google, Meta, Orgânico)"
+    primary_key: true
+  - name: "id_campanha"
+    type: "integer"
+    description: "ID de identificação da campanha de marketing"
+    primary_key: true
+  - name: "total_leads"
+    type: "integer"
+    description: "Quantidade total de leads gerados na combinação de chave"
+  - name: "leads_perdidos"
+    type: "integer"
+    description: "Quantidade de leads que foram dados como perdidos"
+  - name: "leads_convertidos"
+    type: "integer"
+    description: "Quantidade de leads que viraram clientes ativos"
+  - name: "tempo_medio_conversao_dias"
+    type: "double"
+    description: "Tempo médio em dias para um lead se converter em cliente ativo"
+  - name: "porcentagem_representacao_fonte"
+    type: "double"
+    description: "Share de participação daquela fonte no volume de leads do dia"
+  - name: "taxa_conversao_fonte_porcentagem"
+    type: "double"
+    description: "Taxa de conversão da fonte em porcentagem (leads convertidos / total leads * 100)"
+
+governance:
+
+
+service_level_agreements:
