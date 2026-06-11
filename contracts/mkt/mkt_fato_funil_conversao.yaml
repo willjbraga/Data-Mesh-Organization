@@ -38,6 +38,11 @@ schema:
     description: "Taxa de conversão da fonte em porcentagem (leads convertidos / total leads * 100)"
 
 governance:
-
+  classification: "internal" # Opções: public, internal, confidential, restricted
+  contains_pii: false        # Como esta tabela é agregada, não possui dados sensíveis expostos
 
 service_level_agreements:
+  freshness: "daily"         # O dado deve ser atualizado a cada 24 horas
+  completeness:
+    column: "total_leads"
+    min_threshold_pct: 100.0 # Não toleramos linhas com total de leads nulo ou zerado incorretamente
