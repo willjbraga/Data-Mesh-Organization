@@ -33,3 +33,60 @@ class MeshContractEnforcer:
             is_nullable = not col.get("primary_key", False)
             fields.append(StructField(col["name"], spark_type, is_nullable))
         return StructType(fields)
+    
+    def enforce(self, df: DataFrame) -> bool:
+        """Aplica os testes de conformidade do Data Product contra o Contrato de Dados.
+
+        Levanta exceções claras se o Produto de Dados violar o acordo.
+        """
+        product_name = self.contract_data["data_product_name"]
+        print(f"🛑 [Data Mesh Governance] Validando Data Product: '{product_name}' v{self.contract_data['version']}...")
+
+        # ==============================================================================
+        # 1. VALIDAÇÃO DE SCHEMA ESTRITO
+        # ==============================================================================
+        expected_fields = {f["name"]: f["type"] for f in self.contract_data["schema"]}
+        current_fields = df.dtypes
+        
+        for col_name, col_type in current_fields:
+            if col_name not in expected_fields:
+                raise ValueError(f"❌ Violação de Contrato: Coluna extra não autorizada encontrada no Data Product: '{col_name}'")
+        
+        # ==============================================================================
+        # 2. VALIDAÇÃO DE CHAVES PRIMÁRIAS
+        # ==============================================================================
+        pks = [col["name"] for col in self.contract_data["schema"] if col.get("primary_key", False)]
+        for pk in pks:
+            null_count = df.filter(F.col(pk).isNull()).count()
+            if null_count > 0:
+                raise ValueError(f"❌ Violação de SLA: A Chave Primária contratada '{pk}' contém {null_count} valores nulos.")
+
+        # ==============================================================================
+        # 3. VALIDAÇÃO DE SLA DE COMPLETUDE
+        # ==============================================================================
+        sla = self.contract_data.get("service_level_agreements", {})
+        sla_completeness = sla.get("completeness", {})
+        target_column = sla_completeness.get("column")
+        
+        if df.count() == 0:
+            raise ValueError(f"❌ Violação de SLA: O Produto de Dados está completamente vazio.")
+
+        # ==============================================================================
+        # 4. NOVA VALIDAÇÃO: CHECAGEM DE VALORES NEGATIVOS (INTEGRIDADE)
+        # ==============================================================================
+        integrity_rules = sla.get("integrity", {})
+        non_negative_cols = integrity_rules.get("non_negative_columns", [])
+        
+        for col_name in non_negative_cols:
+            if col_name in df.columns:
+                # Filtrar linhas onde o valor é menor que zero
+                negative_rows_count = df.filter(F.col(col_name) < 0).count()
+                
+                if negative_rows_count > 0:
+                    raise ValueError(
+                        f"❌ Violação de SLA de Integridade: A coluna '{col_name}' possui "
+                        f"{negative_rows_count} registros com valores NEGATIVOS. Isso viola o contrato firmado."
+                    )
+
+        print(f"✅ [Data Mesh Governance] Data Product '{product_name}' está 100% em conformidade com o contrato!")
+        return True
