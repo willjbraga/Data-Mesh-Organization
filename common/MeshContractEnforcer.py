@@ -1,7 +1,7 @@
 import yaml
 from pyspark.sql import SparkSession, DataFrame
 from pyspark.sql import functions as F
-from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType, DateType
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType, DoubleType, DateType, TimestampType
 
 class MeshContractEnforcer:
     """Motor self-serve para ler contratos YAML de Data Mesh e aplicar governança no Spark."""
@@ -11,7 +11,8 @@ class MeshContractEnforcer:
         "string": StringType(),
         "integer": IntegerType(),
         "double": DoubleType(),
-        "date": DateType()
+        "date": DateType(),
+        "timestamp": TimestampType()
     }
 
     def __init__(self, contract_yaml_path: str):
