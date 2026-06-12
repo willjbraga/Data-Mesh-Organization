@@ -73,7 +73,7 @@ class MeshContractEnforcer:
             raise ValueError(f"❌ Violação de SLA: O Produto de Dados está completamente vazio.")
 
         # ==============================================================================
-        # 4. NOVA VALIDAÇÃO: CHECAGEM DE VALORES NEGATIVOS (INTEGRIDADE)
+        # 4. CHECAGEM DE VALORES NEGATIVOS (INTEGRIDADE)
         # ==============================================================================
         integrity_rules = sla.get("integrity", {})
         non_negative_cols = integrity_rules.get("non_negative_columns", [])
