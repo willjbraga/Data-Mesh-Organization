@@ -6,16 +6,11 @@ class FatoMovimentoCaixaFinPipeline(GoldPipeline):
     '''
     Gold - FATO: movimentos de caixa (tabela central do star schema).
 
-    Cada linha é uma entrada ou saída real de dinheiro (regime de caixa),
-    vinda do fluxo_caixa. Carrega as chaves para as dimensões (tempo,
-    categoria) e a classificação de grupo DRE.
-
-    É a base a partir da qual o fato_dre_mensal é construído e da qual
-    qualquer análise financeira pode partir.
+    Cada linha é uma entrada ou saída real de dinheiro (regime de caixa).
+    Valores convertidos de decimal para double para conformidade com o
+    contrato (MeshContractEnforcer não suporta decimal).
 
     Grão: 1 linha por movimento de caixa.
-    Chaves dimensionais: data (-> dim_tempo), categoria (-> análise)
-    Métrica: valor, sinal (entrada=+ / saida=-), valor_sinalizado
     '''
 
     def __init__(self):
@@ -46,16 +41,16 @@ class FatoMovimentoCaixaFinPipeline(GoldPipeline):
              .otherwise(-F.col("valor"))
         )
 
-        # Seleção final do fato
+        # Seleção final do fato (valores decimal -> double p/ contrato)
         return df.select(
             F.col("id_fluxo"),
-            F.col("data_movimento").alias("data"),   # chave -> dim_tempo
+            F.col("data_movimento").alias("data"),
             F.col("ano_mes"),
-            F.col("tipo_movimento"),                  # entrada / saida
+            F.col("tipo_movimento"),
             F.col("tipo_referencia"),
             F.col("categoria"),
             F.col("grupo_dre"),
-            F.col("valor"),
-            F.col("valor_sinalizado"),
+            F.col("valor").cast("double").alias("valor"),
+            F.col("valor_sinalizado").cast("double").alias("valor_sinalizado"),
             F.col("descricao"),
         ).orderBy("data", "id_fluxo")
