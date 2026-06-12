@@ -1,0 +1,53 @@
+# Data Contract Specification v1.0
+id: "fin:data_product:fato_movimento_caixa"
+version: "1.0.0"
+domain: "financeiro"
+data_product_name: "fato_movimento_caixa"
+owner: "team-financeiro@empresa.com"
+status: "active"
+
+schema:
+  - name: "id_fluxo"
+    type: "integer"
+    description: "ID único do movimento de caixa"
+    primary_key: true
+  - name: "data"
+    type: "date"
+    description: "Data do movimento de caixa (chave -> dim_tempo)"
+  - name: "ano_mes"
+    type: "string"
+    description: "Ano e mês do movimento no formato yyyy-MM"
+  - name: "tipo_movimento"
+    type: "string"
+    description: "Tipo do movimento (entrada ou saida)"
+  - name: "tipo_referencia"
+    type: "string"
+    description: "Origem do movimento (conta_receber, compra_insumo, etc.)"
+  - name: "categoria"
+    type: "string"
+    description: "Categoria do movimento (venda, despesa, servico, etc.)"
+  - name: "grupo_dre"
+    type: "string"
+    description: "Classificação no DRE (1_receita, 2_custo, 3_despesa_pessoal, 4_despesa_operacional)"
+  - name: "valor"
+    type: "double"
+    description: "Valor absoluto do movimento (sempre positivo)"
+  - name: "valor_sinalizado"
+    type: "double"
+    description: "Valor com sinal (positivo para entradas, negativo para saidas)"
+  - name: "descricao"
+    type: "string"
+    description: "Descrição do movimento"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "id_fluxo"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "valor"

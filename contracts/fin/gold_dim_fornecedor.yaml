@@ -1,0 +1,37 @@
+# Data Contract Specification v1.0
+id: "fin:data_product:dim_fornecedor"
+version: "1.0.0"
+domain: "financeiro"
+data_product_name: "dim_fornecedor"
+owner: "team-financeiro@empresa.com"
+status: "active"
+
+schema:
+  - name: "id_fornecedor"
+    type: "integer"
+    description: "ID único identificador do fornecedor"
+    primary_key: true
+  - name: "nome_empresa"
+    type: "string"
+    description: "Razão social / nome da empresa fornecedora"
+  - name: "cnpj"
+    type: "string"
+    description: "CNPJ do fornecedor (apenas dígitos)"
+  - name: "tipo_fornecedor"
+    type: "string"
+    description: "Tipo de fornecedor (insumos, mercadorias, servicos)"
+  - name: "cnpj_valido"
+    type: "string"
+    description: "Flag de validade do CNPJ (true/false) - 14 dígitos e não nulo"
+
+governance:
+  classification: "confidential"
+  contains_pii: true
+  pii_columns:
+    - "cnpj"
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "id_fornecedor"
+    min_threshold_pct: 100.0
