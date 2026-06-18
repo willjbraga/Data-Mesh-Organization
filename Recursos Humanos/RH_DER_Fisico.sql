@@ -1,4 +1,3 @@
-sql
 /* RH_DER_Fisico_Melhorado */
 
 /* 
