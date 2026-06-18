@@ -6,12 +6,10 @@ class DimFornecedorFinPipeline(GoldPipeline):
     '''
     Gold - DIMENSÃO: fornecedores.
 
-    Descreve cada fornecedor (contexto para análises de compras/pagamentos).
-    Cópia tratada da Silver fornecedores. Dados de contato sensíveis ficam
-    de fora da dimensão analítica.
+    cnpj_valido é convertido de boolean para string, pois o contrato
+    (MeshContractEnforcer) não suporta o tipo boolean nativamente.
 
     Grão: 1 linha por fornecedor.
-    Saída: id_fornecedor, nome_empresa, cnpj, tipo_fornecedor, cnpj_valido
     '''
 
     def __init__(self):
@@ -24,8 +22,9 @@ class DimFornecedorFinPipeline(GoldPipeline):
             F.col("id_fornecedor"),
             F.col("nome_empresa"),
             F.col("cnpj"),
-            F.col("tipo").alias("tipo_fornecedor"),   # insumos / mercadorias / servicos
-            F.col("cnpj_valido"),
+            F.col("tipo").alias("tipo_fornecedor"),
+            # boolean -> string (contrato não aceita boolean)
+            F.col("cnpj_valido").cast("string").alias("cnpj_valido"),
         )
 
         return df.dropDuplicates(["id_fornecedor"]).orderBy("id_fornecedor")

@@ -1,0 +1,35 @@
+# Data Contract Specification v1.0
+id: "fin:data_product:dim_categoria"
+version: "1.0.0"
+domain: "financeiro"
+data_product_name: "dim_categoria"
+owner: "team-financeiro@empresa.com"
+status: "active"
+
+schema:
+  - name: "id_categoria"
+    type: "integer"
+    description: "ID único identificador da categoria de despesa"
+    primary_key: true
+  - name: "nome_categoria"
+    type: "string"
+    description: "Nome da categoria de despesa"
+  - name: "tipo_categoria"
+    type: "string"
+    description: "Tipo da categoria (fixa ou variavel)"
+  - name: "descricao"
+    type: "string"
+    description: "Descrição detalhada da categoria"
+  - name: "grupo_dre"
+    type: "string"
+    description: "Classificação no DRE (despesa_fixa, despesa_variavel, nao_classificada)"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "id_categoria"
+    min_threshold_pct: 100.0

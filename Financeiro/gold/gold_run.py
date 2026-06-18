@@ -1,9 +1,16 @@
 import sys
+import os
 
-# raiz do projeto -> resolve "from common..."
-sys.path.append("/Workspace/Users/steimbachgabriel@gmail.com/Data-Mesh-Organization")
-# pasta gold -> resolve "from gold_<view>..."
-sys.path.append("/Workspace/Users/steimbachgabriel@gmail.com/Data-Mesh-Organization/Financeiro/gold")
+# Raiz do projeto
+RAIZ = "/Workspace/Users/steimbachgabriel@gmail.com/Data-Mesh-Organization"
+
+# Muda o diretório de trabalho para a raiz do projeto.
+# Necessário porque o MeshContractEnforcer usa caminho RELATIVO (contracts/fin/...).
+os.chdir(RAIZ)
+
+# sys.path -> resolve "from common..." e "from gold_<view>..."
+sys.path.append(RAIZ)
+sys.path.append(f"{RAIZ}/Financeiro/gold")
 
 from gold_dim_categoria import DimCategoriaFinPipeline
 from gold_dim_fornecedor import DimFornecedorFinPipeline

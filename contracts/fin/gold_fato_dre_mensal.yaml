@@ -1,0 +1,47 @@
+# Data Contract Specification v1.0
+id: "fin:data_product:fato_dre_mensal"
+version: "1.1.0"
+domain: "financeiro"
+data_product_name: "fato_dre_mensal"
+owner: "team-financeiro@empresa.com"
+status: "active"
+
+schema:
+  - name: "ano_mes"
+    type: "string"
+    description: "Ano e mês de competência do DRE no formato yyyy-MM"
+    primary_key: true
+  - name: "receita"
+    type: "double"
+    description: "Total de receitas no mês (regime de caixa)"
+  - name: "custo"
+    type: "double"
+    description: "Total de custos (CMV - insumos e mercadorias) no mês"
+  - name: "despesa_pessoal"
+    type: "double"
+    description: "Total de despesas com folha de pagamento no mês"
+  - name: "despesa_operacional"
+    type: "double"
+    description: "Total de despesas operacionais (aluguel, energia, serviços) no mês"
+  - name: "total_despesas"
+    type: "double"
+    description: "Soma de custo + despesa_pessoal + despesa_operacional"
+  - name: "resultado_liquido"
+    type: "double"
+    description: "Resultado líquido (receita - total_despesas). Pode ser negativo (prejuízo)."
+  - name: "margem_liquida_pct"
+    type: "double"
+    description: "Margem líquida em percentual (resultado_liquido / receita * 100)"
+  - name: "mes_completo"
+    type: "string"
+    description: "Flag de qualidade (true/false): indica se o mês tem volume de vendas completo. Meses com poucas vendas na origem são marcados como false (dados parciais)."
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "ano_mes"
+    min_threshold_pct: 100.0

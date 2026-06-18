@@ -1,0 +1,50 @@
+# Data Contract Specification v1.0
+id: "fin:data_product:dim_tempo"
+version: "1.0.0"
+domain: "financeiro"
+data_product_name: "dim_tempo"
+owner: "team-financeiro@empresa.com"
+status: "active"
+
+schema:
+  - name: "data"
+    type: "date"
+    description: "Data completa (chave da dimensão tempo)"
+    primary_key: true
+  - name: "ano"
+    type: "integer"
+    description: "Ano da data"
+  - name: "mes"
+    type: "integer"
+    description: "Mês da data (1-12)"
+  - name: "dia"
+    type: "integer"
+    description: "Dia do mês (1-31)"
+  - name: "ano_mes"
+    type: "string"
+    description: "Ano e mês no formato yyyy-MM"
+  - name: "trimestre"
+    type: "integer"
+    description: "Trimestre do ano (1-4)"
+  - name: "nome_mes"
+    type: "string"
+    description: "Nome do mês por extenso"
+  - name: "dia_semana"
+    type: "string"
+    description: "Nome do dia da semana por extenso"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "data"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "ano"
+      - "mes"
+      - "dia"
+      - "trimestre"

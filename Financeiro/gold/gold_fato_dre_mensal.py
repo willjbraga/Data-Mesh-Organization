@@ -5,22 +5,23 @@ import pyspark.sql.functions as F
 class FatoDREMensalFinPipeline(GoldPipeline):
     '''
     Gold - FATO: DRE consolidado por mês (regime de CAIXA).
-
-    Uma linha por mês com receita, custo, despesas e resultado líquido.
-    Construído a partir do fato_movimento_caixa (lido da própria Gold),
-    seguindo o princípio de que um fato pode derivar de outro fato já tratado.
-
-    Grão: 1 linha por mês (ano_mes).
-    Métricas: receita, custo, despesa_pessoal, despesa_operacional,
-              total_despesas, resultado_liquido, margem_liquida_pct
+    Inclui a flag de qualidade `mes_completo` (string "true"/"false").
     '''
+
+    MIN_RECEITAS_MES = 30
 
     def __init__(self):
         super().__init__(dominio='fin')
 
     def create_business_view(self):
-        # Lê o fato de movimentos já tratado na própria Gold
         mov = self.spark.table(f"{self.catalog}.gold.fato_movimento_caixa")
+
+        # Contagem de transações de receita por mês (para a flag de completude)
+        receitas_por_mes = (
+            mov.filter(F.col("grupo_dre") == "1_receita")
+               .groupBy("ano_mes")
+               .agg(F.count("*").alias("qtd_receitas"))
+        )
 
         df = mov.withColumn(
             "receita",
@@ -56,4 +57,24 @@ class FatoDREMensalFinPipeline(GoldPipeline):
              .otherwise(None)
         )
 
-        return dre.orderBy("ano_mes")
+        # Junta a contagem e calcula a flag de completude
+        dre = dre.join(receitas_por_mes, on="ano_mes", how="left")
+        dre = dre.withColumn(
+            "mes_completo",
+            F.when(F.coalesce(F.col("qtd_receitas"), F.lit(0)) >= self.MIN_RECEITAS_MES,
+                   F.lit("true"))
+             .otherwise(F.lit("false"))
+        )
+
+        # Seleção final (decimal -> double; flag como string)
+        return dre.select(
+            F.col("ano_mes"),
+            F.col("receita").cast("double").alias("receita"),
+            F.col("custo").cast("double").alias("custo"),
+            F.col("despesa_pessoal").cast("double").alias("despesa_pessoal"),
+            F.col("despesa_operacional").cast("double").alias("despesa_operacional"),
+            F.col("total_despesas").cast("double").alias("total_despesas"),
+            F.col("resultado_liquido").cast("double").alias("resultado_liquido"),
+            F.col("margem_liquida_pct").cast("double").alias("margem_liquida_pct"),
+            F.col("mes_completo"),
+        ).orderBy("ano_mes")
