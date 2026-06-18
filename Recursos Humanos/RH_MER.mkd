@@ -1,0 +1,555 @@
+# MER — Modelo Entidade-Relacionamento
+
+## Área de RH — Restaurante Grande / Data Mesh
+
+## 1. Convenção utilizada
+
+Este modelo segue a convenção de cardinalidade utilizada no BR Modelo/Peter Chen:
+
+* **(0,1)**: participação opcional, no máximo uma ocorrência.
+* **(1,1)**: participação obrigatória, exatamente uma ocorrência.
+* **(0,N)**: participação opcional, várias ocorrências possíveis.
+* **(1,N)**: participação obrigatória, uma ou várias ocorrências.
+
+---
+
+# 2. Entidades e atributos
+
+## 2.1 COLABORADOR
+
+Representa os funcionários ou prestadores vinculados ao restaurante.
+
+| Atributo            | Observação                                |
+| ------------------- | ----------------------------------------- |
+| `id`                | Identificador do colaborador              |
+| `nome`              | Nome do colaborador                       |
+| `cpf`               | CPF do colaborador                        |
+| `matricula`         | Matrícula interna                         |
+| `email`             | E-mail do colaborador                     |
+| `telefone`          | Telefone de contato                       |
+| `data_nascimento`   | Data de nascimento                        |
+| `data_admissao`     | Data de admissão                          |
+| `data_desligamento` | Data de desligamento, se houver           |
+| `status`            | Ativo, afastado, desligado etc.           |
+| `tipo_vinculo`      | CLT, temporário, freelancer, estágio etc. |
+| `salario_atual`     | Salário atual do colaborador              |
+| `observacao`        | Observações gerais                        |
+
+---
+
+## 2.2 CARGO
+
+Representa os cargos existentes no restaurante.
+
+| Atributo             | Observação                                  |
+| -------------------- | ------------------------------------------- |
+| `id`                 | Identificador do cargo                      |
+| `nome_cargo`         | Nome do cargo                               |
+| `nivel`              | Nível do cargo                              |
+| `tipo_cargo`         | Operacional, liderança, administrativo etc. |
+| `descricao`          | Descrição do cargo                          |
+| `salario_base`       | Salário base de referência                  |
+| `faixa_salarial_min` | Valor mínimo da faixa salarial              |
+| `faixa_salarial_max` | Valor máximo da faixa salarial              |
+| `ativo`              | Indica se o cargo está ativo                |
+
+---
+
+## 2.3 TURNO
+
+Representa os turnos de trabalho do restaurante.
+
+| Atributo                | Observação                   |
+| ----------------------- | ---------------------------- |
+| `id`                    | Identificador do turno       |
+| `nome_turno`            | Nome do turno                |
+| `hora_inicio`           | Horário de início            |
+| `hora_fim`              | Horário de fim               |
+| `carga_horaria_semanal` | Carga horária semanal        |
+| `descricao`             | Descrição do turno           |
+| `ativo`                 | Indica se o turno está ativo |
+
+---
+
+## 2.4 UNIDADE_RESTAURANTE
+
+Representa unidades, filiais ou estruturas do restaurante.
+
+| Atributo       | Observação                                                  |
+| -------------- | ----------------------------------------------------------- |
+| `id`           | Identificador da unidade                                    |
+| `nome_unidade` | Nome da unidade                                             |
+| `tipo_unidade` | Restaurante, cozinha central, delivery, administrativo etc. |
+| `cidade`       | Cidade da unidade                                           |
+| `estado`       | Estado da unidade                                           |
+| `status`       | Ativa, inativa, em reforma etc.                             |
+
+---
+
+## 2.5 DEPARTAMENTO
+
+Representa os setores internos da unidade.
+
+| Atributo            | Observação                                      |
+| ------------------- | ----------------------------------------------- |
+| `id`                | Identificador do departamento                   |
+| `nome_departamento` | Nome do departamento                            |
+| `tipo_departamento` | Cozinha, salão, bar, delivery, limpeza, RH etc. |
+| `descricao`         | Descrição do departamento                       |
+| `ativo`             | Indica se o departamento está ativo             |
+
+---
+
+## 2.6 AUSENCIA
+
+Representa ausências, afastamentos ou faltas de colaboradores.
+
+| Atributo           | Observação                                       |
+| ------------------ | ------------------------------------------------ |
+| `id`               | Identificador da ausência                        |
+| `tipo_ausencia`    | Falta, atestado, férias, licença etc.            |
+| `motivo`           | Motivo da ausência                               |
+| `data_solicitacao` | Data em que a ausência foi solicitada/registrada |
+| `data_inicio`      | Data inicial da ausência                         |
+| `data_fim`         | Data final da ausência                           |
+| `status_aprovacao` | Pendente, aprovada, recusada etc.                |
+| `data_aprovacao`   | Data da aprovação ou recusa                      |
+| `observacao`       | Observações gerais                               |
+
+---
+
+## 2.7 TREINAMENTO
+
+Representa treinamentos oferecidos aos colaboradores.
+
+| Atributo           | Observação                                             |
+| ------------------ | ------------------------------------------------------ |
+| `id`               | Identificador do treinamento                           |
+| `nome_treinamento` | Nome do treinamento                                    |
+| `tipo_treinamento` | Integração, segurança, atendimento, boas práticas etc. |
+| `obrigatorio`      | Indica se é obrigatório                                |
+| `validade_meses`   | Validade do treinamento em meses                       |
+| `descricao`        | Descrição do treinamento                               |
+| `ativo`            | Indica se o treinamento está ativo                     |
+
+---
+
+## 2.8 PARTICIPACAO_TREINAMENTO
+
+Representa a participação de colaboradores em treinamentos.
+
+| Atributo          | Observação                              |
+| ----------------- | --------------------------------------- |
+| `id`              | Identificador da participação           |
+| `data_realizacao` | Data em que o treinamento foi realizado |
+| `data_validade`   | Data de validade da participação        |
+| `status`          | Concluído, pendente, vencido etc.       |
+| `nota`            | Nota ou avaliação, se houver            |
+| `observacao`      | Observações gerais                      |
+
+---
+
+## 2.9 MOVIMENTACAO_COLABORADOR
+
+Representa mudanças na vida funcional do colaborador.
+
+| Atributo            | Observação                                           |
+| ------------------- | ---------------------------------------------------- |
+| `id`                | Identificador da movimentação                        |
+| `tipo_movimentacao` | Admissão, promoção, transferência, desligamento etc. |
+| `data_movimentacao` | Data do registro da movimentação                     |
+| `data_efetivacao`   | Data em que a movimentação passa a valer             |
+| `motivo`            | Motivo da movimentação                               |
+| `observacao`        | Observações gerais                                   |
+| `salario_anterior`  | Salário antes da movimentação                        |
+| `salario_novo`      | Salário após a movimentação                          |
+
+---
+
+## 2.10 RECRUTAMENTO_VAGA
+
+Representa vagas abertas no restaurante.
+
+| Atributo           | Observação                       |
+| ------------------ | -------------------------------- |
+| `vaga_id`          | Identificador da vaga            |
+| `titulo`           | Título da vaga                   |
+| `descricao`        | Descrição da vaga                |
+| `requisitos`       | Requisitos da vaga               |
+| `data_abertura`    | Data de abertura da vaga         |
+| `data_fechamento`  | Data de fechamento da vaga       |
+| `status`           | Aberta, pausada, encerrada etc.  |
+| `quantidade_vagas` | Quantidade de vagas disponíveis  |
+| `tipo_vinculo`     | CLT, temporário, freelancer etc. |
+| `salario_ofertado` | Salário ofertado na vaga         |
+
+---
+
+## 2.11 CANDIDATO
+
+Representa pessoas que se candidatam às vagas.
+
+| Atributo        | Observação                    |
+| --------------- | ----------------------------- |
+| `id`            | Identificador do candidato    |
+| `nome`          | Nome do candidato             |
+| `email`         | E-mail do candidato           |
+| `telefone`      | Telefone do candidato         |
+| `data_cadastro` | Data de cadastro do candidato |
+
+---
+
+## 2.12 CANDIDATURA
+
+Representa a candidatura de um candidato a uma vaga.
+
+| Atributo             | Observação                                   |
+| -------------------- | -------------------------------------------- |
+| `id`                 | Identificador da candidatura                 |
+| `data_candidatura`   | Data da candidatura                          |
+| `origem_candidatura` | Site, indicação, redes sociais etc.          |
+| `status_candidatura` | Em análise, aprovado, recusado etc.          |
+| `etapa_atual`        | Triagem, entrevista, teste, contratação etc. |
+| `pretensao_salarial` | Pretensão salarial do candidato              |
+| `observacao`         | Observações gerais                           |
+
+---
+
+# 3. Relacionamentos e cardinalidades
+
+## 3.1 CARGO — OCUPA — COLABORADOR
+
+Um cargo pode ser ocupado por nenhum ou vários colaboradores.
+Cada colaborador ocupa um cargo.
+
+| Entidade    | Cardinalidade |
+| ----------- | ------------- |
+| CARGO       | (0,N)         |
+| COLABORADOR | (1,1)         |
+
+---
+
+## 3.2 TURNO — CUMPRE — COLABORADOR
+
+Um turno pode ser cumprido por nenhum ou vários colaboradores.
+Um colaborador pode cumprir nenhum ou um turno.
+
+| Entidade    | Cardinalidade |
+| ----------- | ------------- |
+| TURNO       | (0,N)         |
+| COLABORADOR | (0,1)         |
+
+Regra de negócio: colaborador ativo deve possuir turno definido.
+
+---
+
+## 3.3 UNIDADE_RESTAURANTE — POSSUI — DEPARTAMENTO
+
+Uma unidade pode possuir nenhum ou vários departamentos.
+Cada departamento pertence a uma unidade.
+
+| Entidade            | Cardinalidade |
+| ------------------- | ------------- |
+| UNIDADE_RESTAURANTE | (0,N)         |
+| DEPARTAMENTO        | (1,1)         |
+
+---
+
+## 3.4 DEPARTAMENTO — ALOCADO — COLABORADOR
+
+Um departamento pode ter nenhum ou vários colaboradores alocados.
+Cada colaborador pertence a um departamento.
+
+| Entidade     | Cardinalidade |
+| ------------ | ------------- |
+| DEPARTAMENTO | (0,N)         |
+| COLABORADOR  | (1,1)         |
+
+---
+
+## 3.5 COLABORADOR — GERENCIA — COLABORADOR
+
+Autorrelacionamento que representa a hierarquia entre colaboradores.
+
+Um colaborador pode gerenciar nenhum ou vários colaboradores.
+Um colaborador pode ter nenhum ou um gerente.
+
+| Papel       | Cardinalidade |
+| ----------- | ------------- |
+| Gerente     | (0,N)         |
+| Subordinado | (0,1)         |
+
+---
+
+## 3.6 COLABORADOR — REGISTRA — AUSENCIA
+
+Um colaborador pode registrar nenhuma ou várias ausências.
+Cada ausência pertence a um colaborador.
+
+| Entidade    | Cardinalidade |
+| ----------- | ------------- |
+| COLABORADOR | (0,N)         |
+| AUSENCIA    | (1,1)         |
+
+---
+
+## 3.7 COLABORADOR — APROVA — AUSENCIA
+
+Um colaborador gerente pode aprovar nenhuma ou várias ausências.
+Uma ausência pode ainda não ter sido aprovada, mas, quando aprovada, possui um aprovador.
+
+| Entidade    | Cardinalidade |
+| ----------- | ------------- |
+| COLABORADOR | (0,N)         |
+| AUSENCIA    | (0,1)         |
+
+Regra de negócio: a ausência deve ser aprovada pelo gerente do colaborador que registrou a ausência no momento da aprovação.
+
+---
+
+## 3.8 COLABORADOR — PARTICIPA — PARTICIPACAO_TREINAMENTO
+
+Um colaborador pode participar de nenhum ou vários treinamentos.
+Cada participação de treinamento pertence a um colaborador.
+
+| Entidade                 | Cardinalidade |
+| ------------------------ | ------------- |
+| COLABORADOR              | (0,N)         |
+| PARTICIPACAO_TREINAMENTO | (1,1)         |
+
+---
+
+## 3.9 TREINAMENTO — REFERE-SE — PARTICIPACAO_TREINAMENTO
+
+Um treinamento pode estar associado a nenhuma ou várias participações.
+Cada participação se refere a um treinamento.
+
+| Entidade                 | Cardinalidade |
+| ------------------------ | ------------- |
+| TREINAMENTO              | (0,N)         |
+| PARTICIPACAO_TREINAMENTO | (1,1)         |
+
+---
+
+## 3.10 COLABORADOR — ASSOCIADA — MOVIMENTACAO_COLABORADOR
+
+Um colaborador pode possuir nenhuma ou várias movimentações.
+Cada movimentação está associada a um colaborador.
+
+| Entidade                 | Cardinalidade |
+| ------------------------ | ------------- |
+| COLABORADOR              | (0,N)         |
+| MOVIMENTACAO_COLABORADOR | (1,1)         |
+
+---
+
+## 3.11 CARGO — TINHA — MOVIMENTACAO_COLABORADOR
+
+Um cargo pode aparecer como cargo anterior em nenhuma ou várias movimentações.
+Uma movimentação pode ter nenhum ou um cargo anterior.
+
+| Entidade                 | Cardinalidade |
+| ------------------------ | ------------- |
+| CARGO                    | (0,N)         |
+| MOVIMENTACAO_COLABORADOR | (0,1)         |
+
+---
+
+## 3.12 CARGO — ASSUME — MOVIMENTACAO_COLABORADOR
+
+Um cargo pode aparecer como novo cargo em nenhuma ou várias movimentações.
+Uma movimentação pode ter nenhum ou um novo cargo.
+
+| Entidade                 | Cardinalidade |
+| ------------------------ | ------------- |
+| CARGO                    | (0,N)         |
+| MOVIMENTACAO_COLABORADOR | (0,1)         |
+
+---
+
+## 3.13 DEPARTAMENTO — SAI_DE — MOVIMENTACAO_COLABORADOR
+
+Um departamento pode aparecer como departamento de origem em nenhuma ou várias movimentações.
+Uma movimentação pode ter nenhum ou um departamento de origem.
+
+| Entidade                 | Cardinalidade |
+| ------------------------ | ------------- |
+| DEPARTAMENTO             | (0,N)         |
+| MOVIMENTACAO_COLABORADOR | (0,1)         |
+
+---
+
+## 3.14 DEPARTAMENTO — VAI_PARA — MOVIMENTACAO_COLABORADOR
+
+Um departamento pode aparecer como departamento de destino em nenhuma ou várias movimentações.
+Uma movimentação pode ter nenhum ou um departamento de destino.
+
+| Entidade                 | Cardinalidade |
+| ------------------------ | ------------- |
+| DEPARTAMENTO             | (0,N)         |
+| MOVIMENTACAO_COLABORADOR | (0,1)         |
+
+---
+
+## 3.15 DEPARTAMENTO — OFERTA — RECRUTAMENTO_VAGA
+
+Um departamento pode ofertar nenhuma ou várias vagas.
+Cada vaga pertence a um departamento.
+
+| Entidade          | Cardinalidade |
+| ----------------- | ------------- |
+| DEPARTAMENTO      | (0,N)         |
+| RECRUTAMENTO_VAGA | (1,1)         |
+
+---
+
+## 3.16 TURNO — PREVE — RECRUTAMENTO_VAGA
+
+Um turno pode estar previsto em nenhuma ou várias vagas.
+Uma vaga pode prever nenhum ou um turno.
+
+| Entidade          | Cardinalidade |
+| ----------------- | ------------- |
+| TURNO             | (0,N)         |
+| RECRUTAMENTO_VAGA | (0,1)         |
+
+---
+
+## 3.17 RECRUTAMENTO_VAGA — RECEBE — CANDIDATURA
+
+Uma vaga pode receber nenhuma ou várias candidaturas.
+Cada candidatura pertence a uma vaga.
+
+| Entidade          | Cardinalidade |
+| ----------------- | ------------- |
+| RECRUTAMENTO_VAGA | (0,N)         |
+| CANDIDATURA       | (1,1)         |
+
+---
+
+## 3.18 CANDIDATO — REALIZA — CANDIDATURA
+
+Um candidato pode realizar nenhuma ou várias candidaturas.
+Cada candidatura pertence a um candidato.
+
+| Entidade    | Cardinalidade |
+| ----------- | ------------- |
+| CANDIDATO   | (0,N)         |
+| CANDIDATURA | (1,1)         |
+
+---
+
+# 4. Regras de negócio principais
+
+## RB01 — Cargo do colaborador
+
+Todo colaborador ativo deve ocupar um cargo.
+
+---
+
+## RB02 — Departamento do colaborador
+
+Todo colaborador ativo deve estar alocado em um departamento.
+
+---
+
+## RB03 — Turno do colaborador
+
+Todo colaborador ativo deve cumprir um turno.
+
+---
+
+## RB04 — Hierarquia entre colaboradores
+
+Um colaborador pode gerenciar vários colaboradores, mas um colaborador subordinado deve possuir no máximo um gerente direto.
+
+---
+
+## RB05 — Aprovação de ausência
+
+Toda ausência é registrada por um colaborador.
+
+Uma ausência pode ficar pendente de aprovação.
+
+Quando aprovada ou recusada, deve ser vinculada ao colaborador responsável pela aprovação.
+
+O aprovador deve ser o gerente do colaborador solicitante no momento da aprovação.
+
+---
+
+## RB06 — Histórico de movimentação
+
+Toda movimentação deve estar associada a um colaborador.
+
+Dependendo do tipo de movimentação, cargo e departamento anterior ou novo podem ser opcionais.
+
+Exemplos:
+
+| Tipo de movimentação | Cargo anterior  | Cargo novo      | Departamento anterior | Departamento novo |
+| -------------------- | --------------- | --------------- | --------------------- | ----------------- |
+| Admissão             | Não obrigatório | Obrigatório     | Não obrigatório       | Obrigatório       |
+| Promoção             | Obrigatório     | Obrigatório     | Opcional              | Opcional          |
+| Transferência        | Opcional        | Opcional        | Obrigatório           | Obrigatório       |
+| Desligamento         | Obrigatório     | Não obrigatório | Obrigatório           | Não obrigatório   |
+
+---
+
+## RB07 — Treinamentos
+
+Um colaborador pode realizar o mesmo treinamento mais de uma vez, principalmente quando o treinamento possuir validade.
+
+No modelo físico, recomenda-se usar `id` como chave primária de `PARTICIPACAO_TREINAMENTO` e criar uma restrição única com:
+
+```sql
+UNIQUE (colaborador_id, treinamento_id, data_realizacao)
+```
+
+---
+
+## RB08 — Recrutamento
+
+Toda candidatura deve estar vinculada a uma vaga e a um candidato.
+
+Uma vaga pode prever um turno, mas isso não é obrigatório no momento da abertura.
+
+---
+
+# 5. Resumo visual em texto
+
+```text
+UNIDADE_RESTAURANTE (0,N) ---- POSSUI ---- (1,1) DEPARTAMENTO
+
+DEPARTAMENTO (0,N) ---- ALOCADO ---- (1,1) COLABORADOR
+
+CARGO (0,N) ---- OCUPA ---- (1,1) COLABORADOR
+
+TURNO (0,N) ---- CUMPRE ---- (0,1) COLABORADOR
+
+COLABORADOR (0,N) ---- REGISTRA ---- (1,1) AUSENCIA
+
+COLABORADOR (0,N) ---- APROVA ---- (0,1) AUSENCIA
+
+COLABORADOR (0,N) ---- GERENCIA ---- (0,1) COLABORADOR
+
+COLABORADOR (0,N) ---- PARTICIPA ---- (1,1) PARTICIPACAO_TREINAMENTO
+
+TREINAMENTO (0,N) ---- REFERE-SE ---- (1,1) PARTICIPACAO_TREINAMENTO
+
+COLABORADOR (0,N) ---- ASSOCIADA ---- (1,1) MOVIMENTACAO_COLABORADOR
+
+CARGO (0,N) ---- TINHA ---- (0,1) MOVIMENTACAO_COLABORADOR
+
+CARGO (0,N) ---- ASSUME ---- (0,1) MOVIMENTACAO_COLABORADOR
+
+DEPARTAMENTO (0,N) ---- SAI_DE ---- (0,1) MOVIMENTACAO_COLABORADOR
+
+DEPARTAMENTO (0,N) ---- VAI_PARA ---- (0,1) MOVIMENTACAO_COLABORADOR
+
+DEPARTAMENTO (0,N) ---- OFERTA ---- (1,1) RECRUTAMENTO_VAGA
+
+TURNO (0,N) ---- PREVE ---- (0,1) RECRUTAMENTO_VAGA
+
+RECRUTAMENTO_VAGA (0,N) ---- RECEBE ---- (1,1) CANDIDATURA
+
+CANDIDATO (0,N) ---- REALIZA ---- (1,1) CANDIDATURA
+```
