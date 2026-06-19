@@ -26,33 +26,35 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 
 ```text
 .
-├── 00_common/               # Recursos compartilhados (Core do Framework)
-│   ├── BasePipelineClass
-|   ├── BronzePipelineClass
-|   ├── SilverPipelineClass
-|   ├── GoldPipelineClass
-│   └── utils.py             # Funções auxiliares e constantes globais
+├── common/               # Recursos compartilhados (Core do Framework)
+|   ├── BaseParquetSyncPipelineClass.py     # Salvando em Parquet para comparação
+│   ├── BasePipelineClass.py                # Base herdada com configurações base
+|   ├── BronzePipelineClass.py              # Pipeline Bronze (Medallion)
+|   ├── SilverPipelineClass.py              # Pipeline Silver (Medallion)
+|   ├── GoldPipelineClass.py                # Pipeline Gold (Medallion)
+|   ├── MeshContractEnforcer.py             # Garante a integridade segundo o schema
+│   └── config_env.py                       # Variavéis de ambiente e segredos (não deve ser enviada ao repositório)
 │
-├── 01_marketing/            # Domínio de Marketing
+├── marketing/            # Domínio de Marketing
 │   ├── bronze/
 |   ├── silver/
 |   ├── gold/
 │   └── tests/               # Testes unitários do domínio
 │
-├── 02_financas/             # Domínio de Finanças
+├── financas/             # Domínio de Finanças
 │   ├── bronze/
 |   ├── silver/
 |   ├── gold/
 │   └── tests/
 │
-├── 03_recursos_humanos/     # Domínio de Recursos Humanos
+├── recursos_humanos/     # Domínio de Recursos Humanos
 │   ├── bronze/
 |   ├── silver/
 |   ├── gold/
 │   └── tests/
 │
-├── 04_gold_global/          # Camada Gold Transversal (Cross-Domain)
-│   └── fato_vendas.py       # Tabela Fato unindo os 3 domínios
+├── gold_global/                # Camada Gold Transversal (Cross-Domain)
+│   └── fato_vendas.py          # Tabela Fato unindo os 3 domínios
 │
 ├── docs/                    # Documentação da Modelagem
 |   ├── arquitetura/        # Diagramas (ex: fluxo Medallion no Mesh)
@@ -68,3 +70,10 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 ├── .gitignore               # Arquivos ignorados (tokens, logs, pycache)
 ├── requirements.txt         # Dependências do projeto (pyspark, etc)
 └── README.md                # Documentação principal 
+```
+
+## 📊 Compressão de Dados
+
+Os dados estão no formato CSV em sua origem, eles são salvos no DataBricks no formato Parquet e Delta por motivos de comparação entre a compressão dos dados.
+
+![Compression](financeiro/Comparação de tamanhos - Delta, Parquert e CSV.png)
