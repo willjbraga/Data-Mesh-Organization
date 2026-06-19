@@ -3,6 +3,11 @@
 ![Databricks](https://img.shields.io/badge/Azure-Databricks-FF3621?logo=databricks)
 ![Delta Lake](https://img.shields.io/badge/Delta-Lake-00ADD8)
 
+## 🏛️ Arquitetura
+
+**Arquitetura Datamesh**
+![Arquitetura](docs/arquitetura/arquitetura_datamesh.png)
+
 ## 🔐 Configuração de Segredos e Ambiente
 
 Devido às limitações da versão **Databricks Community Edition**, que não suporta o uso nativo de `dbutils.secrets`, implementamos uma solução baseada em variáveis de ambiente para a gestão de credenciais.
