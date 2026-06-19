@@ -76,4 +76,4 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 
 Os dados estão no formato CSV em sua origem, eles são salvos no DataBricks no formato Parquet e Delta por motivos de comparação entre a compressão dos dados.
 
-![Compression](financeiro/Comparação de tamanhos - Delta, Parquert e CSV.png)
+![Compression](Financeiro/Comparação%20de%20tamanhos%20-%20Delta,%20Parquert%20e%20CSV.png)
