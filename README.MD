@@ -3,10 +3,13 @@
 ![Databricks](https://img.shields.io/badge/Azure-Databricks-FF3621?logo=databricks)
 ![Delta Lake](https://img.shields.io/badge/Delta-Lake-00ADD8)
 
-## 🏛️ Arquitetura
+## 🏛️ Arquitetura DataMesh
 
-**Arquitetura Datamesh**
-![Arquitetura](docs/arquitetura/arquitetura_datamesh.png)
+![Arquitetura_Datamesh](docs/arquitetura/arquitetura_datamesh.png)
+
+## 🏅 Arquitetura Medalhão
+
+![Arquitetura_Medallion](docs/arquitetura/arquitetura_medallion.png)
 
 ## 🔐 Configuração de Segredos e Ambiente
 
