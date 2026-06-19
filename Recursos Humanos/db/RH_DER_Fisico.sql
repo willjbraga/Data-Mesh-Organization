@@ -8,6 +8,134 @@
 */
 
 /* ============================================================
+   SCHEMA
+   ============================================================ */
+
+CREATE SCHEMA IF NOT EXISTS rh;
+
+/* ============================================================
+   ENUMS - RH
+   ============================================================ */
+
+CREATE TYPE rh.status_colaborador_enum AS ENUM (
+    'ativo',
+    'afastado',
+    'ferias',
+    'desligado'
+);
+
+CREATE TYPE rh.tipo_vinculo_enum AS ENUM (
+    'clt',
+    'temporario',
+    'freelancer',
+    'estagio',
+    'pj'
+);
+
+CREATE TYPE rh.tipo_cargo_enum AS ENUM (
+    'operacional',
+    'lideranca',
+    'administrativo'
+);
+
+CREATE TYPE rh.tipo_departamento_enum AS ENUM (
+    'cozinha',
+    'salao',
+    'bar',
+    'delivery',
+    'limpeza',
+    'estoque',
+    'administrativo',
+    'rh',
+    'financeiro'
+);
+
+CREATE TYPE rh.tipo_unidade_enum AS ENUM (
+    'restaurante',
+    'cozinha_central',
+    'delivery',
+    'administrativo'
+);
+
+CREATE TYPE rh.status_unidade_enum AS ENUM (
+    'ativa',
+    'inativa',
+    'em_reforma'
+);
+
+CREATE TYPE rh.tipo_ausencia_enum AS ENUM (
+    'falta',
+    'atestado',
+    'ferias',
+    'licenca',
+    'afastamento',
+    'atraso'
+);
+
+CREATE TYPE rh.status_aprovacao_enum AS ENUM (
+    'pendente',
+    'aprovada',
+    'recusada'
+);
+
+CREATE TYPE rh.tipo_movimentacao_enum AS ENUM (
+    'admissao',
+    'promocao',
+    'transferencia',
+    'alteracao_salarial',
+    'desligamento',
+    'afastamento',
+    'retorno_afastamento'
+);
+
+CREATE TYPE rh.status_vaga_enum AS ENUM (
+    'aberta',
+    'pausada',
+    'encerrada',
+    'cancelada'
+);
+
+CREATE TYPE rh.origem_candidatura_enum AS ENUM (
+    'site',
+    'indicacao',
+    'redes_sociais',
+    'presencial',
+    'agencia',
+    'outro'
+);
+
+CREATE TYPE rh.status_candidatura_enum AS ENUM (
+    'em_analise',
+    'aprovada',
+    'recusada',
+    'desistente',
+    'contratada'
+);
+
+CREATE TYPE rh.etapa_candidatura_enum AS ENUM (
+    'triagem',
+    'entrevista',
+    'teste',
+    'documentacao',
+    'finalizada'
+);
+
+CREATE TYPE rh.tipo_treinamento_enum AS ENUM (
+    'integracao',
+    'seguranca',
+    'atendimento',
+    'boas_praticas',
+    'operacional'
+);
+
+CREATE TYPE rh.status_participacao_treinamento_enum AS ENUM (
+    'pendente',
+    'concluido',
+    'vencido',
+    'cancelado'
+);
+
+/* ============================================================
    TABELAS BASE
    ============================================================ */
 

@@ -1,0 +1,23 @@
+# Ambiente virtual
+.venv/
+venv/
+
+# Variáveis de ambiente / credenciais
+.env
+
+# Datasets locais
+Datasets/
+datasets/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db

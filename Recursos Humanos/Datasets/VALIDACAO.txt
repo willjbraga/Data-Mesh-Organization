@@ -1,8 +1,0 @@
-Cargo: 1000 registros
-Departamento: 1000 registros
-Colaborador: 1000 registros
-Movimentacao_Colaborador: 1000 registros
-Ausencia: 1000 registros
-Recrutamento_Vaga: 1000 registros
-Candidatura: 1000 registros
-Validação de FKs: OK
