@@ -1,6 +1,6 @@
 # Projeto Data-Mesh
 
-![Databricks](https://img.shields.io/badge/Azure-Databricks-FF3621?logo=databricks)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?logo=databricks&logoColor=white)
 ![Delta Lake](https://img.shields.io/badge/Delta-Lake-00ADD8)
 
 ## 🏛️ Arquitetura DataMesh
