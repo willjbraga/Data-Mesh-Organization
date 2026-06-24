@@ -67,6 +67,9 @@ schema:
   - name: "total_compartilhamentos"
     type: "integer"
     description: "Métrica de engajamento: total de vezes que o conteúdo foi compartilhado"
+  - name: "total_alcance"
+    type: "integer"
+    description: "Número total de usuários únicos que visualizaram qualquer conteúdo da campanha"
 
 governance:
   classification: "internal" # Opções: public, internal, confidential, restricted
@@ -88,3 +91,4 @@ service_level_agreements:
       - "total_curtidas"
       - "total_comentarios"
       - "total_compartilhamentos"
+      - "total_alcance"
