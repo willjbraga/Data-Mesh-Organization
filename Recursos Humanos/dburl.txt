@@ -1,0 +1,4 @@
+postgresql+asyncpg://USUARIO:SENHA@HOST:5432/postgres
+
+# Este arquivo fica apenas como template local.
+# A esteira Databricks de RH usa CSVs exportados em vez de conexao direta ao Supabase.
