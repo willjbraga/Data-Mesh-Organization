@@ -1,0 +1,57 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:gold_recrutamento_funil"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "gold_recrutamento_funil"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "vaga_id"
+    type: "integer"
+    description: "Identificador natural da vaga"
+    primary_key: true
+  - name: "titulo"
+    type: "string"
+    description: "Titulo da vaga"
+  - name: "nome_departamento"
+    type: "string"
+    description: "Nome do departamento"
+    primary_key: true
+  - name: "origem_candidatura"
+    type: "string"
+    description: "Origem da candidatura"
+    primary_key: true
+  - name: "etapa_atual"
+    type: "string"
+    description: "Etapa atual da candidatura"
+    primary_key: true
+  - name: "status_candidatura"
+    type: "string"
+    description: "Status da candidatura"
+    primary_key: true
+  - name: "qtd_candidaturas"
+    type: "integer"
+    description: "Quantidade de candidaturas"
+  - name: "qtd_contratadas"
+    type: "integer"
+    description: "Quantidade de candidaturas contratadas"
+  - name: "taxa_contratacao"
+    type: "double"
+    description: "Taxa de contratacao"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "vaga_id"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "vaga_id"
+      - "qtd_candidaturas"
+      - "qtd_contratadas"
+      - "taxa_contratacao"

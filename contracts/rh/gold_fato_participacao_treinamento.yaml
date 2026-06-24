@@ -1,0 +1,69 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:fato_participacao_treinamento"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "fato_participacao_treinamento"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "participacao_treinamento_id"
+    type: "integer"
+    description: "Identificador natural da participacao em treinamento"
+    primary_key: true
+  - name: "data_realizacao_sk"
+    type: "integer"
+    description: "Chave da data de realizacao"
+  - name: "data_validade_sk"
+    type: "integer"
+    description: "Chave da data de validade"
+  - name: "colaborador_sk"
+    type: "string"
+    description: "Chave surrogate do colaborador"
+  - name: "treinamento_sk"
+    type: "string"
+    description: "Chave surrogate do treinamento"
+  - name: "departamento_sk"
+    type: "string"
+    description: "Chave surrogate do departamento"
+  - name: "cargo_sk"
+    type: "string"
+    description: "Chave surrogate do cargo"
+  - name: "status_participacao"
+    type: "string"
+    description: "Status da participacao"
+  - name: "qtd_participacao"
+    type: "integer"
+    description: "Contador de participacao"
+  - name: "nota"
+    type: "double"
+    description: "Nota obtida no treinamento"
+  - name: "flag_concluido"
+    type: "integer"
+    description: "Flag 1/0 para treinamento concluido"
+  - name: "flag_vencido"
+    type: "integer"
+    description: "Flag 1/0 para treinamento vencido"
+  - name: "flag_pendente"
+    type: "integer"
+    description: "Flag 1/0 para treinamento pendente"
+
+governance:
+  classification: "confidential"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "participacao_treinamento_id"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "participacao_treinamento_id"
+      - "data_realizacao_sk"
+      - "data_validade_sk"
+      - "qtd_participacao"
+      - "nota"
+      - "flag_concluido"
+      - "flag_vencido"
+      - "flag_pendente"

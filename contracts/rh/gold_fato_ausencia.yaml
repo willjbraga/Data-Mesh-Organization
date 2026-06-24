@@ -1,0 +1,72 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:fato_ausencia"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "fato_ausencia"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "ausencia_id"
+    type: "integer"
+    description: "Identificador natural da ausencia"
+    primary_key: true
+  - name: "data_inicio_sk"
+    type: "integer"
+    description: "Chave da data de inicio"
+  - name: "data_fim_sk"
+    type: "integer"
+    description: "Chave da data de fim"
+  - name: "colaborador_sk"
+    type: "string"
+    description: "Chave surrogate do colaborador"
+  - name: "aprovador_sk"
+    type: "string"
+    description: "Chave surrogate do aprovador"
+  - name: "departamento_sk"
+    type: "string"
+    description: "Chave surrogate do departamento"
+  - name: "cargo_sk"
+    type: "string"
+    description: "Chave surrogate do cargo"
+  - name: "tipo_ausencia"
+    type: "string"
+    description: "Tipo de ausencia"
+  - name: "status_aprovacao"
+    type: "string"
+    description: "Status de aprovacao"
+  - name: "qtd_ausencia"
+    type: "integer"
+    description: "Contador de ausencia"
+  - name: "dias_ausencia"
+    type: "integer"
+    description: "Quantidade de dias de ausencia"
+  - name: "flag_aprovada"
+    type: "integer"
+    description: "Flag 1/0 para ausencia aprovada"
+  - name: "flag_recusada"
+    type: "integer"
+    description: "Flag 1/0 para ausencia recusada"
+  - name: "flag_pendente"
+    type: "integer"
+    description: "Flag 1/0 para ausencia pendente"
+
+governance:
+  classification: "confidential"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "ausencia_id"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "ausencia_id"
+      - "data_inicio_sk"
+      - "data_fim_sk"
+      - "qtd_ausencia"
+      - "dias_ausencia"
+      - "flag_aprovada"
+      - "flag_recusada"
+      - "flag_pendente"

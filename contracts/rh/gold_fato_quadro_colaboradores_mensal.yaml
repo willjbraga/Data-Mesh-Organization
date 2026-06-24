@@ -1,0 +1,58 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:fato_quadro_colaboradores_mensal"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "fato_quadro_colaboradores_mensal"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "data_sk"
+    type: "integer"
+    description: "Chave da competencia mensal"
+    primary_key: true
+  - name: "ano_mes"
+    type: "string"
+    description: "Ano e mes da competencia no formato yyyy-MM"
+  - name: "colaborador_sk"
+    type: "string"
+    description: "Chave surrogate do colaborador"
+    primary_key: true
+  - name: "cargo_sk"
+    type: "string"
+    description: "Chave surrogate do cargo"
+  - name: "departamento_sk"
+    type: "string"
+    description: "Chave surrogate do departamento"
+  - name: "turno_sk"
+    type: "string"
+    description: "Chave surrogate do turno"
+  - name: "qtd_colaborador"
+    type: "integer"
+    description: "Contador de colaborador no mes"
+  - name: "salario_atual"
+    type: "double"
+    description: "Salario atual do colaborador"
+  - name: "flag_ativo"
+    type: "integer"
+    description: "Flag 1/0 para colaborador ativo na competencia"
+  - name: "flag_desligado"
+    type: "integer"
+    description: "Flag 1/0 para desligamento na competencia"
+
+governance:
+  classification: "confidential"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "colaborador_sk"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "data_sk"
+      - "qtd_colaborador"
+      - "salario_atual"
+      - "flag_ativo"
+      - "flag_desligado"

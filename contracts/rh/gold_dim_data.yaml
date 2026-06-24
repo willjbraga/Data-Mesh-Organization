@@ -1,0 +1,54 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:dim_data"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "dim_data"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "data_sk"
+    type: "integer"
+    description: "Chave surrogate da data no formato yyyyMMdd"
+    primary_key: true
+  - name: "data"
+    type: "date"
+    description: "Data calendario"
+  - name: "dia"
+    type: "integer"
+    description: "Dia do mes"
+  - name: "mes"
+    type: "integer"
+    description: "Mes do ano"
+  - name: "nome_mes"
+    type: "string"
+    description: "Nome do mes"
+  - name: "trimestre"
+    type: "integer"
+    description: "Trimestre do ano"
+  - name: "ano"
+    type: "integer"
+    description: "Ano da data"
+  - name: "ano_mes"
+    type: "string"
+    description: "Ano e mes no formato yyyy-MM"
+  - name: "dia_semana"
+    type: "string"
+    description: "Dia da semana"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "data_sk"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "data_sk"
+      - "dia"
+      - "mes"
+      - "trimestre"
+      - "ano"

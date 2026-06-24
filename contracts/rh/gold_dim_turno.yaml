@@ -1,0 +1,42 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:dim_turno"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "dim_turno"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "turno_sk"
+    type: "string"
+    description: "Chave surrogate estavel do turno"
+    primary_key: true
+  - name: "turno_id"
+    type: "integer"
+    description: "Identificador natural do turno"
+  - name: "nome_turno"
+    type: "string"
+    description: "Nome do turno"
+  - name: "hora_inicio"
+    type: "string"
+    description: "Hora de inicio no formato HH:mm:ss"
+  - name: "hora_fim"
+    type: "string"
+    description: "Hora de fim no formato HH:mm:ss"
+  - name: "carga_horaria_semanal"
+    type: "double"
+    description: "Carga horaria semanal esperada"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "turno_sk"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "turno_id"
+      - "carga_horaria_semanal"

@@ -1,0 +1,51 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:dim_departamento"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "dim_departamento"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "departamento_sk"
+    type: "string"
+    description: "Chave surrogate estavel do departamento"
+    primary_key: true
+  - name: "departamento_id"
+    type: "integer"
+    description: "Identificador natural do departamento"
+  - name: "nome_departamento"
+    type: "string"
+    description: "Nome do departamento"
+  - name: "tipo_departamento"
+    type: "string"
+    description: "Tipo funcional do departamento"
+  - name: "ativo"
+    type: "string"
+    description: "Indicador booleano de departamento ativo"
+  - name: "unidade_id"
+    type: "integer"
+    description: "Identificador natural da unidade relacionada"
+  - name: "nome_unidade"
+    type: "string"
+    description: "Nome da unidade relacionada"
+  - name: "cidade"
+    type: "string"
+    description: "Cidade da unidade"
+  - name: "estado"
+    type: "string"
+    description: "UF da unidade"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "departamento_sk"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "departamento_id"
+      - "unidade_id"

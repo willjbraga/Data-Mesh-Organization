@@ -1,0 +1,60 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:dim_vaga"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "dim_vaga"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "vaga_sk"
+    type: "string"
+    description: "Chave surrogate estavel da vaga"
+    primary_key: true
+  - name: "vaga_id"
+    type: "integer"
+    description: "Identificador natural da vaga"
+  - name: "titulo"
+    type: "string"
+    description: "Titulo da vaga"
+  - name: "status"
+    type: "string"
+    description: "Status da vaga"
+  - name: "tipo_vinculo"
+    type: "string"
+    description: "Tipo de vinculo ofertado"
+  - name: "departamento_id"
+    type: "integer"
+    description: "Identificador natural do departamento"
+  - name: "nome_departamento"
+    type: "string"
+    description: "Nome do departamento"
+  - name: "turno_id"
+    type: "integer"
+    description: "Identificador natural do turno"
+  - name: "nome_turno"
+    type: "string"
+    description: "Nome do turno"
+  - name: "quantidade_vagas"
+    type: "integer"
+    description: "Quantidade de posicoes abertas"
+  - name: "salario_ofertado"
+    type: "double"
+    description: "Salario ofertado para a vaga"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "vaga_sk"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "vaga_id"
+      - "departamento_id"
+      - "turno_id"
+      - "quantidade_vagas"
+      - "salario_ofertado"

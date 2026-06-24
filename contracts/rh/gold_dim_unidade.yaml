@@ -1,0 +1,44 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:dim_unidade"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "dim_unidade"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "unidade_sk"
+    type: "string"
+    description: "Chave surrogate estavel da unidade"
+    primary_key: true
+  - name: "unidade_id"
+    type: "integer"
+    description: "Identificador natural da unidade"
+  - name: "nome_unidade"
+    type: "string"
+    description: "Nome da unidade de restaurante"
+  - name: "tipo_unidade"
+    type: "string"
+    description: "Tipo da unidade"
+  - name: "cidade"
+    type: "string"
+    description: "Cidade da unidade"
+  - name: "estado"
+    type: "string"
+    description: "UF da unidade"
+  - name: "status"
+    type: "string"
+    description: "Status operacional da unidade"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "unidade_sk"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "unidade_id"

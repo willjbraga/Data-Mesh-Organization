@@ -1,0 +1,49 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:gold_custo_pessoal_estimado"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "gold_custo_pessoal_estimado"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "ano_mes"
+    type: "string"
+    description: "Ano e mes da competencia"
+    primary_key: true
+  - name: "nome_unidade"
+    type: "string"
+    description: "Nome da unidade"
+    primary_key: true
+  - name: "nome_departamento"
+    type: "string"
+    description: "Nome do departamento"
+    primary_key: true
+  - name: "nome_cargo"
+    type: "string"
+    description: "Nome do cargo"
+    primary_key: true
+  - name: "headcount"
+    type: "integer"
+    description: "Quantidade de colaboradores"
+  - name: "salario_total_estimado"
+    type: "double"
+    description: "Custo salarial estimado"
+  - name: "salario_medio"
+    type: "double"
+    description: "Media salarial"
+
+governance:
+  classification: "confidential"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "ano_mes"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "headcount"
+      - "salario_total_estimado"
+      - "salario_medio"

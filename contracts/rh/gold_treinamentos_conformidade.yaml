@@ -1,0 +1,61 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:gold_treinamentos_conformidade"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "gold_treinamentos_conformidade"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "nome_unidade"
+    type: "string"
+    description: "Nome da unidade"
+    primary_key: true
+  - name: "nome_departamento"
+    type: "string"
+    description: "Nome do departamento"
+    primary_key: true
+  - name: "nome_cargo"
+    type: "string"
+    description: "Nome do cargo"
+    primary_key: true
+  - name: "nome_treinamento"
+    type: "string"
+    description: "Nome do treinamento"
+    primary_key: true
+  - name: "status_participacao"
+    type: "string"
+    description: "Status da participacao"
+    primary_key: true
+  - name: "qtd_participacoes"
+    type: "integer"
+    description: "Quantidade de participacoes"
+  - name: "qtd_concluidos"
+    type: "integer"
+    description: "Quantidade de treinamentos concluidos"
+  - name: "qtd_vencidos"
+    type: "integer"
+    description: "Quantidade de treinamentos vencidos"
+  - name: "qtd_pendentes"
+    type: "integer"
+    description: "Quantidade de treinamentos pendentes"
+  - name: "nota_media"
+    type: "double"
+    description: "Nota media"
+
+governance:
+  classification: "confidential"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "nome_treinamento"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "qtd_participacoes"
+      - "qtd_concluidos"
+      - "qtd_vencidos"
+      - "qtd_pendentes"
+      - "nota_media"

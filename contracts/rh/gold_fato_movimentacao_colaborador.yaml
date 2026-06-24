@@ -1,0 +1,67 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:fato_movimentacao_colaborador"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "fato_movimentacao_colaborador"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "movimentacao_id"
+    type: "integer"
+    description: "Identificador natural da movimentacao"
+    primary_key: true
+  - name: "data_movimentacao_sk"
+    type: "integer"
+    description: "Chave da data de movimentacao"
+  - name: "data_efetivacao_sk"
+    type: "integer"
+    description: "Chave da data de efetivacao"
+  - name: "colaborador_sk"
+    type: "string"
+    description: "Chave surrogate do colaborador"
+  - name: "cargo_anterior_sk"
+    type: "string"
+    description: "Chave surrogate do cargo anterior"
+  - name: "cargo_novo_sk"
+    type: "string"
+    description: "Chave surrogate do cargo novo"
+  - name: "departamento_origem_sk"
+    type: "string"
+    description: "Chave surrogate do departamento de origem"
+  - name: "departamento_destino_sk"
+    type: "string"
+    description: "Chave surrogate do departamento de destino"
+  - name: "tipo_movimentacao"
+    type: "string"
+    description: "Tipo da movimentacao"
+  - name: "qtd_movimentacao"
+    type: "integer"
+    description: "Contador de movimentacao"
+  - name: "salario_anterior"
+    type: "double"
+    description: "Salario anterior, quando aplicavel"
+  - name: "salario_novo"
+    type: "double"
+    description: "Salario novo, quando aplicavel"
+  - name: "variacao_salarial"
+    type: "double"
+    description: "Diferenca entre salario novo e anterior"
+
+governance:
+  classification: "confidential"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "movimentacao_id"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "movimentacao_id"
+      - "data_movimentacao_sk"
+      - "data_efetivacao_sk"
+      - "qtd_movimentacao"
+      - "salario_anterior"
+      - "salario_novo"

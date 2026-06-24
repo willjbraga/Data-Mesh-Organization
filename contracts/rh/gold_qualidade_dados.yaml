@@ -1,0 +1,40 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:gold_qualidade_dados"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "gold_qualidade_dados"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "tipo_checagem"
+    type: "string"
+    description: "Tipo da checagem de qualidade"
+    primary_key: true
+  - name: "tabela"
+    type: "string"
+    description: "Tabela avaliada"
+    primary_key: true
+  - name: "regra"
+    type: "string"
+    description: "Regra ou coluna avaliada"
+    primary_key: true
+  - name: "quantidade"
+    type: "integer"
+    description: "Quantidade de ocorrencias encontradas"
+  - name: "data_validacao"
+    type: "timestamp"
+    description: "Data e hora da validacao"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "tipo_checagem"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "quantidade"

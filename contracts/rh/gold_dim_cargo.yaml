@@ -1,0 +1,53 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:dim_cargo"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "dim_cargo"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "cargo_sk"
+    type: "string"
+    description: "Chave surrogate estavel do cargo"
+    primary_key: true
+  - name: "cargo_id"
+    type: "integer"
+    description: "Identificador natural do cargo"
+  - name: "nome_cargo"
+    type: "string"
+    description: "Nome do cargo"
+  - name: "nivel"
+    type: "string"
+    description: "Nivel do cargo"
+  - name: "tipo_cargo"
+    type: "string"
+    description: "Tipo do cargo"
+  - name: "ativo"
+    type: "string"
+    description: "Indicador booleano de cargo ativo"
+  - name: "salario_base"
+    type: "double"
+    description: "Salario base do cargo"
+  - name: "faixa_salarial_min"
+    type: "double"
+    description: "Limite minimo da faixa salarial"
+  - name: "faixa_salarial_max"
+    type: "double"
+    description: "Limite maximo da faixa salarial"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "cargo_sk"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "cargo_id"
+      - "salario_base"
+      - "faixa_salarial_min"
+      - "faixa_salarial_max"

@@ -1,0 +1,65 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:gold_painel_rh_executivo"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "gold_painel_rh_executivo"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "ano_mes"
+    type: "string"
+    description: "Ano e mes da competencia"
+    primary_key: true
+  - name: "headcount"
+    type: "integer"
+    description: "Headcount total"
+  - name: "admissoes"
+    type: "integer"
+    description: "Total de admissoes"
+  - name: "desligamentos"
+    type: "integer"
+    description: "Total de desligamentos"
+  - name: "turnover"
+    type: "double"
+    description: "Taxa de turnover"
+  - name: "qtd_ausencias"
+    type: "integer"
+    description: "Quantidade de ausencias"
+  - name: "dias_ausencia"
+    type: "integer"
+    description: "Total de dias de ausencia"
+  - name: "qtd_treinamentos_concluidos"
+    type: "integer"
+    description: "Quantidade de treinamentos concluidos"
+  - name: "qtd_treinamentos_vencidos"
+    type: "integer"
+    description: "Quantidade de treinamentos vencidos"
+  - name: "qtd_candidaturas"
+    type: "integer"
+    description: "Quantidade de candidaturas"
+  - name: "qtd_contratacoes"
+    type: "integer"
+    description: "Quantidade de contratacoes"
+
+governance:
+  classification: "confidential"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "ano_mes"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "headcount"
+      - "admissoes"
+      - "desligamentos"
+      - "turnover"
+      - "qtd_ausencias"
+      - "dias_ausencia"
+      - "qtd_treinamentos_concluidos"
+      - "qtd_treinamentos_vencidos"
+      - "qtd_candidaturas"
+      - "qtd_contratacoes"

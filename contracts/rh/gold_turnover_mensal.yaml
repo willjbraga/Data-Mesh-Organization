@@ -1,0 +1,49 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:gold_turnover_mensal"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "gold_turnover_mensal"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "ano_mes"
+    type: "string"
+    description: "Ano e mes da competencia"
+    primary_key: true
+  - name: "nome_unidade"
+    type: "string"
+    description: "Nome da unidade"
+    primary_key: true
+  - name: "nome_departamento"
+    type: "string"
+    description: "Nome do departamento"
+    primary_key: true
+  - name: "headcount_medio"
+    type: "integer"
+    description: "Headcount usado como base simples do turnover"
+  - name: "admissoes"
+    type: "integer"
+    description: "Quantidade de admissoes no mes"
+  - name: "desligamentos"
+    type: "integer"
+    description: "Quantidade de desligamentos no mes"
+  - name: "turnover"
+    type: "double"
+    description: "Taxa simples de turnover"
+
+governance:
+  classification: "confidential"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "ano_mes"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "headcount_medio"
+      - "admissoes"
+      - "desligamentos"
+      - "turnover"

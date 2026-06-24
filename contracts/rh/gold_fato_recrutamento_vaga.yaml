@@ -1,0 +1,70 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:fato_recrutamento_vaga"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "fato_recrutamento_vaga"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "vaga_id"
+    type: "integer"
+    description: "Identificador natural da vaga"
+    primary_key: true
+  - name: "data_abertura_sk"
+    type: "integer"
+    description: "Chave da data de abertura"
+  - name: "data_fechamento_sk"
+    type: "integer"
+    description: "Chave da data de fechamento"
+  - name: "vaga_sk"
+    type: "string"
+    description: "Chave surrogate da vaga"
+  - name: "departamento_sk"
+    type: "string"
+    description: "Chave surrogate do departamento"
+  - name: "turno_sk"
+    type: "string"
+    description: "Chave surrogate do turno"
+  - name: "status_vaga"
+    type: "string"
+    description: "Status da vaga"
+  - name: "quantidade_vagas"
+    type: "integer"
+    description: "Quantidade de vagas abertas"
+  - name: "salario_ofertado"
+    type: "double"
+    description: "Salario ofertado para a vaga"
+  - name: "dias_aberta"
+    type: "integer"
+    description: "Quantidade de dias em aberto"
+  - name: "flag_aberta"
+    type: "integer"
+    description: "Flag 1/0 para vaga aberta"
+  - name: "flag_encerrada"
+    type: "integer"
+    description: "Flag 1/0 para vaga encerrada"
+  - name: "flag_cancelada"
+    type: "integer"
+    description: "Flag 1/0 para vaga cancelada"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "vaga_id"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "vaga_id"
+      - "data_abertura_sk"
+      - "data_fechamento_sk"
+      - "quantidade_vagas"
+      - "salario_ofertado"
+      - "dias_aberta"
+      - "flag_aberta"
+      - "flag_encerrada"
+      - "flag_cancelada"

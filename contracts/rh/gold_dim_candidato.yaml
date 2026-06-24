@@ -1,0 +1,45 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:dim_candidato"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "dim_candidato"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "candidato_sk"
+    type: "string"
+    description: "Chave surrogate estavel do candidato"
+    primary_key: true
+  - name: "candidato_id"
+    type: "integer"
+    description: "Identificador natural do candidato"
+  - name: "nome"
+    type: "string"
+    description: "Nome do candidato"
+  - name: "email_mascarado"
+    type: "string"
+    description: "Email mascarado do candidato"
+  - name: "telefone_mascarado"
+    type: "string"
+    description: "Telefone mascarado do candidato"
+  - name: "data_cadastro"
+    type: "date"
+    description: "Data de cadastro do candidato"
+
+governance:
+  classification: "confidential"
+  contains_pii: true
+  pii_columns:
+    - "nome"
+    - "email_mascarado"
+    - "telefone_mascarado"
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "candidato_sk"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "candidato_id"

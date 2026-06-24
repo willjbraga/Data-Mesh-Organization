@@ -1,0 +1,45 @@
+# Data Contract Specification v1.0
+id: "rh:data_product:dim_treinamento"
+version: "1.0.0"
+domain: "recursos_humanos"
+data_product_name: "dim_treinamento"
+owner: "team-rh-analytics@empresa.com"
+status: "active"
+
+schema:
+  - name: "treinamento_sk"
+    type: "string"
+    description: "Chave surrogate estavel do treinamento"
+    primary_key: true
+  - name: "treinamento_id"
+    type: "integer"
+    description: "Identificador natural do treinamento"
+  - name: "nome_treinamento"
+    type: "string"
+    description: "Nome do treinamento"
+  - name: "tipo_treinamento"
+    type: "string"
+    description: "Tipo do treinamento"
+  - name: "obrigatorio"
+    type: "string"
+    description: "Indicador booleano de treinamento obrigatorio"
+  - name: "validade_meses"
+    type: "integer"
+    description: "Validade do treinamento em meses"
+  - name: "ativo"
+    type: "string"
+    description: "Indicador booleano de treinamento ativo"
+
+governance:
+  classification: "internal"
+  contains_pii: false
+
+service_level_agreements:
+  freshness: "daily"
+  completeness:
+    column: "treinamento_sk"
+    min_threshold_pct: 100.0
+  integrity:
+    non_negative_columns:
+      - "treinamento_id"
+      - "validade_meses"
