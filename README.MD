@@ -1,3 +1,16 @@
+# Projeto Data-Mesh
+
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?logo=databricks&logoColor=white)
+![Delta Lake](https://img.shields.io/badge/Delta-Lake-00ADD8)
+
+## 🏛️ Arquitetura DataMesh
+
+![Arquitetura_Datamesh](docs/arquitetura/arquitetura_datamesh.png)
+
+## 🏅 Arquitetura Medalhão
+
+![Arquitetura_Medallion](docs/arquitetura/arquitetura_medallion.png)
+
 ## 🔐 Configuração de Segredos e Ambiente
 
 Devido às limitações da versão **Databricks Community Edition**, que não suporta o uso nativo de `dbutils.secrets`, implementamos uma solução baseada em variáveis de ambiente para a gestão de credenciais.
@@ -77,3 +90,15 @@ O projeto está organizado seguindo os princípios de **Data Mesh**, onde cada d
 Os dados estão no formato CSV em sua origem, eles são salvos no DataBricks no formato Parquet e Delta por motivos de comparação entre a compressão dos dados.
 
 ![Compression](Financeiro/Comparação%20de%20tamanhos%20-%20Delta,%20Parquert%20e%20CSV.png)
+
+## Pipeline Automatizada
+
+As pipelines são automatizadas no próprio DataBricks similar ao Apache Airflow.
+
+![Pipeline](docs/pipeline_exemplo.png)
+
+## ✉️ Mensageria
+
+O próprio DataBricks oferece um sistema de mensageria para alertas em casos como inicio, sucesso, falha e outros casos.
+
+![Mensageria](docs/mensageria_exeplo.png)
