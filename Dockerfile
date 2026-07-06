@@ -10,7 +10,6 @@ RUN apt-get update && \
 
 # Configura a variável de ambiente do Java
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-export JAVA_HOME
 
 USER airflow
 
