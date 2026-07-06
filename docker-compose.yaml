@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   airflow-common:
     build: .
@@ -16,6 +15,7 @@ services:
       - ./Marketing:/opt/airflow/Marketing
       - ./Recursos Humanos:/opt/airflow/Recursos_Humanos
       - ./logs:/opt/airflow/logs
+      - ./airflow.db:/opt/airflow/airflow.db
     user: "${AIRFLOW_UID:-50000}:0"
 
   airflow-webserver:
