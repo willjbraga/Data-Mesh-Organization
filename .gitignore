@@ -1,3 +1,12 @@
 .env
 venv/
 common/config_env.py
+__pycache__/
+*.pyc
+
+# Ficheiros gerados pelo Airflow localmente dentro do contentor (mapeados para o host)
+logs/
+plugins/
+airflow.db
+airflow.cfg
+webserver_config.py
