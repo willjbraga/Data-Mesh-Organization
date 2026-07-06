@@ -14,7 +14,7 @@ services:
       - ./contracts:/opt/airflow/contracts
       - ./Financeiro:/opt/airflow/Financeiro
       - ./Marketing:/opt/airflow/Marketing
-      - ./Recursos_Humanos:/opt/airflow/Recursos_Humanos
+      - ./Recursos Humanos:/opt/airflow/Recursos_Humanos
       - ./logs:/opt/airflow/logs
     user: "${AIRFLOW_UID:-50000}:0"
 
