@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  airflow-common:
+    build: .
+    image: ${AIRFLOW_IMAGE_NAME}
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=${AIRFLOW__CORE__EXECUTOR}
+      - AIRFLOW__CORE__LOAD_EXAMPLES=${AIRFLOW__CORE__LOAD_EXAMPLES}
+      - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+    volumes:
+      # Mapeia as pastas locais para dentro do ambiente de execução do Docker
+      - ./dags:/opt/airflow/dags
+      - ./common:/opt/airflow/common
+      - ./contracts:/opt/airflow/contracts
+      - ./Financeiro:/opt/airflow/Financeiro
+      - ./Marketing:/opt/airflow/Marketing
+      - ./Recursos_Humanos:/opt/airflow/Recursos_Humanos
+      - ./logs:/opt/airflow/logs
+    user: "${AIRFLOW_UID:-50000}:0"
+
+  airflow-webserver:
+    extends:
+      service: airflow-common
+    command: webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+  airflow-scheduler:
+    extends:
+      service: airflow-common
+    command: scheduler
+    restart: always
