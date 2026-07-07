@@ -25,13 +25,14 @@ class BasePipeline:
         get_jdbc_url(): Retorna a URL de conexão JDBC formatada.
         get_connection_properties(): Retorna um dicionário com as propriedades de conexão necessárias para o JDBC.
     '''
-    def __init__(self, dominio: str, schema: str):
+    def __init__(self, dominio: str, schema: str, is_local: bool = False):
         '''
         Inicializa a classe base configurando os atributos de conexão e metadados do catálogo.
 
         Args:
             dominio (str): O domínio responsável pelos dados. Deve ser um dos valores definidos em _dominios_validos.
             schema (str): A camada de dados alvo no DataBricks(ex: 'bronze', 'silver', 'gold').
+            is_local (bool): Indica se a pipeline está sendo executada em ambiente local.
 
         Raises:
             ValueError: Se o domínio fornecido não estiver na lista de domínios permitidos
@@ -44,11 +45,28 @@ class BasePipeline:
                 f"Use um de: {sorted(self._dominios_validos)}"
             )
         
-        self.spark = SparkSession.builder.getOrCreate()
-        
+        self.is_local = is_local
         self.dominio = dominio
         self.schema = schema
         self.catalog = f'{self.dominio}_prod'
+
+        if self.is_local:
+            print("[SPARK] Inicializando Spark Session LOCAL para Docker...")
+            self.spark = SparkSession.builder \
+                .appName(f"DataMesh-{dominio}-{schema}") \
+                .master("local[*]") \
+                .config("spark.driver.memory", "1g") \
+                .config("spark.executor.memory", "1g") \
+                .config("spark.jars.packages", "io.delta:delta-core_2.12:2.4.0") \
+                .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
+                .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
+                .config("spark.sql.warehouse.dir", "/tmp/spark-warehouse") \
+                .config("spark.driver.extraJavaOptions", "-Dderby.stream.error.file=/tmp/derby.log") \
+                .getOrCreate()
+        else:
+            # Comportamento padrão original do Databricks
+            print("[SPARK] Conectando à Spark Session existente do Databricks...")
+            self.spark = SparkSession.builder.getOrCreate()
 
         # Para uso no Aiflow
         self.local_data_path = f"/opt/airflow/data/{self.dominio}/{self.schema}/"

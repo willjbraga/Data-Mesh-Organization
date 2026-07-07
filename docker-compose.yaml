@@ -5,7 +5,7 @@ services:
     environment:
       - AIRFLOW__CORE__EXECUTOR=${AIRFLOW__CORE__EXECUTOR}
       - AIRFLOW__CORE__LOAD_EXAMPLES=${AIRFLOW__CORE__LOAD_EXAMPLES}
-      - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
       - PYTHONPATH=/opt/airflow
     volumes:
       # Mapeia as pastas locais para dentro do ambiente de execução do Docker

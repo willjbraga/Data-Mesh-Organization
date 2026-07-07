@@ -32,9 +32,9 @@ def marketing_cliente_pipeline():
     
     @task
     def run_marketing_cliente_silver_pipeline():
-        pipelines = {'cliente': ClienteMktPipeline(), 'lead': LeadMktPipeline(), 'interacao': InteracaoMktPipeline(), 'cliente_segmento': ClienteSegmentoMktPipeline()}
+        pipelines = {'cliente': ClienteMktPipeline(is_local=True), 'lead': LeadMktPipeline(is_local=True), 'interacao': InteracaoMktPipeline(is_local=True), 'cliente_segmento': ClienteSegmentoMktPipeline(is_local=True)}
         for table_name, pipeline in pipelines.items():
-            pipeline.run(table_name, is_local=True)
+            pipeline.run(table_name)
     
     @task
     def run_marketing_cliente_gold_pipeline():

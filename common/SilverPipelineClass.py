@@ -5,13 +5,14 @@ from pyspark.sql.functions import current_timestamp, udf
 from pyspark.sql.types import StringType
 
 class SilverPipeline(BasePipeline):
-    def __init__(self, dominio: str):
-        super().__init__(dominio, 'silver')
+    def __init__(self, dominio: str, is_local: bool = False):
+        super().__init__(dominio, 'silver', is_local=is_local)
+        self.is_local = is_local
 
-    def extract_from_bronze(self, table_name, is_local: bool = False) -> 'pyspark.sql.DataFrame':
+    def extract_from_bronze(self, table_name) -> 'pyspark.sql.DataFrame':
         full_table_path = f"{self.catalog}.bronze.{table_name}"
 
-        if is_local:
+        if self.is_local:
             # Se estiver rodando localmente, salva no caminho local do Airflow
             full_table_path = f"{self.local_data_path}{table_name}"
             print(f"[Local Mode] Extraindo da Silver (local): {full_table_path}...")
@@ -20,9 +21,9 @@ class SilverPipeline(BasePipeline):
         
         return self.spark.table(full_table_path)
     
-    def load_to_silver(self, df, table_name, is_local: bool = False):
+    def load_to_silver(self, df, table_name):
         full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
-        if is_local:
+        if self.is_local:
             # Se estiver rodando localmente, salva no caminho local do Airflow
             full_table_path = f"{self.local_data_path}{table_name}"
             print(f"[Local Mode] Salvando na Silver (local): {full_table_path}...")
@@ -44,18 +45,18 @@ class SilverPipeline(BasePipeline):
 
         return df_silver
 
-    def run(self, source_table, is_local: bool = False):
+    def run(self, source_table):
         
         print(f"Iniciando pipeline Silver para o domínio '{self.dominio}'...")
         
         # Extração dos dados da camada Bronze
-        df_bronze = self.extract_from_bronze(source_table, is_local)
+        df_bronze = self.extract_from_bronze(source_table)
 
         # Transformação dos dados para a camada Silver
         df_silver = self.transform(df_bronze)
 
         # Carga dos dados na camada Silver
-        self.load_to_silver(df_silver, source_table, is_local)
+        self.load_to_silver(df_silver, source_table)
         
         print(f"Pipeline Silver para o domínio '{self.dominio}' concluída com sucesso!")
 

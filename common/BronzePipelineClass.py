@@ -21,7 +21,7 @@ class BronzePipeline(BasePipeline):
         """
         
         self.is_local = is_local
-        super().__init__(dominio, 'bronze')
+        super().__init__(dominio, 'bronze', is_local=is_local)
 
     def extract_from_postgres(self, table_name):
         """Realiza a leitura dos dados brutos do Supabase via protocolo JDBC.

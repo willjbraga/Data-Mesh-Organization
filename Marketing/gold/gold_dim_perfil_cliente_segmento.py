@@ -2,18 +2,18 @@ from common.GoldPipelineClass import GoldPipeline
 from pyspark.sql import functions as F
 
 class GoldDimPerfilClienteSegmento(GoldPipeline):
-    def __init__(self):
-        super().__init__('mkt')
+    def __init__(self, is_local: bool = False):
+        super().__init__('mkt', is_local=is_local)
 
-    def create_business_view(self, is_local: bool = False):
+    def create_business_view(self):
         # ==============================================================================
         # 1. LEITURA DAS TABELAS DA CAMADA SILVER
         # ==============================================================================
-        df_cliente          = self.extract_from_silver("mkt_prod.silver.cliente", is_local=is_local)
-        df_lead             = self.extract_from_silver("mkt_prod.silver.lead", is_local=is_local)
-        df_interacao        = self.extract_from_silver("mkt_prod.silver.interacao", is_local=is_local)
-        df_cliente_segmento = self.extract_from_silver("mkt_prod.silver.cliente_segmento", is_local=is_local)
-        df_segmento         = self.extract_from_silver("mkt_prod.silver.segmento", is_local=is_local)
+        df_cliente          = self.extract_from_silver("mkt_prod.silver.cliente", is_local=self.is_local)
+        df_lead             = self.extract_from_silver("mkt_prod.silver.lead", is_local=self.is_local)
+        df_interacao        = self.extract_from_silver("mkt_prod.silver.interacao", is_local=self.is_local)
+        df_cliente_segmento = self.extract_from_silver("mkt_prod.silver.cliente_segmento", is_local=self.is_local)
+        df_segmento         = self.extract_from_silver("mkt_prod.silver.segmento", is_local=self.is_local)
 
         # ==============================================================================
         # 2. AGREGAÇÃO DE INTERAÇÕES (Correção da Ponte: Interação -> Lead -> Cliente)

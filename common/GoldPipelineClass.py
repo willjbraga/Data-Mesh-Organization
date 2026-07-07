@@ -5,8 +5,9 @@ from pyspark.sql import DataFrame
 from abc import abstractmethod
 
 class GoldPipeline(BasePipeline):
-    def __init__(self, dominio: str):
-        super().__init__(dominio, 'gold')
+    def __init__(self, dominio: str, is_local: bool = False):
+        super().__init__(dominio, 'gold', is_local=is_local)
+        self.is_local = is_local
 
     def extract_from_silver(self, table_name, is_local: bool = False) -> 'pyspark.sql.DataFrame':
         full_table_path = f"{self.catalog}.silver.{table_name}"
@@ -47,19 +48,19 @@ class GoldPipeline(BasePipeline):
         """
         raise NotImplementedError("O método 'create_business_view' precisa ser implementado pelo domínio.")
     
-    def run(self, target_table: str, is_local: bool = False):
+    def run(self, target_table: str):
         """Executa o fluxo fim-a-fim da camada Gold."""
         print(f"Iniciando pipeline Gold para o domínio '{self.dominio}'...")
         
         
         # 2. Aplica a regra de negócio/agregação customizada do domínio
-        df_gold = self.create_business_view(is_local=is_local)
+        df_gold = self.create_business_view(is_local=self.is_local)
 
         enforcer = MeshContractEnforcer(contract_yaml_path=f"contracts/{self.dominio}/gold_{target_table}.yaml")
         if enforcer.enforce(df_gold):
 
             # 3. Salva no catálogo da Gold
-            self.load_to_gold(df_gold, target_table, is_local=is_local)
+            self.load_to_gold(df_gold, target_table, is_local=self.is_local)
             print(f"Pipeline Gold para '{target_table}' concluída com sucesso!")
         else:
             print(f"Pipeline Gold para '{target_table}' falhou na validação de contrato.")
