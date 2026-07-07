@@ -13,7 +13,7 @@ class MarketingBronzePipeline(BronzePipeline):
     Methods:
         ingest(): Método responsável por iniciar o processo de ingestão dos dados.
     '''
-    def __init__(self, tabelas: list):
+    def __init__(self, tabelas: list, is_local: bool = False):
         '''
         Inicializa a classe MarketingBronzePipeline.
 
@@ -21,7 +21,7 @@ class MarketingBronzePipeline(BronzePipeline):
             tabelas (list): Lista de tabelas a serem ingeridas.
 
         '''
-        super().__init__(dominio='mkt')
+        super().__init__(dominio='mkt', is_local=is_local)
         self.tabelas = tabelas
     
     def ingest(self):

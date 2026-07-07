@@ -49,9 +49,9 @@ class BasePipeline:
         self.dominio = dominio
         self.schema = schema
         self.catalog = f'{self.dominio}_prod'
-        
+
         # Para uso no Aiflow
-        self.local_data_path = "/opt/airflow/data"
+        self.local_data_path = f"/opt/airflow/data/{self.dominio}/{self.schema}/"
 
         # Não usamos mais dbutils.secrets
         self.db_user = os.getenv(f"SUPABASE_USER")

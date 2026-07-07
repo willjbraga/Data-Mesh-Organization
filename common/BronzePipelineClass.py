@@ -12,13 +12,15 @@ class BronzePipeline(BasePipeline):
         load_to_bronze(df, table_name): Persiste os dados no formato Delta no Unity Catalog, aplicando a estratégia de overwrite.
         run(source_table): Executa o fluxo fim-a-fim de ingestão (Extração e Carga), encapsulando a lógica de orquestração.
     """
-    def __init__(self, dominio: str):
+    def __init__(self, dominio: str, is_local: bool = False):
         """Inicializa a pipeline configurando os metadados do catálogo.
 
         Args:
             dominio (str): O domínio responsável pelos dados. Deve ser um dos valores definidos em _dominios_validos.
+            is_local (bool): Indica se a pipeline está sendo executada em ambiente local.
         """
         
+        self.is_local = is_local
         super().__init__(dominio, 'bronze')
 
     def extract_from_postgres(self, table_name):
@@ -50,6 +52,11 @@ class BronzePipeline(BasePipeline):
         """
         full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
         
+        if self.is_local:
+            # Se estiver rodando localmente, salva no caminho local do Airflow
+            full_table_path = f"{self.local_data_path}{table_name}"
+            print(f"[Local Mode] Salvando na Bronze (local): {full_table_path}...")
+
         print(f"Salvando na Bronze: {full_table_path}...")
         
         df.write.format("delta") \
