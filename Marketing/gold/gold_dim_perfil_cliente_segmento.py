@@ -5,15 +5,15 @@ class GoldDimPerfilClienteSegmento(GoldPipeline):
     def __init__(self):
         super().__init__('mkt')
 
-    def create_business_view(self):
+    def create_business_view(self, is_local: bool = False):
         # ==============================================================================
         # 1. LEITURA DAS TABELAS DA CAMADA SILVER
         # ==============================================================================
-        df_cliente          = self.spark.table("mkt_prod.silver.cliente")
-        df_lead             = self.spark.table("mkt_prod.silver.lead")
-        df_interacao        = self.spark.table("mkt_prod.silver.interacao")
-        df_cliente_segmento = self.spark.table("mkt_prod.silver.cliente_segmento")
-        df_segmento         = self.spark.table("mkt_prod.silver.segmento")
+        df_cliente          = self.extract_from_silver("mkt_prod.silver.cliente", is_local=is_local)
+        df_lead             = self.extract_from_silver("mkt_prod.silver.lead", is_local=is_local)
+        df_interacao        = self.extract_from_silver("mkt_prod.silver.interacao", is_local=is_local)
+        df_cliente_segmento = self.extract_from_silver("mkt_prod.silver.cliente_segmento", is_local=is_local)
+        df_segmento         = self.extract_from_silver("mkt_prod.silver.segmento", is_local=is_local)
 
         # ==============================================================================
         # 2. AGREGAÇÃO DE INTERAÇÕES (Correção da Ponte: Interação -> Lead -> Cliente)
