@@ -9,11 +9,11 @@ class GoldDimPerfilClienteSegmento(GoldPipeline):
         # ==============================================================================
         # 1. LEITURA DAS TABELAS DA CAMADA SILVER
         # ==============================================================================
-        df_cliente          = self.extract_from_silver("mkt_prod.silver.cliente", is_local=self.is_local)
-        df_lead             = self.extract_from_silver("mkt_prod.silver.lead", is_local=self.is_local)
-        df_interacao        = self.extract_from_silver("mkt_prod.silver.interacao", is_local=self.is_local)
-        df_cliente_segmento = self.extract_from_silver("mkt_prod.silver.cliente_segmento", is_local=self.is_local)
-        df_segmento         = self.extract_from_silver("mkt_prod.silver.segmento", is_local=self.is_local)
+        df_cliente          = self.extract_from_silver("cliente", is_local=self.is_local)
+        df_lead             = self.extract_from_silver("lead", is_local=self.is_local)
+        df_interacao        = self.extract_from_silver("interacao", is_local=self.is_local)
+        df_cliente_segmento = self.extract_from_silver("cliente_segmento", is_local=self.is_local)
+        df_segmento         = self.extract_from_silver("segmento", is_local=self.is_local)
 
         # ==============================================================================
         # 2. AGREGAÇÃO DE INTERAÇÕES (Correção da Ponte: Interação -> Lead -> Cliente)
