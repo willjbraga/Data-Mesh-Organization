@@ -15,6 +15,7 @@ services:
       - ./Marketing:/opt/airflow/Marketing
       - ./Recursos Humanos:/opt/airflow/Recursos_Humanos
       - ./logs:/opt/airflow/logs
+      - ./data:/opt/airflow/data
       - ./airflow.db:/opt/airflow/airflow.db
     user: "${AIRFLOW_UID:-50000}:0"
 
