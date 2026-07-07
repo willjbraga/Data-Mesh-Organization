@@ -8,14 +8,27 @@ class GoldPipeline(BasePipeline):
     def __init__(self, dominio: str):
         super().__init__(dominio, 'gold')
 
-    def extract_from_silver(self, table_name) -> 'pyspark.sql.DataFrame':
+    def extract_from_silver(self, table_name, is_local: bool = False) -> 'pyspark.sql.DataFrame':
         full_table_path = f"{self.catalog}.silver.{table_name}"
+
+        if is_local:
+            # Se estiver rodando localmente, salva no caminho local do Airflow
+            full_table_path = f"{self.local_data_path}{table_name}"
+            print(f"[Local Mode] Salvando na Gold (local): {full_table_path}...")
+
         print(f"Extraindo dados de: {full_table_path}...")
         
         return self.spark.table(full_table_path)
     
-    def load_to_gold(self, df, table_name):
+    def load_to_gold(self, df, table_name, is_local: bool = False):
+
         full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
+
+        if is_local:
+            # Se estiver rodando localmente, salva no caminho local do Airflow
+            full_table_path = f"{self.local_data_path}{table_name}"
+            print(f"[Local Mode] Salvando na Gold (local): {full_table_path}...")
+        
         
         print(f"Salvando na Gold: {full_table_path}...")
         
@@ -34,7 +47,7 @@ class GoldPipeline(BasePipeline):
         """
         raise NotImplementedError("O método 'create_business_view' precisa ser implementado pelo domínio.")
     
-    def run(self, target_table: str):
+    def run(self, target_table: str, is_local: bool = False):
         """Executa o fluxo fim-a-fim da camada Gold."""
         print(f"Iniciando pipeline Gold para o domínio '{self.dominio}'...")
         
@@ -46,7 +59,7 @@ class GoldPipeline(BasePipeline):
         if enforcer.enforce(df_gold):
 
             # 3. Salva no catálogo da Gold
-            self.load_to_gold(df_gold, target_table)
+            self.load_to_gold(df_gold, target_table, is_local=is_local)
             print(f"Pipeline Gold para '{target_table}' concluída com sucesso!")
         else:
             print(f"Pipeline Gold para '{target_table}' falhou na validação de contrato.")

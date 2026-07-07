@@ -8,14 +8,24 @@ class SilverPipeline(BasePipeline):
     def __init__(self, dominio: str):
         super().__init__(dominio, 'silver')
 
-    def extract_from_bronze(self, table_name) -> 'pyspark.sql.DataFrame':
+    def extract_from_bronze(self, table_name, is_local: bool = False) -> 'pyspark.sql.DataFrame':
         full_table_path = f"{self.catalog}.bronze.{table_name}"
+
+        if is_local:
+            # Se estiver rodando localmente, salva no caminho local do Airflow
+            full_table_path = f"{self.local_data_path}{table_name}"
+            print(f"[Local Mode] Extraindo da Silver (local): {full_table_path}...")
+
         print(f"Extraindo dados de: {full_table_path}...")
         
         return self.spark.table(full_table_path)
     
-    def load_to_silver(self, df, table_name):
+    def load_to_silver(self, df, table_name, is_local: bool = False):
         full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
+        if is_local:
+            # Se estiver rodando localmente, salva no caminho local do Airflow
+            full_table_path = f"{self.local_data_path}{table_name}"
+            print(f"[Local Mode] Salvando na Silver (local): {full_table_path}...")
         
         print(f"Salvando na Silver: {full_table_path}...")
         
@@ -34,18 +44,18 @@ class SilverPipeline(BasePipeline):
 
         return df_silver
 
-    def run(self, source_table):
+    def run(self, source_table, is_local: bool = False):
         
         print(f"Iniciando pipeline Silver para o domínio '{self.dominio}'...")
         
         # Extração dos dados da camada Bronze
-        df_bronze = self.extract_from_bronze(source_table)
+        df_bronze = self.extract_from_bronze(source_table, is_local)
 
         # Transformação dos dados para a camada Silver
         df_silver = self.transform(df_bronze)
 
         # Carga dos dados na camada Silver
-        self.load_to_silver(df_silver, source_table)
+        self.load_to_silver(df_silver, source_table, is_local)
         
         print(f"Pipeline Silver para o domínio '{self.dominio}' concluída com sucesso!")
 
