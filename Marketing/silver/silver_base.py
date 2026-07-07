@@ -4,8 +4,8 @@ from pyspark.sql import DataFrame
 import pyspark.sql.functions as F
 
 class MarketingSilverPipeline(SilverPipeline):
-    def __init__(self):
-        super().__init__(dominio='mkt')
+    def __init__(self, is_local: bool = False):
+        super().__init__(dominio='mkt', is_local=is_local)
 
     def transform(self, df:DataFrame, 
                   date_cols: list = None,
