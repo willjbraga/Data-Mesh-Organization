@@ -54,7 +54,7 @@ class GoldPipeline(BasePipeline):
         
         
         # 2. Aplica a regra de negócio/agregação customizada do domínio
-        df_gold = self.create_business_view(is_local=self.is_local)
+        df_gold = self.create_business_view()
 
         enforcer = MeshContractEnforcer(contract_yaml_path=f"contracts/{self.dominio}/gold_{target_table}.yaml")
         if enforcer.enforce(df_gold):
