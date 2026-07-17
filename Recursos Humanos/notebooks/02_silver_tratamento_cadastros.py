@@ -11,7 +11,7 @@ from pyspark.sql import functions as F
 
 # COMMAND ----------
 def ler_bronze(tabela: str) -> DataFrame:
-    return aplicar_normalizacao_strings(spark.table(f"{BRONZE_DB}.{tabela}"))
+    return aplicar_normalizacao_strings(ler_parquet_bronze(tabela))
 
 
 def finalizar_tabela_silver(

@@ -11,6 +11,11 @@ from pyspark.sql import functions as F
 
 # COMMAND ----------
 def contar_registros(database: str, tabela: str) -> int:
+    if database == BRONZE_DB:
+        try:
+            return ler_parquet_bronze(tabela).count()
+        except Exception:
+            return 0
     if not tabela_existe(database, tabela):
         return 0
     return spark.table(f"{database}.{tabela}").count()

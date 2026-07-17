@@ -57,7 +57,7 @@ def ingerir_postgresql_bronze(tabela: str, senha: str) -> dict:
     df_bronze = adicionar_colunas_bronze(df_raw, tabela)
     salvar_parquet(df_bronze, BRONZE_DB, tabela, BRONZE_BASE_PATH, mode="overwrite")
     qtd_registros = df_bronze.count()
-    print(f"OK: {BRONZE_DB}.{tabela} (Parquet) - {qtd_registros} registros")
+    print(f"OK: {BRONZE_BASE_PATH}{tabela} (Parquet) - {qtd_registros} registros")
     return {"tabela": tabela, "registros_bronze": qtd_registros, "formato": "parquet"}
 
 # COMMAND ----------

@@ -28,18 +28,26 @@ def garantir_barra_final(path: str) -> str:
     return path if path.endswith("/") else f"{path}/"
 
 
+BRONZE_DB = "rh_bronze"
+SILVER_DB = "rh_silver"
+GOLD_DB = "rh_gold"
+QUARANTINE_DB = "rh_quarantine"
+
+# No Serverless, DBFS nao pode ser usado como local de tabelas do Unity Catalog.
+# A Bronze permanece em Parquet dentro de um Volume; Silver e Gold sao tabelas
+# Delta gerenciadas, sem caminhos de armazenamento definidos pelo notebook.
+UC_CATALOG_PADRAO = spark.sql("SELECT current_catalog() AS catalogo").first()["catalogo"]
+UC_CATALOG = obter_parametro("uc_catalog", UC_CATALOG_PADRAO)
+BRONZE_VOLUME = obter_parametro("bronze_volume", "bronze_parquet")
+
+spark.sql(f"USE CATALOG `{UC_CATALOG}`")
+
 BRONZE_BASE_PATH = garantir_barra_final(
-    obter_parametro("bronze_base_path", "dbfs:/FileStore/data_mesh/rh/bronze_parquet/")
+    f"/Volumes/{UC_CATALOG}/{BRONZE_DB}/{BRONZE_VOLUME}"
 )
-SILVER_BASE_PATH = garantir_barra_final(
-    obter_parametro("silver_base_path", "dbfs:/FileStore/data_mesh/rh/silver/")
-)
-GOLD_BASE_PATH = garantir_barra_final(
-    obter_parametro("gold_base_path", "dbfs:/FileStore/data_mesh/rh/gold/")
-)
-QUARANTINE_BASE_PATH = garantir_barra_final(
-    obter_parametro("quarantine_base_path", "dbfs:/FileStore/data_mesh/rh/quarantine/")
-)
+SILVER_BASE_PATH = None
+GOLD_BASE_PATH = None
+QUARANTINE_BASE_PATH = None
 
 # Fonte operacional PostgreSQL/Supabase. A senha deve ficar em um secret scope do
 # Databricks; ela nunca deve ser gravada no notebook ou na URL de conexao.
@@ -89,15 +97,15 @@ def obter_senha_postgres() -> str:
             f"{POSTGRES_SECRET_SCOPE}/{POSTGRES_SECRET_KEY} no Databricks."
         ) from exc
 
-BRONZE_DB = "rh_bronze"
-SILVER_DB = "rh_silver"
-GOLD_DB = "rh_gold"
-QUARANTINE_DB = "rh_quarantine"
-
 # COMMAND ----------
-# Schemas/databases do dominio.
+# Schemas e Volume do dominio no Unity Catalog.
 for database in [BRONZE_DB, SILVER_DB, GOLD_DB, QUARANTINE_DB]:
-    spark.sql(f"CREATE DATABASE IF NOT EXISTS {database}")
+    spark.sql(f"CREATE SCHEMA IF NOT EXISTS `{UC_CATALOG}`.`{database}`")
+
+spark.sql(
+    f"CREATE VOLUME IF NOT EXISTS "
+    f"`{UC_CATALOG}`.`{BRONZE_DB}`.`{BRONZE_VOLUME}`"
+)
 
 # COMMAND ----------
 # Tabelas operacionais do dominio de RH.
@@ -200,29 +208,34 @@ def gerar_hash_linha(df: DataFrame, colunas: list[str] | None = None, coluna_has
     return df.withColumn(coluna_hash, F.sha2(F.concat_ws("||", *exprs), 256))
 
 
-def salvar_delta(df: DataFrame, database: str, tabela: str, base_path: str, mode: str = "overwrite") -> None:
-    """Salva um DataFrame como Delta em caminho e tabela catalogada."""
-    destino = f"{garantir_barra_final(base_path)}{tabela}"
+def salvar_delta(
+    df: DataFrame,
+    database: str,
+    tabela: str,
+    base_path: str | None = None,
+    mode: str = "overwrite",
+) -> None:
+    """Salva Silver/Quarentena/Gold como tabela Delta gerenciada pelo UC."""
+    nome_completo = f"`{UC_CATALOG}`.`{database}`.`{tabela}`"
+    if mode == "overwrite":
+        spark.sql(f"DROP TABLE IF EXISTS {nome_completo}")
     (
         df.write.format("delta")
         .mode(mode)
         .option("overwriteSchema", "true")
-        .option("path", destino)
-        .saveAsTable(f"{database}.{tabela}")
+        .saveAsTable(f"{UC_CATALOG}.{database}.{tabela}")
     )
 
 
 def salvar_parquet(df: DataFrame, database: str, tabela: str, base_path: str, mode: str = "overwrite") -> None:
-    """Salva a Bronze como Parquet e a registra no metastore do Databricks."""
+    """Salva a Bronze somente como arquivos Parquet em um UC Volume."""
     destino = f"{garantir_barra_final(base_path)}{tabela}"
-    if mode == "overwrite":
-        spark.sql(f"DROP TABLE IF EXISTS {database}.{tabela}")
-    (
-        df.write.format("parquet")
-        .mode(mode)
-        .option("path", destino)
-        .saveAsTable(f"{database}.{tabela}")
-    )
+    df.write.format("parquet").mode(mode).save(destino)
+
+
+def ler_parquet_bronze(tabela: str) -> DataFrame:
+    """Le uma tabela Bronze pelo diretorio Parquet no UC Volume."""
+    return spark.read.format("parquet").load(f"{BRONZE_BASE_PATH}{tabela}")
 
 
 def validar_enum(coluna: str, valores_validos: list[str], permitir_nulo: bool = False):
@@ -372,10 +385,11 @@ def data_sk(coluna: str):
 
 # COMMAND ----------
 print("Configuracao RH carregada.")
+print(f"UC_CATALOG...........: {UC_CATALOG}")
 print(f"POSTGRES_HOST........: {POSTGRES_HOST}")
 print(f"POSTGRES_DATABASE....: {POSTGRES_DATABASE}")
 print(f"POSTGRES_SCHEMA......: {POSTGRES_SCHEMA}")
 print(f"BRONZE_BASE_PATH.....: {BRONZE_BASE_PATH}")
-print(f"SILVER_BASE_PATH.....: {SILVER_BASE_PATH}")
-print(f"GOLD_BASE_PATH.......: {GOLD_BASE_PATH}")
-print(f"QUARANTINE_BASE_PATH.: {QUARANTINE_BASE_PATH}")
+print(f"SILVER...............: {UC_CATALOG}.{SILVER_DB} (Delta gerenciado)")
+print(f"GOLD.................: {UC_CATALOG}.{GOLD_DB} (Delta gerenciado)")
+print(f"QUARANTINE...........: {UC_CATALOG}.{QUARANTINE_DB} (Delta gerenciado)")

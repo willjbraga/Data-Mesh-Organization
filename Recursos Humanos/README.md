@@ -63,13 +63,16 @@ rh_gold
 rh_quarantine
 ```
 
-## Formatos e caminhos padrao
+## Formatos e destinos no Databricks Serverless
 
 ```text
-Bronze (Parquet): dbfs:/FileStore/data_mesh/rh/bronze_parquet/
-Silver (Delta): dbfs:/FileStore/data_mesh/rh/silver/
-Gold (Delta): dbfs:/FileStore/data_mesh/rh/gold/
-Quarentena (Delta): dbfs:/FileStore/data_mesh/rh/quarantine/
+Bronze (Parquet): /Volumes/<catalogo>/rh_bronze/bronze_parquet/<tabela>/
+Silver (Delta gerenciado): <catalogo>.rh_silver.<tabela>
+Gold (Delta gerenciado): <catalogo>.rh_gold.<tabela>
+Quarentena (Delta gerenciado): <catalogo>.rh_quarantine.<tabela>
 ```
 
-Esses caminhos podem ser alterados por widgets no notebook `00_configuracao.py`.
+O catalogo padrao e detectado com `current_catalog()` e pode ser alterado pelo
+widget `uc_catalog`. A Bronze nao e registrada como tabela porque arquivos dentro
+de Volumes devem ser acessados por caminho. Silver, Gold e quarentena sao tabelas
+gerenciadas pelo Unity Catalog e, portanto, nao usam caminhos `dbfs:/`.
