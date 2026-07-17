@@ -1,4 +1,4 @@
-postgresql+asyncpg://postgres:SENHA_URL_ENCODED@db.bpiwbiwzoybrpdjjfbyn.supabase.co:5432/postgres
+postgresql+asyncpg://postgres.bpiwbiwzoybrpdjjfbyn:SENHA_URL_ENCODED@aws-1-sa-east-1.pooler.supabase.com:5432/postgres
 
 # Este arquivo fica apenas como template local.
 # A senha contem @; por isso ela aparece como %40 quando faz parte da URL.

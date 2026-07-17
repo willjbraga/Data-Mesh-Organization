@@ -43,10 +43,27 @@ QUARANTINE_BASE_PATH = garantir_barra_final(
 
 # Fonte operacional PostgreSQL/Supabase. A senha deve ficar em um secret scope do
 # Databricks; ela nunca deve ser gravada no notebook ou na URL de conexao.
-POSTGRES_HOST = obter_parametro("postgres_host", "db.bpiwbiwzoybrpdjjfbyn.supabase.co")
+POSTGRES_POOLER_HOST_PADRAO = "aws-1-sa-east-1.pooler.supabase.com"
+POSTGRES_POOLER_USER_PADRAO = "postgres.bpiwbiwzoybrpdjjfbyn"
+
+# O endpoint direto do Supabase e o usuario simples foram usados numa revisao
+# anterior. A pipeline JDBC que ja funcionava no Databricks usava o Session
+# Pooler. A migracao abaixo tambem corrige widgets antigos persistidos no notebook.
+_postgres_host_param = obter_parametro("postgres_host", POSTGRES_POOLER_HOST_PADRAO)
+_postgres_user_param = obter_parametro("postgres_user", POSTGRES_POOLER_USER_PADRAO)
+
+POSTGRES_HOST = (
+    POSTGRES_POOLER_HOST_PADRAO
+    if _postgres_host_param == "db.bpiwbiwzoybrpdjjfbyn.supabase.co"
+    else _postgres_host_param
+)
 POSTGRES_PORT = obter_parametro("postgres_port", "5432")
 POSTGRES_DATABASE = obter_parametro("postgres_database", "postgres")
-POSTGRES_USER = obter_parametro("postgres_user", "postgres")
+POSTGRES_USER = (
+    POSTGRES_POOLER_USER_PADRAO
+    if _postgres_user_param == "postgres"
+    else _postgres_user_param
+)
 POSTGRES_SCHEMA = obter_parametro("postgres_schema", "rh")
 POSTGRES_SECRET_SCOPE = obter_parametro("postgres_secret_scope", "data-mesh-rh")
 POSTGRES_SECRET_KEY = obter_parametro("postgres_secret_key", "supabase-postgres-password")

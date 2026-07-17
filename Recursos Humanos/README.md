@@ -9,12 +9,16 @@ Os dados operacionais sao extraidos diretamente do schema `rh` no PostgreSQL/Sup
 Conexao padrao (sem senha):
 
 ```text
-host: db.bpiwbiwzoybrpdjjfbyn.supabase.co
+host: aws-1-sa-east-1.pooler.supabase.com
 port: 5432
 database: postgres
-user: postgres
+user: postgres.bpiwbiwzoybrpdjjfbyn
 schema: rh
 ```
+
+A esteira usa o Supavisor Session Pooler do Supabase, o mesmo endpoint da
+pipeline JDBC historica que funcionava no Databricks Serverless. Nao use o
+endpoint direto `db.bpiwbiwzoybrpdjjfbyn.supabase.co` nesta configuracao.
 
 Defina a senha como variavel de ambiente do cluster Databricks:
 

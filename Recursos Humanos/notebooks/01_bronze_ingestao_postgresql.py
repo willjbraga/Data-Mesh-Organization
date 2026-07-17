@@ -10,17 +10,35 @@
 from pyspark.sql import functions as F
 
 # COMMAND ----------
+def propriedades_conexao_postgresql(senha: str) -> dict[str, str]:
+    """Replica as propriedades da pipeline JDBC historica funcional."""
+    return {
+        "user": POSTGRES_USER,
+        "password": senha,
+        "driver": "org.postgresql.Driver",
+        "ssl": "true",
+        "sslmode": "require",
+        "fetchsize": "10000",
+    }
+
+
 def ler_postgresql_bronze(tabela: str, senha: str) -> DataFrame:
-    return (
-        spark.read.format("jdbc")
-        .option("url", POSTGRES_JDBC_URL)
-        .option("dbtable", f"{POSTGRES_SCHEMA}.{tabela}")
-        .option("user", POSTGRES_USER)
-        .option("password", senha)
-        .option("driver", "org.postgresql.Driver")
-        .option("fetchsize", "10000")
-        .load()
+    return spark.read.jdbc(
+        url=POSTGRES_JDBC_URL,
+        table=f"{POSTGRES_SCHEMA}.{tabela}",
+        properties=propriedades_conexao_postgresql(senha),
     )
+
+
+def testar_conexao_postgresql(senha: str) -> None:
+    teste = spark.read.jdbc(
+        url=POSTGRES_JDBC_URL,
+        table="(SELECT 1 AS conexao_ok) AS teste_conexao",
+        properties=propriedades_conexao_postgresql(senha),
+    )
+    if teste.first()["conexao_ok"] != 1:
+        raise RuntimeError("O PostgreSQL respondeu, mas o teste SELECT 1 foi inesperado.")
+    print(f"Conexao JDBC validada: {POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DATABASE}")
 
 
 def adicionar_colunas_bronze(df: DataFrame, tabela: str) -> DataFrame:
@@ -44,7 +62,17 @@ def ingerir_postgresql_bronze(tabela: str, senha: str) -> dict:
 
 # COMMAND ----------
 senha_postgres = obter_senha_postgres()
-resultados = [ingerir_postgresql_bronze(tabela, senha_postgres) for tabela in TABELAS_RH]
+testar_conexao_postgresql(senha_postgres)
+
+resultados = []
+for tabela in TABELAS_RH:
+    try:
+        resultados.append(ingerir_postgresql_bronze(tabela, senha_postgres))
+    except Exception as exc:
+        raise RuntimeError(
+            f"Falha na ingestao de {POSTGRES_SCHEMA}.{tabela} via "
+            f"{POSTGRES_HOST}:{POSTGRES_PORT}."
+        ) from exc
 
 df_resultados_bronze = spark.createDataFrame(resultados)
 display(df_resultados_bronze)
