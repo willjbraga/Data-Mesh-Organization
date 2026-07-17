@@ -303,11 +303,14 @@ def col_to_boolean(coluna: str):
 
 def col_to_time_string(coluna: str):
     valor = F.trim(F.col(coluna).cast("string"))
+    # O JDBC do PostgreSQL pode representar TIME como um timestamp ancorado em
+    # 1970-01-01. Primeiro tentamos o valor como recebido; somente valores que
+    # contem apenas a hora recebem a data tecnica antes do segundo parse.
     timestamp = F.coalesce(
-        F.to_timestamp(F.concat(F.lit("1970-01-01 "), valor), "yyyy-MM-dd HH:mm:ss"),
-        F.to_timestamp(F.concat(F.lit("1970-01-01 "), valor), "yyyy-MM-dd HH:mm"),
+        F.try_to_timestamp(valor),
+        F.try_to_timestamp(F.concat(F.lit("1970-01-01 "), valor)),
     )
-    return F.date_format(timestamp, "HH:mm:ss")
+    return F.when(timestamp.isNotNull(), F.date_format(timestamp, "HH:mm:ss"))
 
 
 def limpar_digitos(coluna: str):
