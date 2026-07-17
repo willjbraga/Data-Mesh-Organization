@@ -1,9 +1,10 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC # 00 - Configuracao RH
-# MAGIC Notebook base do dominio de Recursos Humanos para o MVP Data Mesh em Delta Lake.
+# MAGIC Notebook base do dominio de Recursos Humanos para o Data Mesh no Databricks.
 
 # COMMAND ----------
+import os
 from datetime import date
 
 from pyspark.sql import DataFrame
@@ -27,11 +28,8 @@ def garantir_barra_final(path: str) -> str:
     return path if path.endswith("/") else f"{path}/"
 
 
-CSV_BASE_PATH = garantir_barra_final(
-    obter_parametro("csv_base_path", "dbfs:/FileStore/data_mesh/rh/csv/")
-)
 BRONZE_BASE_PATH = garantir_barra_final(
-    obter_parametro("bronze_base_path", "dbfs:/FileStore/data_mesh/rh/bronze/")
+    obter_parametro("bronze_base_path", "dbfs:/FileStore/data_mesh/rh/bronze_parquet/")
 )
 SILVER_BASE_PATH = garantir_barra_final(
     obter_parametro("silver_base_path", "dbfs:/FileStore/data_mesh/rh/silver/")
@@ -42,6 +40,37 @@ GOLD_BASE_PATH = garantir_barra_final(
 QUARANTINE_BASE_PATH = garantir_barra_final(
     obter_parametro("quarantine_base_path", "dbfs:/FileStore/data_mesh/rh/quarantine/")
 )
+
+# Fonte operacional PostgreSQL/Supabase. A senha deve ficar em um secret scope do
+# Databricks; ela nunca deve ser gravada no notebook ou na URL de conexao.
+POSTGRES_HOST = obter_parametro("postgres_host", "db.bpiwbiwzoybrpdjjfbyn.supabase.co")
+POSTGRES_PORT = obter_parametro("postgres_port", "5432")
+POSTGRES_DATABASE = obter_parametro("postgres_database", "postgres")
+POSTGRES_USER = obter_parametro("postgres_user", "postgres")
+POSTGRES_SCHEMA = obter_parametro("postgres_schema", "rh")
+POSTGRES_SECRET_SCOPE = obter_parametro("postgres_secret_scope", "data-mesh-rh")
+POSTGRES_SECRET_KEY = obter_parametro("postgres_secret_key", "supabase-postgres-password")
+POSTGRES_JDBC_URL = (
+    f"jdbc:postgresql://{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DATABASE}?sslmode=require"
+)
+
+
+def obter_senha_postgres() -> str:
+    senha_ambiente = os.getenv("RH_POSTGRES_PASSWORD")
+    if senha_ambiente:
+        return senha_ambiente
+
+    try:
+        return dbutils.secrets.get(
+            scope=POSTGRES_SECRET_SCOPE,
+            key=POSTGRES_SECRET_KEY,
+        )
+    except Exception as exc:
+        raise RuntimeError(
+            "Senha PostgreSQL nao encontrada. Defina RH_POSTGRES_PASSWORD nas variaveis "
+            "de ambiente do cluster ou crie o secret "
+            f"{POSTGRES_SECRET_SCOPE}/{POSTGRES_SECRET_KEY} no Databricks."
+        ) from exc
 
 BRONZE_DB = "rh_bronze"
 SILVER_DB = "rh_silver"
@@ -88,21 +117,6 @@ TABELAS_EVENTOS = [
     "candidatura",
 ]
 
-ARQUIVOS_CSV_RH = {
-    "unidade_restaurante": "01_unidade_restaurante.csv",
-    "cargo": "02_cargo.csv",
-    "turno": "03_turno.csv",
-    "departamento": "04_departamento.csv",
-    "colaborador": "05_colaborador.csv",
-    "ausencia": "06_ausencia.csv",
-    "movimentacao_colaborador": "07_movimentacao_colaborador.csv",
-    "treinamento": "08_treinamento.csv",
-    "participacao_treinamento": "09_participacao_treinamento.csv",
-    "recrutamento_vaga": "10_recrutamento_vaga.csv",
-    "candidato": "11_candidato.csv",
-    "candidatura": "12_candidatura.csv",
-}
-
 # COMMAND ----------
 # Enums aceitos pela modelagem operacional de RH.
 STATUS_COLABORADOR = ["ativo", "afastado", "ferias", "desligado"]
@@ -140,7 +154,7 @@ TIPO_TREINAMENTO = ["integracao", "seguranca", "atendimento", "boas_praticas", "
 STATUS_PARTICIPACAO_TREINAMENTO = ["pendente", "concluido", "vencido", "cancelado"]
 
 NULL_TOKENS = ["", "null", "none", "nan", "na", "n/a", "--", "???"]
-COLUNAS_TECNICAS_BRONZE = ["data_ingestao", "arquivo_origem", "hash_linha", "camada"]
+COLUNAS_TECNICAS_BRONZE = ["data_ingestao", "fonte_origem", "hash_linha", "camada"]
 
 # COMMAND ----------
 def _col(coluna):
@@ -176,6 +190,19 @@ def salvar_delta(df: DataFrame, database: str, tabela: str, base_path: str, mode
         df.write.format("delta")
         .mode(mode)
         .option("overwriteSchema", "true")
+        .option("path", destino)
+        .saveAsTable(f"{database}.{tabela}")
+    )
+
+
+def salvar_parquet(df: DataFrame, database: str, tabela: str, base_path: str, mode: str = "overwrite") -> None:
+    """Salva a Bronze como Parquet e a registra no metastore do Databricks."""
+    destino = f"{garantir_barra_final(base_path)}{tabela}"
+    if mode == "overwrite":
+        spark.sql(f"DROP TABLE IF EXISTS {database}.{tabela}")
+    (
+        df.write.format("parquet")
+        .mode(mode)
         .option("path", destino)
         .saveAsTable(f"{database}.{tabela}")
     )
@@ -328,7 +355,9 @@ def data_sk(coluna: str):
 
 # COMMAND ----------
 print("Configuracao RH carregada.")
-print(f"CSV_BASE_PATH........: {CSV_BASE_PATH}")
+print(f"POSTGRES_HOST........: {POSTGRES_HOST}")
+print(f"POSTGRES_DATABASE....: {POSTGRES_DATABASE}")
+print(f"POSTGRES_SCHEMA......: {POSTGRES_SCHEMA}")
 print(f"BRONZE_BASE_PATH.....: {BRONZE_BASE_PATH}")
 print(f"SILVER_BASE_PATH.....: {SILVER_BASE_PATH}")
 print(f"GOLD_BASE_PATH.......: {GOLD_BASE_PATH}")

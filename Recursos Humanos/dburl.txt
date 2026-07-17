@@ -1,4 +1,6 @@
-postgresql+asyncpg://USUARIO:SENHA@HOST:5432/postgres
+postgresql+asyncpg://postgres:SENHA_URL_ENCODED@db.bpiwbiwzoybrpdjjfbyn.supabase.co:5432/postgres
 
 # Este arquivo fica apenas como template local.
-# A esteira Databricks de RH usa CSVs exportados em vez de conexao direta ao Supabase.
+# A senha contem @; por isso ela aparece como %40 quando faz parte da URL.
+# No Databricks, prefira RH_POSTGRES_PASSWORD ou o secret data-mesh-rh/supabase-postgres-password.
+# A Bronze usa JDBC e Parquet; Silver, Gold e quarentena usam Delta Lake.

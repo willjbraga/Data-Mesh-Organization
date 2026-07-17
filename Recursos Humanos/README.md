@@ -1,33 +1,39 @@
 # Recursos Humanos - Data Mesh MVP
 
-Este dominio simula a area de RH de uma rede de restaurantes usando uma arquitetura Medallion no Databricks com Delta Lake.
+Este dominio simula a area de RH de uma rede de restaurantes usando uma arquitetura Medallion no Databricks.
 
 ## Fonte de dados
 
-Os dados operacionais vieram originalmente de um modelo OLTP PostgreSQL/Supabase, mas a esteira atual usa CSVs ficticios exportados para o Databricks.
+Os dados operacionais sao extraidos diretamente do schema `rh` no PostgreSQL/Supabase por JDBC.
 
-Caminho padrao de entrada:
-
-```text
-dbfs:/FileStore/data_mesh/rh/csv/
-```
-
-Arquivos esperados:
+Conexao padrao (sem senha):
 
 ```text
-01_unidade_restaurante.csv
-02_cargo.csv
-03_turno.csv
-04_departamento.csv
-05_colaborador.csv
-06_ausencia.csv
-07_movimentacao_colaborador.csv
-08_treinamento.csv
-09_participacao_treinamento.csv
-10_recrutamento_vaga.csv
-11_candidato.csv
-12_candidatura.csv
+host: db.bpiwbiwzoybrpdjjfbyn.supabase.co
+port: 5432
+database: postgres
+user: postgres
+schema: rh
 ```
+
+Defina a senha como variavel de ambiente do cluster Databricks:
+
+```text
+RH_POSTGRES_PASSWORD=<senha-do-postgres>
+```
+
+O notebook le essa variavel com `os.getenv`. Como alternativa, cadastre a senha no
+Databricks Secret Scope:
+
+```text
+scope: data-mesh-rh
+key: supabase-postgres-password
+```
+
+Para desenvolvimento local, o arquivo `Recursos Humanos/.env` pode conter
+`RH_POSTGRES_PASSWORD` e `DB_URL`. O `.env` esta ignorado pelo Git. Como a senha
+possui `@`, use `%40` no componente de senha de uma URL completa; nas opcoes JDBC
+do notebook a senha e enviada separadamente e nao precisa ser codificada.
 
 ## Notebooks Databricks
 
@@ -36,7 +42,7 @@ Os notebooks novos estao em `notebooks/` no formato source do Databricks (`.py`)
 Ordem de execucao:
 
 1. `00_configuracao.py` - parametros, schemas, enums e funcoes utilitarias.
-2. `01_bronze_ingestao_csv.py` - ingestao dos CSVs para `rh_bronze`.
+2. `01_bronze_ingestao_postgresql.py` - extracao JDBC e gravacao Parquet em `rh_bronze`.
 3. `02_silver_tratamento_cadastros.py` - Silver de cadastros e quarentena.
 4. `03_silver_tratamento_eventos.py` - Silver de eventos/processos e quarentena.
 5. `04_olap_dimensoes.py` - dimensoes em `rh_gold`.
@@ -53,13 +59,13 @@ rh_gold
 rh_quarantine
 ```
 
-## Saidas Delta padrao
+## Formatos e caminhos padrao
 
 ```text
-dbfs:/FileStore/data_mesh/rh/bronze/
-dbfs:/FileStore/data_mesh/rh/silver/
-dbfs:/FileStore/data_mesh/rh/gold/
-dbfs:/FileStore/data_mesh/rh/quarantine/
+Bronze (Parquet): dbfs:/FileStore/data_mesh/rh/bronze_parquet/
+Silver (Delta): dbfs:/FileStore/data_mesh/rh/silver/
+Gold (Delta): dbfs:/FileStore/data_mesh/rh/gold/
+Quarentena (Delta): dbfs:/FileStore/data_mesh/rh/quarantine/
 ```
 
 Esses caminhos podem ser alterados por widgets no notebook `00_configuracao.py`.
