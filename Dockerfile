@@ -7,9 +7,12 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Agora sim, este caminho está garantido pelo sistema operacional
-ENV JAVA_HOME=/usr/lib/jvm/default-java
+RUN JAVA_PATH=$(dirname $(dirname $(readlink -f $(which java)))) && \
+    ln -s $JAVA_PATH /usr/lib/jvm/java-current
+
+ENV JAVA_HOME=/usr/lib/jvm/java-current
+ENV PATH=$JAVA_HOME/bin:$PATH
 
 USER airflow
 
-RUN pip install --no-cache-dir pyspark pyyaml
+RUN pip install --no-cache-dir pyspark==3.5.1 pyyaml
