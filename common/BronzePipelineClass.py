@@ -51,18 +51,22 @@ class BronzePipeline(BasePipeline):
             table_name (str): O nome da tabela de destino (sem o caminho do catálogo).
         """
         full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
+
+        print(f"Salvando na Bronze: {full_table_path}...")
+
+        writer = df.write.format("delta") \
+            .mode("overwrite") \
+            .option("overwriteSchema", "true")
         
         if self.is_local:
             # Se estiver rodando localmente, salva no caminho local do Airflow
             full_table_path = f"{self.local_data_path}{table_name}"
             print(f"[Local Mode] Salvando na Bronze (local): {full_table_path}...")
+            writer.save(full_table_path)
 
-        print(f"Salvando na Bronze: {full_table_path}...")
+        else:
+            writer.saveAsTable(full_table_path)
         
-        df.write.format("delta") \
-            .mode("overwrite") \
-            .option("overwriteSchema", "true") \
-            .saveAsTable(full_table_path)
         
         print("Carga Bronze finalizada com sucesso!")
     
@@ -95,4 +99,7 @@ class BronzePipeline(BasePipeline):
         """
         df_raw = self.extract_from_postgres(source_table)
         self.load_to_bronze(df_raw, source_table)
-        self.export_to_volume(df_raw, source_table)
+
+        if not self.is_local:
+            # Exporta para o volume apenas se não estiver em modo local
+            self.export_to_volume(df_raw, source_table)
