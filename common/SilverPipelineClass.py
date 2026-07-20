@@ -14,8 +14,10 @@ class SilverPipeline(BasePipeline):
 
         if self.is_local:
             # Se estiver rodando localmente, salva no caminho local do Airflow
-            full_table_path = f"{self.local_data_path}{table_name}"
+            full_table_path = f"/opt/airflow/data/{self.dominio}/bronze/{table_name}"
             print(f"[Local Mode] Extraindo da Silver (local): {full_table_path}...")
+            
+            return self.spark.read.format("delta").load(full_table_path)
 
         print(f"Extraindo dados de: {full_table_path}...")
         
@@ -25,7 +27,7 @@ class SilverPipeline(BasePipeline):
         full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
         if self.is_local:
             # Se estiver rodando localmente, salva no caminho local do Airflow
-            full_table_path = f"{self.local_data_path}{table_name}"
+            full_table_path = f"/opt/airflow/data/{self.dominio}/silver/{table_name}"
             print(f"[Local Mode] Salvando na Silver (local): {full_table_path}...")
         
         print(f"Salvando na Silver: {full_table_path}...")
