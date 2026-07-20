@@ -8,7 +8,7 @@ default_args = {
 }
 
 @dag(
-    dag_id='marketing_cliente_pipeline',
+    dag_id='marketing_perfil_cliente_segmento_pipeline',
     default_args=default_args,
     description='Orquestração nativa em Python com PySpark para ingestão de dados brutos do domínio de marketing.',
     schedule_interval='@daily',
