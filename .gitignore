@@ -8,6 +8,9 @@ __pycache__/
 logs/
 plugins/
 data/
+data/mkt/
+data/fin/
+data/rh/
 airflow.db
 airflow.cfg
 webserver_config.py
