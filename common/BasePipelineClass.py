@@ -57,7 +57,7 @@ class BasePipeline:
                 .master("local[*]") \
                 .config("spark.driver.memory", "1g") \
                 .config("spark.executor.memory", "1g") \
-                .config("spark.jars.packages", "org.postgresql:postgresql:42.7.3,io.delta:delta-spark_2.12:3.2.0") \
+                .config("spark.jars.packages", "org.postgresql:postgresql:42.7.3,io.delta:delta-spark_4.1_2.13:4.1.0") \
                 .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension") \
                 .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog") \
                 .config("spark.sql.warehouse.dir", "/tmp/spark-warehouse") \

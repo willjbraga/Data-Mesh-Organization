@@ -25,17 +25,19 @@ class SilverPipeline(BasePipeline):
     
     def load_to_silver(self, df, table_name):
         full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
+
+        writer = df.write.format("delta") \
+            .mode("overwrite") \
+            .option("overwriteSchema", "true")
+
         if self.is_local:
             # Se estiver rodando localmente, salva no caminho local do Airflow
             full_table_path = f"/opt/airflow/data/{self.dominio}/silver/{table_name}"
             print(f"[Local Mode] Salvando na Silver (local): {full_table_path}...")
-        
-        print(f"Salvando na Silver: {full_table_path}...")
-        
-        df.write.format("delta") \
-            .mode("overwrite") \
-            .option("overwriteSchema", "true") \
-            .saveAsTable(full_table_path)
+            writer.save(full_table_path)
+        else:
+            print(f"Salvando na Silver: {full_table_path}...")
+            writer.saveAsTable(full_table_path)
         
         print("Carga Silver finalizada com sucesso!")
 

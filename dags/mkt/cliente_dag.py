@@ -22,6 +22,7 @@ def marketing_cliente_pipeline():
     from Marketing.silver.silver_lead import LeadMktPipeline
     from Marketing.silver.silver_interacao import InteracaoMktPipeline
     from Marketing.silver.silver_cliente_segmento import ClienteSegmentoMktPipeline
+    from Marketing.silver.silver_segmento import SegmentoMktPipeline
     from Marketing.gold.gold_dim_perfil_cliente_segmento import GoldDimPerfilClienteSegmento
 
     @task
@@ -32,13 +33,13 @@ def marketing_cliente_pipeline():
     
     @task
     def run_marketing_cliente_silver_pipeline():
-        pipelines = {'cliente': ClienteMktPipeline(is_local=True), 'lead': LeadMktPipeline(is_local=True), 'interacao': InteracaoMktPipeline(is_local=True), 'cliente_segmento': ClienteSegmentoMktPipeline(is_local=True)}
+        pipelines = {'cliente': ClienteMktPipeline(is_local=True), 'lead': LeadMktPipeline(is_local=True), 'interacao': InteracaoMktPipeline(is_local=True), 'cliente_segmento': ClienteSegmentoMktPipeline(is_local=True), 'segmento': SegmentoMktPipeline(is_local=True)}
         for table_name, pipeline in pipelines.items():
             pipeline.run(table_name)
     
     @task
     def run_marketing_cliente_gold_pipeline():
-        gold_pipeline = GoldDimPerfilClienteSegmento()
+        gold_pipeline = GoldDimPerfilClienteSegmento(is_local=True)
         gold_pipeline.run(target_table="dim_perfil_cliente_segmento")
 
     task_bronze = run_marketing_cliente_bronze_pipeline()

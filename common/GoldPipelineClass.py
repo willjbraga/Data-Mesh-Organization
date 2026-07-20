@@ -14,29 +14,33 @@ class GoldPipeline(BasePipeline):
 
         if is_local:
             # Se estiver rodando localmente, salva no caminho local do Airflow
-            full_table_path = f"{self.local_data_path}{table_name}"
-            print(f"[Local Mode] Salvando na Gold (local): {full_table_path}...")
+            full_table_path = f"/opt/airflow/data/{self.dominio}/silver/{table_name}"
+            print(f"[Local Mode] Extraindo dados de: {full_table_path}...")
 
-        print(f"Extraindo dados de: {full_table_path}...")
-        
-        return self.spark.table(full_table_path)
+            return self.spark.read.format("delta").load(full_table_path)
+        else:
+            # Versão para ambiente Databricks
+            print(f"[Databricks] Extraindo dados de: {full_table_path}...")
+            
+            return self.spark.table(full_table_path)
     
     def load_to_gold(self, df, table_name, is_local: bool = False):
 
         full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
 
+        writer = df.write.format("delta") \
+            .mode("overwrite") \
+            .option("overwriteSchema", "true")
+
         if is_local:
             # Se estiver rodando localmente, salva no caminho local do Airflow
-            full_table_path = f"{self.local_data_path}{table_name}"
+            full_table_path = f"/opt/airflow/data/{self.dominio}/gold/{table_name}"
             print(f"[Local Mode] Salvando na Gold (local): {full_table_path}...")
-        
-        
-        print(f"Salvando na Gold: {full_table_path}...")
-        
-        df.write.format("delta") \
-            .mode("overwrite") \
-            .option("overwriteSchema", "true") \
-            .saveAsTable(full_table_path)
+            writer.save(full_table_path)
+        else:
+            print(f"[Databricks] Salvando na Gold: {full_table_path}...")
+            
+            writer.saveAsTable(full_table_path)
         
     @abstractmethod
     def create_business_view(self, *args, **kwargs) -> DataFrame:
