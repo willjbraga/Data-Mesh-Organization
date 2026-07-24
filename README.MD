@@ -11,6 +11,10 @@
 
 ![Arquitetura_Medallion](docs/arquitetura/arquitetura_medallion.png)
 
+## Diagrama de Classes
+
+![Diagrama_classes](docs/diagrama_classes.png)
+
 ## 🔐 Configuração de Segredos e Ambiente
 
 Devido às limitações da versão **Databricks Community Edition**, que não suporta o uso nativo de `dbutils.secrets`, implementamos uma solução baseada em variáveis de ambiente para a gestão de credenciais.
