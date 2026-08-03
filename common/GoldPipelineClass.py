@@ -41,6 +41,14 @@ class GoldPipeline(BasePipeline):
             print(f"[Databricks] Salvando na Gold: {full_table_path}...")
             
             writer.saveAsTable(full_table_path)
+
+    def load_to_postgres(self, df, table_name):
+        """
+        Método para salvar o DataFrame no PostgreSQL.
+        """
+        # Aqui você implementaria a lógica para salvar o DataFrame no PostgreSQL.
+        # Isso pode incluir a configuração da conexão, mapeamento de tipos de dados, etc.
+        pass
         
     @abstractmethod
     def create_business_view(self, *args, **kwargs) -> DataFrame:
