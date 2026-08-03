@@ -42,13 +42,33 @@ class GoldPipeline(BasePipeline):
             
             writer.saveAsTable(full_table_path)
 
-    def load_to_postgres(self, df, table_name):
+    def load_to_postgres(self, df, table_name, batch_size: int = 5000, schema: str = "gold"):
         """
         Método para salvar o DataFrame no PostgreSQL.
         """
-        # Aqui você implementaria a lógica para salvar o DataFrame no PostgreSQL.
-        # Isso pode incluir a configuração da conexão, mapeamento de tipos de dados, etc.
-        pass
+        jdbc_url = f"jdbc:postgresql://{self.db_host}:5432/{self.db_name}?currentSchema={schema}"
+
+
+        print(f"[GOLD] Exportando {df.count()} registros para Supabase -> Tabela '{table_name}'...")
+
+        try:
+            df.write \
+              .format("jdbc") \
+              .option("url", jdbc_url) \
+              .option("dbtable", table_name) \
+              .option("user", self.db_user) \
+              .option("password", self.db_pass) \
+              .option("driver", "org.postgresql.Driver") \
+              .option("batchsize", batch_size) \
+              .option("stringtype", "unspecified") \
+              .mode('overwrite') \
+              .save()
+
+            print(f"[GOLD] Exportação para o Supabase concluída com sucesso!")
+
+        except Exception as e:
+            print(f"[GOLD] Falha na gravação JDBC no Supabase: {str(e)}")
+            raise e
         
     @abstractmethod
     def create_business_view(self, *args, **kwargs) -> DataFrame:
