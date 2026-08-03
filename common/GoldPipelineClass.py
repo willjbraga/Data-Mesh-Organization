@@ -42,14 +42,28 @@ class GoldPipeline(BasePipeline):
             
             writer.saveAsTable(full_table_path)
 
-    def load_to_postgres(self, df, table_name, batch_size: int = 5000, schema: str = "gold"):
+    def load_to_postgres(self, table_name, batch_size: int = 5000, schema: str = "gold"):
         """
         Método para salvar o DataFrame no PostgreSQL.
         """
         jdbc_url = f"jdbc:postgresql://{self.db_host}:5432/{self.db_name}?currentSchema={schema}"
 
+        full_table_path = f"{self.catalog}.{self.schema}.{table_name}"
 
-        print(f"[GOLD] Exportando {df.count()} registros para Supabase -> Tabela '{table_name}'...")
+
+        if self.is_local:
+            # Se estiver rodando localmente, salva no caminho local do Airflow
+            full_table_path = f"/opt/airflow/data/{self.dominio}/gold/{table_name}"
+            print(f"[Local Mode] Extraindo dados de: {full_table_path}...")
+
+            df = self.spark.read.format("delta").load(full_table_path)
+        else:
+            # Versão para ambiente Databricks
+            print(f"[Databricks] Extraindo dados de: {full_table_path}...")
+            
+            df = self.spark.table(full_table_path)
+
+        print(f"[GOLD] Exportando para Supabase -> Tabela '{table_name}'...")
 
         try:
             df.write \
