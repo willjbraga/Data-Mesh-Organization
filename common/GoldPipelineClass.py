@@ -67,14 +67,14 @@ class GoldPipeline(BasePipeline):
 
         try:
             df.write \
-              .format("jdbc") \
-              .option("url", jdbc_url) \
-              .option("dbtable", table_name) \
-              .option("user", self.db_user) \
-              .option("password", self.db_pass) \
-              .option("driver", "org.postgresql.Driver") \
-              .option("batchsize", batch_size) \
-              .option("stringtype", "unspecified") \
+                .format("postgresql") \
+                .option("database", self.db_name) \
+                .option("dbtable", f'{schema}.{table_name}') \
+                .option("user", self.db_user) \
+                .option("password", self.db_pass) \
+                .option("host", self.db_host) \
+                .option("port", "5432") \
+                .option("batchsize", batch_size) \
               .mode('overwrite') \
               .save()
 
