@@ -105,4 +105,10 @@ As pipelines são automatizadas no próprio DataBricks similar ao Apache Airflow
 
 O próprio DataBricks oferece um sistema de mensageria para alertas em casos como inicio, sucesso, falha e outros casos.
 
-![Mensageria](docs/mensageria_exeplo.png)
+![Mensageria](docs/mensageria_exeplo.png) 
+
+## 🔍 Visualização dos dados
+
+Para visualizar os dados a camada gold utiliza um método chamado load_to_postgres que carrega os dados da gold de volta para o Supabase o qual se conecta ao Looker studio
+
+![visualizacao](docs/looker_studio.png)
